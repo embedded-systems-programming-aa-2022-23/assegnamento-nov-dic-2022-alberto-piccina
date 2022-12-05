@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.22.1 )
 
 project( "Map's library "
 	 VERSION 0.1
-	 LANGUAGES 
+	 LANGUAGES CXX
 	 DESCRIPTION ""
 	 )
 	 
