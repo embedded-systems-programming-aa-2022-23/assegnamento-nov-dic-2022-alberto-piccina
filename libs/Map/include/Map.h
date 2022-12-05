@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 #include <algorithm>
 
 using std::vector;
@@ -20,6 +21,10 @@ public:
     int x() const {return x_; }
     int y() const {return y_; }
 
+    // non-const members
+    int set_x(int x);
+    int set_y(int y);
+
 private:
     int x_;
     int y_;
@@ -34,7 +39,7 @@ class Cell {
 public:
     
     // constructor
-    Cell(Position cell_coordinates, float potential, bool not_obstacle);
+    Cell(Position coordinates, float potential, bool not_obstacle);
     Cell();
 
     // const members
@@ -43,7 +48,6 @@ public:
     bool not_obstacle() const {return not_obstacle_;}
     void set_obstacles_to_cells();
 
-    // non-const members
 private:
     Position coordinates_;
     float potential_;
@@ -62,16 +66,17 @@ public:
     Position start_position() const {return robot_start_position_;}
 
     // non-const member
-    // Cell map_generator(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
-    // vector<vector<Cell>> map_generator(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
     Position smallest_corner{};
     Position biggest_corner{};
 
 private:
-     Position robot_start_position_;
+    Position robot_start_position_;
     Position goal_position_;
     vector<obstacle> obstacles_;
-    bool start_goal_position_check(Position biggest_corner, Position smallest_corner);
+    vector<vector<Cell>> map_;
+    bool start_goal_position_check();
+    void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
+    void print_map();
 };
 
 bool operator<(const Position& p1, const Position& p2);
