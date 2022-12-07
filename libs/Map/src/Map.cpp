@@ -41,6 +41,14 @@ int Position::set_y(int y)
     return y;
 }
 
+Position Cell::set_coordinates(Position point)
+{
+    coordinates_.set_x(point.x());
+    coordinates_.set_y(point.y());
+
+    return coordinates_;
+}
+
 //  Cell's constructor
 Cell::Cell(Position coordinates, float potential, bool not_obstacle)
         :coordinates_{coordinates}, potential_{potential}, not_obstacle_{not_obstacle}
@@ -73,7 +81,7 @@ Map::Map(Position robot_start_position, Position goal_position, vector<obstacle>
         int cell_size{1};
         int number_of_horizontal_cells{(biggest_corner.x() - smallest_corner.x() + edges_surplus) / cell_size};
         int number_of_vertical_cells{(biggest_corner.y() - smallest_corner.y() + edges_surplus) / cell_size};
-        Position map_origin{smallest_corner.x() - (edges_surplus / 2), smallest_corner.x() - (edges_surplus / 2)};
+        Position map_origin{smallest_corner.x() - (edges_surplus / 2), smallest_corner.y() - (edges_surplus / 2)};
 
         std::cout << "Map origin setted at: (" << map_origin.x() << ", " << map_origin.y() << ")" << std::endl;
         std::cout << "Number of horizontal cells: " << number_of_horizontal_cells << std::endl;
@@ -132,6 +140,7 @@ void Map::print_map()
         std::cout << std::endl;
     }
 }
+
 // function to check if robot_start_position_ and goal_position_ are inside the map's edges
 bool Map::start_goal_position_check()
 {

@@ -46,6 +46,7 @@ public:
     Position coordinates() const {return coordinates_;}
     float potential() const {return potential_;}
     bool not_obstacle() const {return not_obstacle_;}
+    Position set_coordinates(Position point);
     void set_obstacles_to_cells();
 
 private:

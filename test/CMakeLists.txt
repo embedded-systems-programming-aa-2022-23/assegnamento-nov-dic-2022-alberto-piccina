@@ -7,4 +7,4 @@ project( Testing
 	 )
 
 add_subdirectory(test_map)
-# add_subdirectory(test_matrix)
+add_subdirectory(test_robot)
