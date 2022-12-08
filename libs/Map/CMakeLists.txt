@@ -11,10 +11,10 @@ add_library(Map
 	src/Map.cpp
 	)
 
-#target_link_libraries( estrazione_csv
-	#PUBLIC
-	#lib::csv
-#)
+target_link_libraries( Map
+	PUBLIC
+	lib::Robot
+)
 
 target_include_directories(Map PUBLIC include)
 

@@ -4,9 +4,12 @@
 #define Map_h
 
 #include <iostream>
+#include <cmath>
 #include <vector>
 #include <map>
 #include <algorithm>
+
+// #include "Robot.h"
 
 using std::vector;
 
@@ -39,20 +42,25 @@ class Cell {
 public:
     
     // constructor
-    Cell(Position coordinates, float potential, bool not_obstacle);
+    Cell(Position coordinates, double potential, bool is_obstacle);
     Cell();
 
     // const members
     Position coordinates() const {return coordinates_;}
-    float potential() const {return potential_;}
-    bool not_obstacle() const {return not_obstacle_;}
+    double potential() const {return potential_;}
+    bool is_obstacle() const {return is_obstacle_;}
+
+    // non-const members
     Position set_coordinates(Position point);
     void set_obstacles_to_cells();
+    double set_potential(double potential);
+    double potential_calculation(Position goal_position, vector<Position> obstacles_position, double max_influence_distance);
+    double distance_calculation(Position p1, Position p2);
 
 private:
     Position coordinates_;
-    float potential_;
-    bool not_obstacle_;
+    double potential_;
+    bool is_obstacle_;
 };
 
 class Map {
@@ -65,6 +73,7 @@ public:
     std::vector<obstacle> obstacles() const {return obstacles_;}
     Position goal_position() const {return goal_position_;}
     Position start_position() const {return robot_start_position_;}
+    vector<Position> obstacle_positions() const {return obstacle_positions_;}
 
     // non-const member
     Position smallest_corner{};
@@ -75,12 +84,12 @@ private:
     Position goal_position_;
     vector<obstacle> obstacles_;
     vector<vector<Cell>> map_;
+    vector<Position> obstacle_positions_;
     bool start_goal_position_check();
     void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
     void print_map();
 };
 
 bool operator<(const Position& p1, const Position& p2);
-
 
 #endif

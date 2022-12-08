@@ -25,11 +25,14 @@ public:
     // non-const member
     void set_available_positions(Position current_cell);
     void print_av_pos();
+    void find_min_potential();
+    void move(vector<Position> obstacles_position, double max_influence_distance);
 
 private:
     Position coordinates_;
     Position goal_position_;
     std::array<Cell,8> available_positions_;
+    int index_of_min_cell_;
 };
 
 #endif 
