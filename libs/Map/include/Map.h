@@ -72,7 +72,7 @@ public:
     // const members
     std::vector<obstacle> obstacles() const {return obstacles_;}
     Position goal_position() const {return goal_position_;}
-    Position start_position() const {return robot_start_position_;}
+    Position robot_start_position() const {return robot_start_position_;}
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
 
     // non-const member

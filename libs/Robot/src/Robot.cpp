@@ -85,7 +85,7 @@ void Robot::find_min_potential()
 
         index_of_min_cell_ = index_of_min_cell;
 
-        std::cout << "\nMin potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
+        std::cout << "Min potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
                         << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
 }
 
@@ -102,7 +102,7 @@ void Robot::move(vector<Position> obstacles_position, double max_influence_dista
                 coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
                 coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
 
-                std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                std::cout << "\nNew cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
                 if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y()))
                         arrived = true;
         }
