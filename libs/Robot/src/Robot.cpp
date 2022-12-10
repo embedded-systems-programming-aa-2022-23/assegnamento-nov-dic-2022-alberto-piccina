@@ -10,6 +10,8 @@ Robot::Robot(Position start_position, Position goal_position)
                 available_positions_.at(i).set_potential(0);
         }
         set_available_positions(start_position);
+
+        previous_cell_ = start_position;
 }
 
 // Robot's default constructor
@@ -85,25 +87,38 @@ void Robot::find_min_potential()
 
         index_of_min_cell_ = index_of_min_cell;
 
-        std::cout << "Min potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
-                        << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
+        // std::cout << "Min potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
+        //                 << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
 }
 
 void Robot::move(vector<Position> obstacles_position, double max_influence_distance)
 {
         bool arrived{false};
         while(!arrived) {
+                // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
+
                 set_available_positions(Position(coordinates().x(),coordinates().y()));
+
                 for(size_t i{0}; i < available_positions().size(); i++) {
                         available_positions_.at(i).potential_calculation(goal_position(),obstacles_position,max_influence_distance);
-                        std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;
+                        // std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;
                 }
-                find_min_potential();
-                coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
-                coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
 
-                std::cout << "\nNew cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-                if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y()))
+                find_min_potential();
+                if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
+                        std::cerr << "Error: local minimum found." << std::endl;
                         arrived = true;
+                }
+                else {
+                        previous_cell_ = Position(coordinates().x(),coordinates().y());
+                
+                        coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
+                        coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
+
+                        // std::cout << "Previous cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
+                        std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                        if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y()))
+                                arrived = true;
+                }
         }
 }

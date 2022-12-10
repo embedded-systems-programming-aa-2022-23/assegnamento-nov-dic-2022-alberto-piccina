@@ -85,7 +85,6 @@ private:
     vector<obstacle> obstacles_;
     vector<vector<Cell>> map_;
     vector<Position> obstacle_positions_;
-    bool start_goal_position_check();
     void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
     void print_map();
 };

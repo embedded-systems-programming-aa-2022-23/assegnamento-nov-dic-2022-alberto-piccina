@@ -21,6 +21,7 @@ public:
     Position coordinates() const {return coordinates_;}
     Position goal_position() const {return goal_position_;}
     std::array<Cell,8> available_positions() const {return available_positions_;}
+    Position previous_cell() const {return previous_cell_;}
 
     // non-const member
     void set_available_positions(Position current_cell);
@@ -32,6 +33,7 @@ private:
     Position coordinates_;
     Position goal_position_;
     std::array<Cell,8> available_positions_;
+    Position previous_cell_;
     int index_of_min_cell_;
 };
 
