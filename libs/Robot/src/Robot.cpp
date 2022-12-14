@@ -6,6 +6,10 @@
 Robot::Robot(Position start_position, Position goal_position, double cell_size)
         :coordinates_{start_position}, goal_position_{goal_position}
 {
+        if(!check_with_cell_size(cell_size)) {
+                std::cout << "Robot(): invalid robot. Verify if start position and goal position are defined correctly." << std::endl;
+                exit(EXIT_FAILURE);
+        }
         for(size_t i{0}; i < available_positions().size(); i++) {
                 available_positions_.at(i).set_potential(0);
         }
@@ -18,6 +22,19 @@ Robot::Robot(Position start_position, Position goal_position, double cell_size)
 Robot::Robot()
         :coordinates_{Position(0,0)}
 {
+}
+
+bool Robot::check_with_cell_size(double cell_size)
+{
+        double a{fmod(coordinates_.x(),cell_size)};
+        double b{fmod(coordinates_.y(),cell_size)};
+        double c{fmod(goal_position_.x(),cell_size)};
+        double d{fmod(goal_position_.y(),cell_size)};
+
+        if((a != 0) || (b != 0) || (c != 0) || (d != 0))
+                return false;
+        else
+                return true;
 }
 
 void Robot::set_available_positions(Position current_cell, double cell_size)

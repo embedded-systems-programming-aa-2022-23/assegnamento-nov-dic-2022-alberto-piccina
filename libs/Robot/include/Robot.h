@@ -24,6 +24,7 @@ public:
     Position previous_cell() const {return previous_cell_;}
 
     // non-const member
+    bool check_with_cell_size(double cell_size);
     void set_available_positions(Position current_cell, double cell_size);
     void print_av_pos();
     void find_min_potential();
