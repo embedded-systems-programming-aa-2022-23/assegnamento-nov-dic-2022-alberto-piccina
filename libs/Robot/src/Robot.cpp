@@ -3,13 +3,13 @@
 #include "Robot.h"
 
 // Robot's constructor
-Robot::Robot(Position start_position, Position goal_position)
+Robot::Robot(Position start_position, Position goal_position, double cell_size)
         :coordinates_{start_position}, goal_position_{goal_position}
 {
         for(size_t i{0}; i < available_positions().size(); i++) {
                 available_positions_.at(i).set_potential(0);
         }
-        set_available_positions(start_position);
+        set_available_positions(start_position, cell_size);
 
         previous_cell_ = start_position;
 }
@@ -20,48 +20,87 @@ Robot::Robot()
 {
 }
 
-void Robot::set_available_positions(Position current_cell)
+void Robot::set_available_positions(Position current_cell, double cell_size)
 {
         Position new_cell{current_cell};
         // std::cout << "Current cell: (" << current_cell.x() << "," << current_cell.y() << ")" << std::endl;
 
+        // // cell: Nord
+        // new_cell.set_y(current_cell.y()+1);
+        // available_positions_.at(0).set_coordinates(new_cell);
+
+        // // cell: NordEst
+        // new_cell.set_x(current_cell.x()+1);
+        // new_cell.set_y(current_cell.y()+1);
+        // available_positions_.at(1).set_coordinates(new_cell);
+
+        // // cell: Est
+        // new_cell.set_x(current_cell.x()+1);
+        // new_cell.set_y(current_cell.y());
+        // available_positions_.at(2).set_coordinates(new_cell);
+
+        // // cell: SudEst
+        // new_cell.set_x(current_cell.x()+1);
+        // new_cell.set_y(current_cell.y()-1);
+        // available_positions_.at(3).set_coordinates(new_cell);
+
+        // // cell: Sud
+        // new_cell.set_x(current_cell.x());
+        // new_cell.set_y(current_cell.y()-1);
+        // available_positions_.at(4).set_coordinates(new_cell);
+
+        // // cell: SudOvest
+        // new_cell.set_x(current_cell.x()-1);
+        // new_cell.set_y(current_cell.y()-1);
+        // available_positions_.at(5).set_coordinates(new_cell);
+
+        // // cell: Ovest
+        // new_cell.set_x(current_cell.x()-1);
+        // new_cell.set_y(current_cell.y());
+        // available_positions_.at(6).set_coordinates(new_cell);
+
+        // // cell: NordOvest
+        // new_cell.set_x(current_cell.x()-1);
+        // new_cell.set_y(current_cell.y()+1);
+        // available_positions_.at(7).set_coordinates(new_cell);
+
         // cell: Nord
-        new_cell.set_y(current_cell.y()+1);
+        new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(0).set_coordinates(new_cell);
 
         // cell: NordEst
-        new_cell.set_x(current_cell.x()+1);
-        new_cell.set_y(current_cell.y()+1);
+        new_cell.set_x(current_cell.x() + cell_size);
+        new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(1).set_coordinates(new_cell);
 
         // cell: Est
-        new_cell.set_x(current_cell.x()+1);
+        new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(2).set_coordinates(new_cell);
 
         // cell: SudEst
-        new_cell.set_x(current_cell.x()+1);
-        new_cell.set_y(current_cell.y()-1);
+        new_cell.set_x(current_cell.x() + cell_size);
+        new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(3).set_coordinates(new_cell);
 
         // cell: Sud
         new_cell.set_x(current_cell.x());
-        new_cell.set_y(current_cell.y()-1);
+        new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(4).set_coordinates(new_cell);
 
         // cell: SudOvest
-        new_cell.set_x(current_cell.x()-1);
-        new_cell.set_y(current_cell.y()-1);
+        new_cell.set_x(current_cell.x() - cell_size);
+        new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(5).set_coordinates(new_cell);
 
         // cell: Ovest
-        new_cell.set_x(current_cell.x()-1);
+        new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(6).set_coordinates(new_cell);
 
         // cell: NordOvest
-        new_cell.set_x(current_cell.x()-1);
-        new_cell.set_y(current_cell.y()+1);
+        new_cell.set_x(current_cell.x() - cell_size);
+        new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(7).set_coordinates(new_cell);
 }
 
@@ -91,13 +130,13 @@ void Robot::find_min_potential()
         //                 << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
 }
 
-void Robot::move(vector<Position> obstacles_position, double max_influence_distance)
+void Robot::move(vector<Position> obstacles_position, double cell_size, double max_influence_distance)
 {
         bool arrived{false};
         while(!arrived) {
                 // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
 
-                set_available_positions(Position(coordinates().x(),coordinates().y()));
+                set_available_positions(Position(coordinates().x(),coordinates().y()), cell_size);
 
                 for(size_t i{0}; i < available_positions().size(); i++) {
                         available_positions_.at(i).potential_calculation(goal_position(),obstacles_position,max_influence_distance);

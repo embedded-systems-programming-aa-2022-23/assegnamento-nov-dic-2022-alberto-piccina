@@ -6,6 +6,6 @@ project( Testing
 	 DESCRIPTION ""
 	 )
 
-add_subdirectory(test_map)
-add_subdirectory(test_robot)
+# add_subdirectory(test_map)
+# add_subdirectory(test_robot)
 add_subdirectory(test_robot_and_map)

@@ -14,7 +14,7 @@ public:
     // };
 
     // constructor
-    Robot(Position start_position, Position goal_position);
+    Robot(Position start_position, Position goal_position, double cell_size);
     Robot();
 
     // const members
@@ -24,10 +24,10 @@ public:
     Position previous_cell() const {return previous_cell_;}
 
     // non-const member
-    void set_available_positions(Position current_cell);
+    void set_available_positions(Position current_cell, double cell_size);
     void print_av_pos();
     void find_min_potential();
-    void move(vector<Position> obstacles_position, double max_influence_distance);
+    void move(vector<Position> obstacles_position, double cell_size, double max_influence_distance);
 
 private:
     Position coordinates_;

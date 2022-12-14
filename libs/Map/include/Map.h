@@ -14,23 +14,41 @@
 using std::vector;
 
 class Position {
+// public:
+
+//     // constructor
+//     Position(int x, int y);
+//     Position();
+
+//     // const members
+//     int x() const {return x_; }
+//     int y() const {return y_; }
+
+//     // non-const members
+//     int set_x(int x);
+//     int set_y(int y);
+
+// private:
+//     int x_;
+//     int y_;
+
 public:
 
     // constructor
-    Position(int x, int y);
+    Position(double x, double y);
     Position();
 
     // const members
-    int x() const {return x_; }
-    int y() const {return y_; }
+    double x() const {return x_; }
+    double y() const {return y_; }
 
     // non-const members
-    int set_x(int x);
-    int set_y(int y);
+    double set_x(double x);
+    double set_y(double y);
 
 private:
-    int x_;
-    int y_;
+    double x_;
+    double y_;
 };
 
 struct obstacle {
@@ -67,7 +85,7 @@ class Map {
 public:
 
     // constructor
-    Map(Position robot_start_position, Position goal_position, std::vector<obstacle> vector_obstacle);
+    Map(Position robot_start_position, Position goal_position, std::vector<obstacle> vector_obstacle, double cell_size);
 
     // const members
     std::vector<obstacle> obstacles() const {return obstacles_;}
@@ -76,8 +94,8 @@ public:
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
 
     // non-const member
-    Position smallest_corner{};
-    Position biggest_corner{};
+    Position smallest_corner;
+    Position biggest_corner;
 
 private:
     Position robot_start_position_;
@@ -85,6 +103,7 @@ private:
     vector<obstacle> obstacles_;
     vector<vector<Cell>> map_;
     vector<Position> obstacle_positions_;
+    double cell_size_;
     void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
     void print_map();
 };
