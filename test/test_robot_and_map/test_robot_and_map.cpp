@@ -3,7 +3,7 @@
 int main()
 {
     double cell_size = 1;
-    Robot r1(Position(4,4), Position(6,24), cell_size);
+    Robot r1(Position(-8,-8), Position(28,25), cell_size);
 
     std::cout << "Robot start position: (" << r1.coordinates().x() << "," << r1.coordinates().y() << ")" << std::endl;
     std::cout << "Robot goal position: (" << r1.goal_position().x() << "," << r1.goal_position().y() << ")" << std::endl;
@@ -12,7 +12,7 @@ int main()
     // r1.print_av_pos();
 
     obstacle ob1{.min_corner{6,6}, .max_corner{7,7}};
-    obstacle ob2{.min_corner{10,10}, .max_corner{12,12}};
+    obstacle ob2{.min_corner{-6,-5}, .max_corner{-2,-2}};
     obstacle ob3{.min_corner{15,16}, .max_corner{16,17}};
     obstacle ob4{.min_corner{18,7}, .max_corner{19,8}};
     obstacle ob5{.min_corner{22,17}, .max_corner{23,19}};
