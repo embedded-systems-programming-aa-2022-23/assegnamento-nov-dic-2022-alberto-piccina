@@ -24,7 +24,7 @@ if(TARGET_GROUP STREQUAL stable)
 	add_subdirectory(app)
 elseif(TARGET_GROUP STREQUAL test)
 	#include(CTest)
-
+	set(dati "${CMAKE_CURRENT_SOURCE_DIR}/data")
 	add_subdirectory(test)
 	#add_subdirectory(external/Unity)
 else()

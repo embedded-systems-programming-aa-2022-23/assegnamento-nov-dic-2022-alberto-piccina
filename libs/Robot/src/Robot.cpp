@@ -42,83 +42,60 @@ void Robot::set_available_positions(Position current_cell, double cell_size)
         Position new_cell{current_cell};
         // std::cout << "Current cell: (" << current_cell.x() << "," << current_cell.y() << ")" << std::endl;
 
-        // // cell: Nord
-        // new_cell.set_y(current_cell.y()+1);
-        // available_positions_.at(0).set_coordinates(new_cell);
-
-        // // cell: NordEst
-        // new_cell.set_x(current_cell.x()+1);
-        // new_cell.set_y(current_cell.y()+1);
-        // available_positions_.at(1).set_coordinates(new_cell);
-
-        // // cell: Est
-        // new_cell.set_x(current_cell.x()+1);
-        // new_cell.set_y(current_cell.y());
-        // available_positions_.at(2).set_coordinates(new_cell);
-
-        // // cell: SudEst
-        // new_cell.set_x(current_cell.x()+1);
-        // new_cell.set_y(current_cell.y()-1);
-        // available_positions_.at(3).set_coordinates(new_cell);
-
-        // // cell: Sud
-        // new_cell.set_x(current_cell.x());
-        // new_cell.set_y(current_cell.y()-1);
-        // available_positions_.at(4).set_coordinates(new_cell);
-
-        // // cell: SudOvest
-        // new_cell.set_x(current_cell.x()-1);
-        // new_cell.set_y(current_cell.y()-1);
-        // available_positions_.at(5).set_coordinates(new_cell);
-
-        // // cell: Ovest
-        // new_cell.set_x(current_cell.x()-1);
-        // new_cell.set_y(current_cell.y());
-        // available_positions_.at(6).set_coordinates(new_cell);
-
-        // // cell: NordOvest
-        // new_cell.set_x(current_cell.x()-1);
-        // new_cell.set_y(current_cell.y()+1);
-        // available_positions_.at(7).set_coordinates(new_cell);
-
         // cell: Nord
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(0).set_coordinates(new_cell);
+        if(available_positions_.at(0).is_obstacle())
+                available_positions_.at(0).set_potential(10000);
 
         // cell: NordEst
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(1).set_coordinates(new_cell);
+        if(available_positions_.at(1).is_obstacle())
+                available_positions_.at(1).set_potential(10000);
 
         // cell: Est
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(2).set_coordinates(new_cell);
+        if(available_positions_.at(2).is_obstacle())
+                available_positions_.at(2).set_potential(10000);
 
         // cell: SudEst
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(3).set_coordinates(new_cell);
+        if(available_positions_.at(3).is_obstacle())
+                available_positions_.at(3).set_potential(10000);
 
         // cell: Sud
         new_cell.set_x(current_cell.x());
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(4).set_coordinates(new_cell);
+        if(available_positions_.at(4).is_obstacle())
+                available_positions_.at(4).set_potential(10000);
 
         // cell: SudOvest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(5).set_coordinates(new_cell);
+        if(available_positions_.at(5).is_obstacle())
+                available_positions_.at(5).set_potential(10000);
 
         // cell: Ovest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(6).set_coordinates(new_cell);
+        if(available_positions_.at(6).is_obstacle())
+                available_positions_.at(6).set_potential(10000);
 
         // cell: NordOvest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(7).set_coordinates(new_cell);
+        if(available_positions_.at(7).is_obstacle())
+                available_positions_.at(7).set_potential(10000);
 }
 
 void Robot::print_av_pos()
@@ -133,12 +110,24 @@ void Robot::find_min_potential()
         double minimum_potential{available_positions().at(0).potential()};
         int index_of_min_cell{0};
         for(size_t it{1}; it < available_positions().size(); it++) {
-                if(available_positions().at(it).potential() < minimum_potential) {
-                        if(!available_positions().at(it).is_obstacle()) {
+                if(!available_positions().at(it).is_obstacle()) {
+                        if(available_positions().at(it).potential() < minimum_potential) {
                                 minimum_potential = available_positions().at(it).potential();
                                 index_of_min_cell = it;
                         }
                 }
+                else {
+                        available_positions_.at(it).set_potential(10000);
+                        std::cout << "OSTACOLOOO" << std::endl;
+                }
+
+                // if(available_positions().at(it).potential() < minimum_potential) {
+                        // std::cout << "ostacolo: " << available_positions().at(it).is_obstacle() << std::endl;
+                        // if(!available_positions().at(it).is_obstacle()) {
+                                // minimum_potential = available_positions().at(it).potential();
+                                // index_of_min_cell = it;
+                        // }
+                // }
         }
 
         index_of_min_cell_ = index_of_min_cell;
@@ -152,15 +141,25 @@ void Robot::move(vector<Position> obstacles_position, double cell_size, double m
         bool arrived{false};
         while(!arrived) {
                 // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-
+                position_record_.push_back(coordinates_);
                 set_available_positions(Position(coordinates().x(),coordinates().y()), cell_size);
 
                 for(size_t i{0}; i < available_positions().size(); i++) {
+                        if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
+                                coordinates_.set_x(available_positions().at(i).coordinates().x());
+                                coordinates_.set_y(available_positions().at(i).coordinates().y());
+                                std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                                std::cout << "Done." << std::endl;
+                                arrived = true;
+                                exit(EXIT_SUCCESS);  // TEMPORANEO
+                        }
                         available_positions_.at(i).potential_calculation(goal_position(),obstacles_position,max_influence_distance);
                         // std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;
                 }
 
                 find_min_potential();
+                // if((available_positions().at(index_of_min_cell_).coordinates().x() == ))
+
                 if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
                         std::cerr << "Error: local minimum found." << std::endl;
                         arrived = true;
