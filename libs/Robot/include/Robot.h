@@ -6,6 +6,7 @@
 #include "Map.h"
 
 #include <array>
+#include <limits>
 
 class Robot {
 public:
@@ -27,6 +28,7 @@ public:
     // non-const member
     bool check_with_cell_size(double cell_size);
     void set_available_positions(Position current_cell, double cell_size);
+    Position set_coordinates_robot(Position new_position);
     void print_av_pos();
     void find_min_potential();
     void move(vector<Position> obstacles_position, double cell_size, double max_influence_distance);

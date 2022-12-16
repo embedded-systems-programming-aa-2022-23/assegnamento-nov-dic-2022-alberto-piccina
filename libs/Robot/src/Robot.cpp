@@ -46,56 +46,64 @@ void Robot::set_available_positions(Position current_cell, double cell_size)
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(0).set_coordinates(new_cell);
         if(available_positions_.at(0).is_obstacle())
-                available_positions_.at(0).set_potential(10000);
+                available_positions_.at(0).set_potential(std::numeric_limits<double>::max());
 
         // cell: NordEst
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(1).set_coordinates(new_cell);
         if(available_positions_.at(1).is_obstacle())
-                available_positions_.at(1).set_potential(10000);
+                available_positions_.at(1).set_potential(std::numeric_limits<double>::max());
 
         // cell: Est
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(2).set_coordinates(new_cell);
         if(available_positions_.at(2).is_obstacle())
-                available_positions_.at(2).set_potential(10000);
+                available_positions_.at(2).set_potential(std::numeric_limits<double>::max());
 
         // cell: SudEst
         new_cell.set_x(current_cell.x() + cell_size);
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(3).set_coordinates(new_cell);
         if(available_positions_.at(3).is_obstacle())
-                available_positions_.at(3).set_potential(10000);
+                available_positions_.at(3).set_potential(std::numeric_limits<double>::max());
 
         // cell: Sud
         new_cell.set_x(current_cell.x());
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(4).set_coordinates(new_cell);
         if(available_positions_.at(4).is_obstacle())
-                available_positions_.at(4).set_potential(10000);
+                available_positions_.at(4).set_potential(std::numeric_limits<double>::max());
 
         // cell: SudOvest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y() - cell_size);
         available_positions_.at(5).set_coordinates(new_cell);
         if(available_positions_.at(5).is_obstacle())
-                available_positions_.at(5).set_potential(10000);
+                available_positions_.at(5).set_potential(std::numeric_limits<double>::max());
 
         // cell: Ovest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y());
         available_positions_.at(6).set_coordinates(new_cell);
         if(available_positions_.at(6).is_obstacle())
-                available_positions_.at(6).set_potential(10000);
+                available_positions_.at(6).set_potential(std::numeric_limits<double>::max());
 
         // cell: NordOvest
         new_cell.set_x(current_cell.x() - cell_size);
         new_cell.set_y(current_cell.y() + cell_size);
         available_positions_.at(7).set_coordinates(new_cell);
         if(available_positions_.at(7).is_obstacle())
-                available_positions_.at(7).set_potential(10000);
+                available_positions_.at(7).set_potential(std::numeric_limits<double>::max());
+}
+
+Position Robot::set_coordinates_robot(Position new_position)
+{
+        coordinates_.set_x(new_position.x());
+        coordinates_.set_y(new_position.y());
+
+        return coordinates_;
 }
 
 void Robot::print_av_pos()
@@ -117,8 +125,7 @@ void Robot::find_min_potential()
                         }
                 }
                 else {
-                        available_positions_.at(it).set_potential(10000);
-                        std::cout << "OSTACOLOOO" << std::endl;
+                        available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
                 }
 
                 // if(available_positions().at(it).potential() < minimum_potential) {
@@ -151,7 +158,7 @@ void Robot::move(vector<Position> obstacles_position, double cell_size, double m
                                 std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
                                 std::cout << "Done." << std::endl;
                                 arrived = true;
-                                exit(EXIT_SUCCESS);  // TEMPORANEO
+                                return ;
                         }
                         available_positions_.at(i).potential_calculation(goal_position(),obstacles_position,max_influence_distance);
                         // std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;

@@ -96,6 +96,9 @@ public:
     // non-const member
     Position smallest_corner;
     Position biggest_corner;
+    void print_map();
+    Position change_robot_position(Position new_position);
+
 
 private:
     Position robot_start_position_;
@@ -105,7 +108,7 @@ private:
     vector<Position> obstacle_positions_;
     double cell_size_;
     void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
-    void print_map();
+    // void print_map();
 };
 
 bool operator<(const Position& p1, const Position& p2);
