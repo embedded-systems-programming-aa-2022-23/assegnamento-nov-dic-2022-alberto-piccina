@@ -9,3 +9,4 @@ project( Libraries
 
 add_subdirectory(Map)
 add_subdirectory(Robot)
+add_subdirectory(Server)

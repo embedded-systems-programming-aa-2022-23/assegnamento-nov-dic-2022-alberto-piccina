@@ -16,6 +16,7 @@ add_custom_command(TARGET main POST_BUILD        # Adds a post-build event to My
 
 target_link_libraries( main
 	PRIVATE
+    lib::Server
 	lib::Robot
     lib::Map
 )
