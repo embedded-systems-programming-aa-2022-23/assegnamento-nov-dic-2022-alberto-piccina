@@ -7,16 +7,18 @@ project( main
 
 add_executable(main src/main.cpp)
 
-target_include_directories(main PRIVATE include) 
+add_custom_command(TARGET main POST_BUILD        # Adds a post-build event to MyTest
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different  # which executes "cmake - E copy_if_different..."
+		"${dati}/start_robots_coordinates.txt"   # <--this is in-file
+		"${dati}/goals_coordinates.txt"
+		"${dati}/obstacles_coordinates.txt"
+        $<TARGET_FILE_DIR:main>)                 # <--this is out-file path
 
-#target_link_libraries( potenze_tot
-#	PRIVATE 
-#	lib::csv
-#	lib::gnuplot_i
-#	lib::estrazione_csv
-#	lib::formule
-#	lib::parametri
-#	lib::calcolo_output
-#	lib::plot
-#)
+target_link_libraries( main
+	PRIVATE
+	lib::Robot
+    lib::Map
+)
+
+# target_include_directories(main PRIVATE include) 
 

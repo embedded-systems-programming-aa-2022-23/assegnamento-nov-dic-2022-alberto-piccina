@@ -16,11 +16,14 @@ else()
     add_compile_options(-Wall -Wextra -pedantic -Werror)
 endif()
 
-set(TARGET_GROUP test CACHE STRING "Gruppo di sorgenti da compilare")
+
+set(TARGET_GROUP stable CACHE STRING "Gruppo di sorgenti da compilare")
 
 add_subdirectory(libs)
 
+
 if(TARGET_GROUP STREQUAL stable)
+	set(dati "${CMAKE_CURRENT_SOURCE_DIR}/data")
 	add_subdirectory(app)
 elseif(TARGET_GROUP STREQUAL test)
 	#include(CTest)
