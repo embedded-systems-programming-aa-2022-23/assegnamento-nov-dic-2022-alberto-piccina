@@ -1,7 +1,7 @@
 #include "Robot.h"
 #include <fstream>
 
-void read_from_file(const std::string& filename) {
+void read_from_file(const std::string& filename, vector<Position>& vector_of_position) {
 
     // std::ifstream encapsulates the functionality of an 
     // input file stream as a class, is created by
@@ -15,7 +15,42 @@ void read_from_file(const std::string& filename) {
             std::cerr << "Error in input or eof  \n";
             break;
         }
-        std::cout << x << " " << y << "\n";
+        vector_of_position.push_back(Position(x,y));
+        
+        // std::cout << x << " " << y << "\n";
+    }
+
+}
+
+void read_from_file_obstacle(const std::string& filename, vector<obstacle>& vector_of_obstacles) {
+
+    // std::ifstream encapsulates the functionality of an 
+    // input file stream as a class, is created by
+    // providing a filename as its constructor argument
+    std::ifstream infile{filename,std::iostream::in};
+    bool flag{true};
+    obstacle temp;
+
+    while (!infile.eof()) {
+        double x1, y1, x2, y2;
+        if(flag) {
+            infile >> x1 >> y1;
+            if (infile.fail() || infile.bad()) {
+                std::cerr << "Error in input or eof  \n";
+                break;
+            }
+            flag = !flag;
+        }
+        else {
+            infile >> x2 >> y2;
+            if (infile.fail() || infile.bad()) {
+                std::cerr << "Error in input or eof  \n";
+                break;
+            }
+            obstacle temp{.min_corner{x1, y1}, .max_corner{x2, y2}};
+            vector_of_obstacles.push_back(temp);
+            flag = !flag;
+        }        
     }
 
 }
@@ -26,38 +61,28 @@ int main()
     std::string filename_goal_position{"goals_coordinates.txt"};
     std::string filename_obstacles{"obstacles_coordinates.txt"};
 
-    read_from_file(filename_start_position);
-    read_from_file(filename_goal_position);
-    read_from_file(filename_obstacles);
+    vector<Position> vector_of_start_position;
+    vector<Position> vector_of_goals;
+    vector<obstacle> vector_of_obstacles;
+
+    read_from_file(filename_start_position, vector_of_start_position);
+    read_from_file(filename_goal_position, vector_of_goals);
+    read_from_file_obstacle(filename_obstacles, vector_of_obstacles);
+
+    for(size_t it{0}; it < vector_of_start_position.size(); it++)
+        std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
+    for(size_t it{0}; it < vector_of_goals.size(); it++)
+        std::cout << vector_of_goals.at(it).x() << " " << vector_of_goals.at(it).y() << std::endl;
+    // for(size_t it{0}; it < vector_of_obstacles.size(); it++)
+    //     std::cout << vector_of_obstacles.at(it).x() << " " << vector_of_obstacles.at(it).y() << std::endl;
 
     double cell_size = 1;
 
-    obstacle ob1{.min_corner{1,1}, .max_corner{2,2}};
-    obstacle ob2{.min_corner{8,10}, .max_corner{12,12}};
-    obstacle ob3{.min_corner{-5,-7}, .max_corner{-1,-1}};
-    obstacle ob4{.min_corner{-9,-5}, .max_corner{-3,-3}};
-
-    // obstacle ob1{.min_corner{-3,-4}, .max_corner{1,1}};
-    // obstacle ob2{.min_corner{5,7}, .max_corner{8,8}};
-    // obstacle ob3{.min_corner{40,6}, .max_corner{42,8}};
-    // obstacle ob4{.min_corner{11,12}, .max_corner{11,12}};
-    // obstacle ob5{.min_corner{-20,-10}, .max_corner{-18,-10}};
-
-    // obstacle ob1{.min_corner{-1,-1}, .max_corner{1,1}};
-    // obstacle ob2{.min_corner{3,3}, .max_corner{3,3}};
-    // obstacle ob3{.min_corner{5,6}, .max_corner{5,6}};
-    // obstacle ob4{.min_corner{11,12}, .max_corner{11,12}};
-    // obstacle ob5{.min_corner{-20,-10}, .max_corner{-18,-10}};
-
-    vector<obstacle> vector_of_obstacles;
-    vector_of_obstacles.push_back(ob1);
-    vector_of_obstacles.push_back(ob2);
-    vector_of_obstacles.push_back(ob3);
-    vector_of_obstacles.push_back(ob4);
-    // vector_of_obstacles.push_back(ob5);
-
-    Map map{Position(0,4), Position(3,0), vector_of_obstacles, cell_size};
+    Map map{vector_of_start_position.at(0), vector_of_goals.at(0), vector_of_obstacles, cell_size};
     Robot r1(map.robot_start_position(), map.goal_position(), cell_size);
+
+    // Map map{Position(0,4), Position(3,0), vector_of_obstacles, cell_size};
+    // Robot r1(map.robot_start_position(), map.goal_position(), cell_size);
 
     // std::cout << std::endl;
     // for(size_t i{0}; i < map.obstacle_positions().size(); i++) {
