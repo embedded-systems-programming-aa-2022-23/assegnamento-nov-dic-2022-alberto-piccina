@@ -2,6 +2,41 @@
 
 #include "Server.h"
 
+using std::mutex;
+using std::unique_lock;
+
+// Server's constructor
+Server::Server(int number_of_robots, int arbitrary_parameter)
+        :number_of_robots_{number_of_robots}, parameter_{arbitrary_parameter}
+{
+    capacity_ = number_of_robots_ * parameter_;
+}
+
+void Server::position_append(Position new_pos)
+{
+    unique_lock<std::mutex> mlock(mutex_);
+    while(count_ == capacity_)
+        not_full_.wait(mlock);
+    goal_queue_.push(new_pos);
+    ++count_;
+    mlock.unlock();
+    not_empty_.notify_one();
+}
+
+Position Server::position_take()
+{
+    std::unique_lock<std::mutex> mlock(mutex_);
+    while(count_ == 0)
+        not_empty_.wait(mlock);
+    Position pos{goal_queue_.front()};
+    goal_queue_.pop();
+    --count_;
+    mlock.unlock();
+    not_full_.notify_one();
+
+    return pos;
+}
+
 void read_from_file(const std::string& filename, vector<Position>& vector_of_position)
 {
 
