@@ -9,7 +9,7 @@ const double edges_surplus{6}; // in order to create a gap between obstacles and
 // *************************************************************
 
 // Position's constructor
-Position::Position(double x, double y)
+Position::Position(const double x, const double y)
         :x_{x}, y_{y}
 {
     // if you want to use only positive coordinates
@@ -33,21 +33,21 @@ Position::Position()
 }
 
 // function that set x_ value
-double Position::set_x(double x)
+double Position::set_x(const double x)
 {
     x_ = x;
     return x_;
 }
 
 // function that set y_ value
-double Position::set_y(double y)
+double Position::set_y(const double y)
 {
     y_ = y;
     return y;
 }
 
 // function that set Cell's coordinates_ 
-Position Cell::set_coordinates(Position point)
+Position Cell::set_coordinates(const Position& point)
 {
     coordinates_.set_x(point.x());
     coordinates_.set_y(point.y());
@@ -144,7 +144,7 @@ Map::Map(Position robot_start_position, Position goal_position, vector<obstacle>
 }
 
 // function that initialize the map with free cells and obstacles
-void Map::map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells)
+void Map::map_initialization(Position& map_origin, const int number_of_horizontal_cells, const int number_of_vertical_cells)
 {
     for(double i{0}; i < number_of_horizontal_cells; i += cell_size_) {
         vector<Cell> v;
@@ -250,7 +250,7 @@ void Cell::set_obstacles_to_cells()
     is_obstacle_= true;
 }
 
-Position Map::change_robot_position(Position new_position)
+Position Map::change_robot_position(const Position& new_position)
 {
     robot_start_position_.set_x(new_position.x());
     robot_start_position_.set_y(new_position.y());
@@ -272,14 +272,14 @@ bool operator<(const Position& p1, const Position& p2)
 const float zeta{10.0};
 const float eta{2.0};
 
-double Cell::set_potential(double potential)
+double Cell::set_potential(const double potential)
 {
     potential_ = potential;
 
     return potential_;
 }
 
-double Cell::potential_calculation(Position goal_position, vector<Position> obstacles_position, double max_influence_distance)
+double Cell::potential_calculation(const Position& goal_position, const vector<Position>& obstacles_position, const double max_influence_distance)
 
 {
     // distance calculation
@@ -328,7 +328,7 @@ double Cell::potential_calculation(Position goal_position, vector<Position> obst
     return total_field;
 }
 
-double Cell::distance_calculation(Position p1, Position p2)
+double Cell::distance_calculation(const Position& p1, const Position& p2)
 {
     // double var1{static_cast<double>(p2.x() - p1.x())};
     // double var2{static_cast<double>(p2.y() - p1.y())};

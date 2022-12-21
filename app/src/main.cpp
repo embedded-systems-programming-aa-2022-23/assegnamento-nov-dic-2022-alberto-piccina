@@ -1,13 +1,16 @@
 // main.cpp
 
 #include "Robot.h"
-#include "Server.h"
+#include "Satellite.h"
 #include <fstream>
+
+const int number_of_robots{2};
 
 int main()
 {
     std::string filename_start_position{"start_robots_coordinates.txt"};
-    std::string filename_goal_position{"goals_coordinates.txt"};
+    std::string filename_goal_position_1{"goals_coordinates_satellite_1.txt"};
+    std::string filename_goal_position_2{"goals_coordinates_satellite_2.txt"};
     std::string filename_obstacles{"obstacles_coordinates.txt"};
 
     vector<Position> vector_of_start_position;
@@ -15,13 +18,14 @@ int main()
     vector<obstacle> vector_of_obstacles;
 
     read_from_file(filename_start_position, vector_of_start_position);
-    read_from_file(filename_goal_position, vector_of_goals);
+    read_from_file(filename_goal_position_1, vector_of_goals);
+    read_from_file(filename_goal_position_2, vector_of_goals);
     read_from_file_obstacle(filename_obstacles, vector_of_obstacles);
 
     // for(size_t it{0}; it < vector_of_start_position.size(); it++)
     //     std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
-    // for(size_t it{0}; it < vector_of_goals.size(); it++)
-    //     std::cout << vector_of_goals.at(it).x() << " " << vector_of_goals.at(it).y() << std::endl;
+    for(size_t it{0}; it < vector_of_goals.size(); it++)
+        std::cout << vector_of_goals.at(it).x() << " " << vector_of_goals.at(it).y() << std::endl;
     // for(size_t it{0}; it < vector_of_obstacles.size(); it++)
     //     std::cout << vector_of_obstacles.at(it).x() << " " << vector_of_obstacles.at(it).y() << std::endl;
 

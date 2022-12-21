@@ -26,12 +26,12 @@ public:
     std::vector<Position> position_record() const {return position_record_;}
 
     // non-const member
-    bool check_with_cell_size(double cell_size);
-    void set_available_positions(Position current_cell, double cell_size);
-    Position set_coordinates_robot(Position new_position);
+    bool check_with_cell_size(const double cell_size);
+    void set_available_positions(const Position& current_cell, const double cell_size);
+    Position set_coordinates_robot(const Position& new_position);
     void print_av_pos();
     void find_min_potential();
-    void move(vector<Position> obstacles_position, double cell_size, double max_influence_distance);
+    void move(const vector<Position>& obstacles_position, const double cell_size, const double max_influence_distance);
 
 private:
     Position coordinates_;

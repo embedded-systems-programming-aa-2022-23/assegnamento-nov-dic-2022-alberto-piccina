@@ -1,11 +1,15 @@
 // Server.cpp
 
-#include "Server.h"
+#include "Satellite.h"
 
 using std::mutex;
 using std::unique_lock;
 
+Satellite::Satellite(vector<Position> vector_of_goals)
+        :goals_{vector_of_goals}
+{
 
+}
 
 // // Server's constructor
 // Server::Server(int number_of_robots, int arbitrary_parameter)
@@ -39,27 +43,27 @@ using std::unique_lock;
 //     return pos;
 // }
 
-// void read_from_file(const std::string& filename, vector<Position>& vector_of_position)
-// {
+void read_from_file(const std::string& filename, vector<Position>& vector_of_position)
+{
 
-//     // std::ifstream encapsulates the functionality of an 
-//     // input file stream as a class, is created by
-//     // providing a filename as its constructor argument
-//     std::ifstream infile{filename,std::iostream::in};
+    // std::ifstream encapsulates the functionality of an 
+    // input file stream as a class, is created by
+    // providing a filename as its constructor argument
+    std::ifstream infile{filename,std::iostream::in};
 
-//     while (!infile.eof()) {
-//         double x, y;
-//         infile >> x >> y;
-//         if (infile.fail() || infile.bad()) {
-//             std::cerr << "Error in input or eof  \n";
-//             break;
-//         }
-//         vector_of_position.push_back(Position(x,y));
+    while (!infile.eof()) {
+        double x, y;
+        infile >> x >> y;
+        if (infile.fail() || infile.bad()) {
+            std::cerr << "Error in input or eof  \n";
+            break;
+        }
+        vector_of_position.push_back(Position(x,y));
         
-//         // std::cout << x << " " << y << "\n";
-//     }
+        // std::cout << x << " " << y << "\n";
+    }
 
-// }
+}
 
 void read_from_file_obstacle(const std::string& filename, vector<obstacle>& vector_of_obstacles)
 {

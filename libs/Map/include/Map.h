@@ -43,8 +43,8 @@ public:
     double y() const {return y_; }
 
     // non-const members
-    double set_x(double x);
-    double set_y(double y);
+    double set_x(const double x);
+    double set_y(const double y);
 
 private:
     double x_;
@@ -69,11 +69,11 @@ public:
     bool is_obstacle() const {return is_obstacle_;}
 
     // non-const members
-    Position set_coordinates(Position point);
+    Position set_coordinates(const Position& point);
     void set_obstacles_to_cells();
-    double set_potential(double potential);
-    double potential_calculation(Position goal_position, vector<Position> obstacles_position, double max_influence_distance);
-    double distance_calculation(Position p1, Position p2);
+    double set_potential(const double potential);
+    double potential_calculation(const Position& goal_position, const vector<Position>& obstacles_position, const double max_influence_distance);
+    double distance_calculation(const Position& p1, const Position& p2);
 
 private:
     Position coordinates_;
@@ -97,7 +97,7 @@ public:
     Position smallest_corner;
     Position biggest_corner;
     void print_map();
-    Position change_robot_position(Position new_position);
+    Position change_robot_position(const Position& new_position);
 
 
 private:
@@ -107,7 +107,7 @@ private:
     vector<vector<Cell>> map_;
     vector<Position> obstacle_positions_;
     double cell_size_;
-    void map_initialization(Position map_origin, int number_of_horizontal_cells, int number_of_vertical_cells);
+    void map_initialization(Position& map_origin, const int number_of_horizontal_cells, const int number_of_vertical_cells);
     // void print_map();
 };
 

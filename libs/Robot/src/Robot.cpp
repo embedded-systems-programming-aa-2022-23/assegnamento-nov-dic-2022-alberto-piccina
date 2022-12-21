@@ -24,7 +24,7 @@ Robot::Robot()
 {
 }
 
-bool Robot::check_with_cell_size(double cell_size)
+bool Robot::check_with_cell_size(const double cell_size)
 {
         double a{fmod(coordinates_.x(),cell_size)};
         double b{fmod(coordinates_.y(),cell_size)};
@@ -37,7 +37,7 @@ bool Robot::check_with_cell_size(double cell_size)
                 return true;
 }
 
-void Robot::set_available_positions(Position current_cell, double cell_size)
+void Robot::set_available_positions(const Position& current_cell, const double cell_size)
 {
         Position new_cell{current_cell};
         // std::cout << "Current cell: (" << current_cell.x() << "," << current_cell.y() << ")" << std::endl;
@@ -98,7 +98,7 @@ void Robot::set_available_positions(Position current_cell, double cell_size)
                 available_positions_.at(7).set_potential(std::numeric_limits<double>::max());
 }
 
-Position Robot::set_coordinates_robot(Position new_position)
+Position Robot::set_coordinates_robot(const Position& new_position)
 {
         coordinates_.set_x(new_position.x());
         coordinates_.set_y(new_position.y());
@@ -143,7 +143,7 @@ void Robot::find_min_potential()
         //                 << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
 }
 
-void Robot::move(vector<Position> obstacles_position, double cell_size, double max_influence_distance)
+void Robot::move(const vector<Position>& obstacles_position, const double cell_size, const double max_influence_distance)
 {
         bool arrived{false};
         while(!arrived) {
