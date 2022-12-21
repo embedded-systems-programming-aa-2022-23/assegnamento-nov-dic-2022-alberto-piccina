@@ -85,12 +85,13 @@ class Map {
 public:
 
     // constructor
-    Map(Position robot_start_position, Position goal_position, std::vector<obstacle> vector_obstacle, double cell_size);
+    // Map(Position robot_start_position, Position goal_position, std::vector<obstacle> vector_obstacle, double cell_size);
+    Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size);
 
     // const members
     std::vector<obstacle> obstacles() const {return obstacles_;}
-    Position goal_position() const {return goal_position_;}
-    Position robot_start_position() const {return robot_start_position_;}
+    vector<Position> goal_position() const {return goal_positions_;}
+    vector<Position> robot_start_position() const {return robot_start_positions_;}
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
 
     // non-const member
@@ -98,11 +99,15 @@ public:
     Position biggest_corner;
     void print_map();
     Position change_robot_position(const Position& new_position);
+    void find_min_start_position();
+    void find_max_goal_position();
+    void check_map_limits();
+    void check_start_and_goal_position(Position map_origin);
 
 
 private:
-    Position robot_start_position_;
-    Position goal_position_;
+    vector<Position> robot_start_positions_;
+    vector<Position> goal_positions_;
     vector<obstacle> obstacles_;
     vector<vector<Cell>> map_;
     vector<Position> obstacle_positions_;

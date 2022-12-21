@@ -66,14 +66,68 @@ Cell::Cell()
 {
 }
 
-// Map's constructor
-Map::Map(Position robot_start_position, Position goal_position, vector<obstacle> vector_obstacle, double cell_size)
-        :robot_start_position_{robot_start_position}, goal_position_{goal_position}, obstacles_{vector_obstacle}, cell_size_{cell_size}
+// to find the minimum position in the vector of robots' start position
+void Map::find_min_start_position()
 {
-    smallest_corner = Position(robot_start_position_.x(),robot_start_position_.y());
-    biggest_corner = Position(goal_position_.x(),goal_position_.y());
-    // smallest_corner = Position((robot_start_position_.x() / cell_size_),(robot_start_position_.y() / cell_size_));
-    // biggest_corner = Position((goal_position_.x() / cell_size_),(goal_position_.y() / cell_size_));
+    for(auto &it : robot_start_positions_) {
+
+        if(it.x() < smallest_corner.x()) 
+            smallest_corner.set_x(it.x());
+        if(it.y() < smallest_corner.y())
+            smallest_corner.set_y(it.y());
+
+    }
+}
+
+// to fin the maximum position in the vector of goals' position
+void Map::find_max_goal_position()
+{
+    for(auto &it : goal_positions_) {
+
+        if(biggest_corner.x() < it.x())
+            biggest_corner.set_x(it.x());
+        if(biggest_corner.y() < it.y())
+            biggest_corner.set_y(it.y());
+
+    }
+}
+
+// to verify if robot and goal position don't go outside the map
+void Map::check_map_limits()
+{
+    for(auto &i : goal_positions_) {
+
+        if(i.x() < smallest_corner.x())
+            smallest_corner.set_x(i.x());
+        if(i.y() < smallest_corner.y())
+            smallest_corner.set_y(i.y());
+
+    }
+
+    for(auto &j : robot_start_positions_) {
+
+        if(j.x() > biggest_corner.x())
+            biggest_corner.set_x(j.x());
+        if(j.y() > biggest_corner.y())
+            biggest_corner.set_y(j.y());
+
+    }
+}
+
+// Map's constructor
+Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size)
+        :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}
+{
+    smallest_corner = robot_start_positions_.at(0);
+    biggest_corner = goal_positions_.at(0);
+
+    find_min_start_position();
+    find_max_goal_position();
+
+    for(auto& it : robot_start_positions_) {
+        std::cout << it.x() << " " << it.y() << std::endl;
+    }
+
 
     for(size_t i{0}; i < obstacles_.size(); i++) {
 
@@ -103,38 +157,17 @@ Map::Map(Position robot_start_position, Position goal_position, vector<obstacle>
             biggest_corner.set_y(obstacles_[i].min_corner.y());
     }
 
-    // to verify if robot and goal position don't go outside the map
-    if(goal_position_.x() < smallest_corner.x())
-        smallest_corner.set_x(goal_position_.x());
-
-    if(goal_position_.y() < smallest_corner.y())
-        smallest_corner.set_y(goal_position_.y());
-
-    if(robot_start_position_.x() > biggest_corner.x())
-        biggest_corner.set_x(robot_start_position_.x());
-    
-    if(robot_start_position_.y() > biggest_corner.y())
-        biggest_corner.set_y(robot_start_position_.y());
+    check_map_limits();
 
     // std::cout << "Obstacles:\n\tsmallest corner: (" << smallest_corner.x() << ", " << smallest_corner.y() << ")"
     //                 <<"\n\tbigger corner: (" << biggest_corner.x() << ", " << biggest_corner.y() << ")" << std::endl;
 
     double number_of_horizontal_cells{(biggest_corner.x() - smallest_corner.x() + edges_surplus)};        
     double number_of_vertical_cells{(biggest_corner.y() - smallest_corner.y() + edges_surplus)};
-    // double number_of_horizontal_cells{(biggest_corner.x() - smallest_corner.x() + edges_surplus) / cell_size_};        
-    // double number_of_vertical_cells{(biggest_corner.y() - smallest_corner.y() + edges_surplus) / cell_size_};
-    // double number_of_horizontal_cells{(biggest_corner.x() - smallest_corner.x() + edges_surplus) * cell_size_};        
-    // double number_of_vertical_cells{(biggest_corner.y() - smallest_corner.y() + edges_surplus) * cell_size_};
-    // double number_of_horizontal_cells{(biggest_corner.x() - smallest_corner.x() + edges_surplus)};        
-    // double number_of_vertical_cells{(biggest_corner.y() - smallest_corner.y() + edges_surplus)};
 
     // std::cout << "hor, vert: " << number_of_horizontal_cells << "," << number_of_vertical_cells << std::endl;
 
     Position map_origin{};
-    // if((smallest_corner.x() <= (edges_surplus / 2)) || (smallest_corner.y() <= (edges_surplus / 2)))
-    //         map_origin = Position(0,0);
-    // else
-    //     map_origin = Position(smallest_corner.x() - (edges_surplus / 2), smallest_corner.y() - (edges_surplus / 2));
     map_origin = Position(smallest_corner.x() - (edges_surplus / 2), smallest_corner.y() - (edges_surplus / 2));
 
     std::cout << "Map origin setted at: (" << map_origin.x() << ", " << map_origin.y() << ")" << std::endl;
@@ -178,35 +211,57 @@ void Map::map_initialization(Position& map_origin, const int number_of_horizonta
     //     std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
     // } 
 
-    // because robot can't spawn inside an obstacle
-    if(!map_[(robot_start_position_.x() - map_origin.x()) / cell_size_][(robot_start_position_.y() - map_origin.y()) / cell_size_].is_obstacle()) {
-        // map_[(robot_start_position_.x() - map_origin.x()) / cell_size_][(robot_start_position_.y() - map_origin.y()) / cell_size_].set_obstacles_to_cells();
-    }
-    else {
-        std::cerr << "Map(): invalid map. \n" << "Robot start position is inside an obstacle." << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    
-    // because a goal can't be inside an obstacle
-    if(!map_[(goal_position().x() - map_origin.x()) / cell_size_][(goal_position().y() - map_origin.y()) / cell_size_].is_obstacle()) {
-        // map_[(goal_position().x() - map_origin.x()) / cell_size_][(goal_position().y() - map_origin.y()) / cell_size_].set_obstacles_to_cells();
-    }
-    else {
-        std::cerr << "Map(): invalid map. \n" << "Goal position is inside an obstacle." << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    check_start_and_goal_position(map_origin);
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
     // std::cout << "New poses: goal: (" << goal_position_.x() << "," << goal_position_.y() << ")" << std::endl;
 
-    robot_start_position_.set_x(robot_start_position_.x() - map_origin.x());
-    robot_start_position_.set_y(robot_start_position_.y() - map_origin.y());
-    goal_position_.set_x(goal_position().x() - map_origin.x());
-    goal_position_.set_y(goal_position().y() - map_origin.y());
+    for(auto& it : robot_start_positions_) {
+
+        it.set_x(it.x() - map_origin.x());
+        it.set_y(it.y() - map_origin.y());
+
+    }
+
+    for( auto& it : goal_positions_) {
+
+        it.set_x(it.x() - map_origin.x());
+        it.set_y(it.y() - map_origin.y());
+
+    }
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
     // std::cout << "New poses: goal: (" << goal_position_.x() << "," << goal_position_.y() << ")" << std::endl;
     
+}
+
+// to verify if a start position or a goal position is inside an obstacle
+void Map::check_start_and_goal_position(Position map_origin)
+{
+    // because robots can't spawn inside an obstacle
+    for(auto &it : robot_start_positions_) {
+
+        if(!map_[(it.x() - map_origin.x()) / cell_size_][(it.y() - map_origin.y()) / cell_size_].is_obstacle()) {
+        }
+        else {
+            std::cerr << "Map(): invalid map. \n" << "Robot start position is inside an obstacle." << std::endl;
+            exit(EXIT_FAILURE);
+        }
+
+    }
+    
+    // because a goals can't be inside an obstacle
+    for(auto &it : goal_positions_) {
+
+        if(!map_[(it.x() - map_origin.x()) / cell_size_][(it.y() - map_origin.y()) / cell_size_].is_obstacle()) {
+        }
+        else {
+            std::cerr << "Map(): invalid map. \n" << "Goal position is inside an obstacle." << std::endl;
+            exit(EXIT_FAILURE);
+        }
+
+    }
+
 }
 
 // function used to print the map
@@ -218,14 +273,21 @@ void Map::print_map()
     //     }
     //     std::cout << std::endl;
     // }
+    std::cout << robot_start_positions_.at(1).x() << " " << robot_start_positions_.at(1).y() << std::endl;
 
     for(auto& rows : map_) {
         for(auto& cols : rows) {
             if(cols.is_obstacle())
                 std::cout << "X";
-            else if((cols.coordinates().x() == robot_start_position_.x()) && (cols.coordinates().y() == robot_start_position_.y()))
+
+            // it's temporary
+            else if((cols.coordinates().x() == robot_start_positions_.at(0).x()) && (cols.coordinates().y() == robot_start_positions_.at(0).y()))
                 std::cout << "R";
-            else if((cols.coordinates().x() == goal_position_.x()) && (cols.coordinates().y() == goal_position_.y()))
+            else if((cols.coordinates().x() == goal_positions_.at(0).x()) && (cols.coordinates().y() == goal_positions_.at(0).y()))
+                std::cout << "G";
+            else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
+                std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
                 std::cout << "G";
             else    
                 std::cout << "-";
@@ -252,8 +314,8 @@ void Cell::set_obstacles_to_cells()
 
 Position Map::change_robot_position(const Position& new_position)
 {
-    robot_start_position_.set_x(new_position.x());
-    robot_start_position_.set_y(new_position.y());
+    // robot_start_positions_.set_x(new_position.x());
+    // robot_start_position_.set_y(new_position.y());
 
     return new_position;
 }

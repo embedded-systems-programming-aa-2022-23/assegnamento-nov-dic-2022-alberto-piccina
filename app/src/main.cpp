@@ -22,8 +22,8 @@ int main()
     read_from_file(filename_goal_position_2, vector_of_goals);
     read_from_file_obstacle(filename_obstacles, vector_of_obstacles);
 
-    // for(size_t it{0}; it < vector_of_start_position.size(); it++)
-    //     std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
+    for(size_t it{0}; it < vector_of_start_position.size(); it++)
+        std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
     for(size_t it{0}; it < vector_of_goals.size(); it++)
         std::cout << vector_of_goals.at(it).x() << " " << vector_of_goals.at(it).y() << std::endl;
     // for(size_t it{0}; it < vector_of_obstacles.size(); it++)
@@ -31,14 +31,14 @@ int main()
 
     double cell_size = 1;
 
-    Map map{vector_of_start_position.at(0), vector_of_goals.at(0), vector_of_obstacles, cell_size};
-    Robot r1(map.robot_start_position(), map.goal_position(), cell_size);
+    Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, cell_size};
+    // Robot r1(map.robot_start_position(), map.goal_position(), cell_size);
 
-    r1.move(map.obstacle_positions(), cell_size, 5.0);
+    // r1.move(map.obstacle_positions(), cell_size, 5.0);
 
-    map.change_robot_position(r1.coordinates());
+    // map.change_robot_position(r1.coordinates());
     
-    map.print_map();
+    // map.print_map();
 
     return 0;
 }
