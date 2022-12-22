@@ -24,6 +24,7 @@ public:
     std::array<Cell,8> available_positions() const {return available_positions_;}
     Position previous_cell() const {return previous_cell_;}
     std::vector<Position> position_record() const {return position_record_;}
+    int id() const {return id_;}
 
     // non-const member
     bool check_with_cell_size(const double cell_size);
@@ -39,6 +40,7 @@ private:
     std::array<Cell,8> available_positions_;
     Position previous_cell_;
     int index_of_min_cell_;
+    int id_;
     std::vector<Position> position_record_;
 };
 

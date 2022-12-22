@@ -124,11 +124,6 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
     find_min_start_position();
     find_max_goal_position();
 
-    for(auto& it : robot_start_positions_) {
-        std::cout << it.x() << " " << it.y() << std::endl;
-    }
-
-
     for(size_t i{0}; i < obstacles_.size(); i++) {
 
         if(obstacles_[i].min_corner.x() < smallest_corner.x())
@@ -236,7 +231,7 @@ void Map::map_initialization(Position& map_origin, const int number_of_horizonta
 }
 
 // to verify if a start position or a goal position is inside an obstacle
-void Map::check_start_and_goal_position(Position map_origin)
+void Map::check_start_and_goal_position(const Position& map_origin)
 {
     // because robots can't spawn inside an obstacle
     for(auto &it : robot_start_positions_) {
@@ -288,6 +283,10 @@ void Map::print_map()
             else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
                 std::cout << "R";
             else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
+                std::cout << "G";
+            else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
+                std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
                 std::cout << "G";
             else    
                 std::cout << "-";

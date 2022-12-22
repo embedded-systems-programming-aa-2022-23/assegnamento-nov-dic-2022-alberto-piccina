@@ -102,7 +102,7 @@ public:
     void find_min_start_position();
     void find_max_goal_position();
     void check_map_limits();
-    void check_start_and_goal_position(Position map_origin);
+    void check_start_and_goal_position(const Position& map_origin);
 
 
 private:
