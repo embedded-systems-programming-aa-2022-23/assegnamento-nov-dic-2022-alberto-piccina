@@ -5,43 +5,53 @@
 using std::mutex;
 using std::unique_lock;
 
-Satellite::Satellite(vector<Position> vector_of_goals)
-        :goals_{vector_of_goals}
+// Server's constructor
+Server::Server(int number_of_robots, int arbitrary_parameter)
+        :number_of_robots_{number_of_robots}, parameter_{arbitrary_parameter}
 {
-
+    capacity_ = number_of_robots_ * parameter_;
 }
 
-// // Server's constructor
-// Server::Server(int number_of_robots, int arbitrary_parameter)
-//         :number_of_robots_{number_of_robots}, parameter_{arbitrary_parameter}
-// {
-//     capacity_ = number_of_robots_ * parameter_;
-// }
+// default constructor
+Server::Server()
+        :capacity_{2}
+{
+}
 
-// // void Server::position_append(Position new_pos)
-// // {
-// //     unique_lock<std::mutex> mlock(mutex_);
-// //     while(count_ == capacity_)
-// //         not_full_.wait(mlock);
-// //     goal_queue_.push(new_pos);
-// //     ++count_;
-// //     mlock.unlock();
-// //     not_empty_.notify_one();
-// // }
+void Server::update_queue(const int number_of_robots, const int arbitrary_parameter)
+{
+    number_of_robots_ = number_of_robots;
+    parameter_ = arbitrary_parameter;
 
-// Position Server::position_take()
-// {
-//     std::unique_lock<std::mutex> mlock(mutex_);
-//     while(count_ == 0)
-//         not_empty_.wait(mlock);
-//     Position pos{goal_queue_.front()};
-//     goal_queue_.pop();
-//     --count_;
-//     mlock.unlock();
-//     not_full_.notify_one();
+    capacity_ = number_of_robots_ * parameter_;
+}
 
-//     return pos;
-// }
+void Server::position_append(Position new_pos)
+{
+    unique_lock<std::mutex> mlock(mutex_);
+    while(count_ == capacity_)
+        not_full_.wait(mlock);
+    goal_queue_.push(new_pos);
+    ++count_;
+    mlock.unlock();
+    not_empty_.notify_one();
+}
+
+Position Server::position_take()
+{
+    std::unique_lock<std::mutex> mlock(mutex_);
+    while(count_ == 0)
+        not_empty_.wait(mlock);
+    Position pos{goal_queue_.front()};
+    goal_queue_.pop();
+    --count_;
+    mlock.unlock();
+    not_full_.notify_one();
+
+    return pos;
+}
+
+
 
 void read_from_file(const std::string& filename, vector<Position>& vector_of_position)
 {
@@ -59,8 +69,6 @@ void read_from_file(const std::string& filename, vector<Position>& vector_of_pos
             break;
         }
         vector_of_position.push_back(Position(x,y));
-        
-        // std::cout << x << " " << y << "\n";
     }
 
 }
