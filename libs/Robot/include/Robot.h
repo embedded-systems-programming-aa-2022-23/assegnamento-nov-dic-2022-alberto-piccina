@@ -10,13 +10,11 @@
 
 class Robot {
 public:
-    // enum class Direction {
-    //     Nord = 0, NordEst, Est, SudEst, Sud, SudOvest, Ovest, NordOvest
-    // };
 
     // constructor
-    Robot(Position start_position, Position goal_position, double cell_size);
-    Robot();
+    // Robot(Position start_position, Position goal_position, double cell_size);
+    Robot(Position start_position, Map map);
+    Robot(Map map);
 
     // const members
     Position coordinates() const {return coordinates_;}
@@ -25,14 +23,18 @@ public:
     Position previous_cell() const {return previous_cell_;}
     std::vector<Position> position_record() const {return position_record_;}
     int id() const {return id_;}
+    bool arrived() const {return arrived_;}
 
     // non-const member
-    bool check_with_cell_size(const double cell_size);
-    void set_available_positions(const Position& current_cell, const double cell_size);
+    bool check_with_cell_size();
+    void set_available_positions(const Position& current_cell);
     Position set_coordinates_robot(const Position& new_position);
+    Position set_goal(const Position& goal_position);
+    int set_id(const int id_to_set);
     void print_av_pos();
     void find_min_potential();
-    void move(const vector<Position>& obstacles_position, const double cell_size, const double max_influence_distance);
+    // void move(const vector<Position>& obstacles_position, const double max_influence_distance);
+    void step(const double max_influence_distance);
 
 private:
     Position coordinates_;
@@ -42,6 +44,11 @@ private:
     int index_of_min_cell_;
     int id_;
     std::vector<Position> position_record_;
+    Map map_;
+    bool arrived_;
+
+    std::mutex mutex_;
+    std::condition_variable in_movement;
 };
 
 #endif 

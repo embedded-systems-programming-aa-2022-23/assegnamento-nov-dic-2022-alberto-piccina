@@ -284,10 +284,10 @@ void Map::print_map()
                 std::cout << "R";
             else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
                 std::cout << "G";
-            else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
-                std::cout << "R";
-            else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
-                std::cout << "G";
+            // else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
+            //     std::cout << "R";
+            // else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
+            //     std::cout << "G";
             else    
                 std::cout << "-";
         }

@@ -93,6 +93,7 @@ public:
     vector<Position> goal_position() const {return goal_positions_;}
     vector<Position> robot_start_position() const {return robot_start_positions_;}
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
+    double cell_size() const {return cell_size_;}
 
     // non-const member
     Position smallest_corner;
