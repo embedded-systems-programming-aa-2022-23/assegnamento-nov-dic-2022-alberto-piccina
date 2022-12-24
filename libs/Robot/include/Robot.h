@@ -6,6 +6,7 @@
 #include "Map.h"
 
 #include <array>
+#include <algorithm>
 #include <limits>
 #include <mutex>
 #include <condition_variable>
@@ -24,6 +25,7 @@ public:
     std::array<Cell,8> available_positions() const {return available_positions_;}
     Position previous_cell() const {return previous_cell_;}
     std::vector<Position> position_record() const {return position_record_;}
+    Map map() const {return map_;}
     int id() const {return id_;}
     bool arrived() const {return arrived_;}
 

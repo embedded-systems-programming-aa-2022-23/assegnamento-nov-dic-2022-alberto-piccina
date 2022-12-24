@@ -32,6 +32,7 @@ void consumer(const int id, Robot robot)
         }
         std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() << " " 
                                                 << robot.coordinates().y() << ")" << std::endl;
+        // robot.map().print_map();
     }
 }
 
@@ -70,7 +71,6 @@ int main()
         vector_of_goals.push_back(it);
     }
 
-
     // to stamp what I save from file.txt
     // for(size_t it{0}; it < vector_of_start_position.size(); it++)
     //     std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
@@ -88,9 +88,14 @@ int main()
     
     // map.print_map();
 
+    // for(auto& it : map.obstacle_positions()) {
+    //     std::cout << it.x() << " " << it.y() << std::endl;
+    // }
+
     vector<Robot> list_of_robots;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {
-        list_of_robots.push_back(Robot(vector_of_start_position.at(i), map));
+        // list_of_robots.push_back(Robot(vector_of_start_position.at(i), map));
+        list_of_robots.push_back(Robot(map.robot_start_position().at(i), map));
     }
 
     // to stamp initial position of each robot

@@ -14,7 +14,7 @@ Server::Server(int number_of_robots, int arbitrary_parameter)
 
 // default constructor
 Server::Server()
-        :capacity_{2}
+        :capacity_{10}
 {
 }
 

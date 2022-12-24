@@ -122,8 +122,8 @@ Position Robot::set_coordinates_robot(const Position& new_position)
 
 Position Robot::set_goal(const Position& goal_position)
 {
-        goal_position_.set_x(goal_position.x());
-        goal_position_.set_y(goal_position.y());
+        goal_position_.set_x(goal_position.x() - map_.origin().x());
+        goal_position_.set_y(goal_position.y() - map_.origin().y());
 
         return goal_position_;
 }
@@ -144,29 +144,47 @@ void Robot::print_av_pos()
 
 void Robot::find_min_potential()
 {
-        double minimum_potential{available_positions().at(0).potential()};
-        int index_of_min_cell{0};
-        for(size_t it{1}; it < available_positions().size(); it++) {
-                if(!available_positions().at(it).is_obstacle()) {
-                        if(available_positions().at(it).potential() < minimum_potential) {
-                                minimum_potential = available_positions().at(it).potential();
-                                index_of_min_cell = it;
-                        }
-                }
-                else {
+        double minimum_potential{available_positions_.at(0).potential()};
+        int index{0};
+        for(size_t it{0}; it < available_positions().size(); it++) {
+                if(available_positions_.at(it).is_obstacle()) {
                         available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
                 }
-
-                // if(available_positions().at(it).potential() < minimum_potential) {
-                        // std::cout << "ostacolo: " << available_positions().at(it).is_obstacle() << std::endl;
-                        // if(!available_positions().at(it).is_obstacle()) {
-                                // minimum_potential = available_positions().at(it).potential();
-                                // index_of_min_cell = it;
-                        // }
-                // }
+                else {
+                        if(available_positions_.at(it).potential() < minimum_potential) {
+                                minimum_potential = available_positions_.at(it).potential();
+                                index = it;
+                        }
+                }
         }
 
-        index_of_min_cell_ = index_of_min_cell;
+        index_of_min_cell_ = index;
+        
+
+
+        // double minimum_potential{available_positions().at(0).potential()};
+        // int index_of_min_cell{0};
+        // for(size_t it{1}; it < available_positions().size(); it++) {
+        //         if(!available_positions().at(it).is_obstacle()) {
+        //                 if(available_positions().at(it).potential() < minimum_potential) {
+        //                         minimum_potential = available_positions().at(it).potential();
+        //                         index_of_min_cell = it;
+        //                 }
+        //         }
+        //         else {
+        //                 available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
+        //         }
+
+        //         // if(available_positions().at(it).potential() < minimum_potential) {
+        //                 // std::cout << "ostacolo: " << available_positions().at(it).is_obstacle() << std::endl;
+        //                 // if(!available_positions().at(it).is_obstacle()) {
+        //                         // minimum_potential = available_positions().at(it).potential();
+        //                         // index_of_min_cell = it;
+        //                 // }
+        //         // }
+        // }
+
+        // index_of_min_cell_ = index_of_min_cell;
 
         // std::cout << "Min potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
         //                 << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
@@ -183,10 +201,8 @@ void Robot::step(const double max_influence_distance)
                         if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
                                 coordinates_.set_x(available_positions().at(i).coordinates().x());
                                 coordinates_.set_y(available_positions().at(i).coordinates().y());
-                                // std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-                                // std::cout << "Done." << std::endl;
-                                // std::cout << "Robot " << id() << " reached (" << coordinates_.x() << " " 
-                                //                 << coordinates_.y() << ")" << std::endl;
+                                map_.change_robot_position(id_, coordinates_);
+                                std::cout << "wewe " << map_.robot_start_position().at(id_).x() << "," << map_.robot_start_position().at(id_).y() << std::endl;
                                 arrived_ = true;
                                 return ;
                         }
@@ -205,11 +221,9 @@ void Robot::step(const double max_influence_distance)
                 
                         coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
                         coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
-
-                        // std::cout << "Previous cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-                        // std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-                        // std::cout << "Robot " << id() << " moved to (" << coordinates().x() << ","
-                        //     << coordinates().y() << ")" << std::endl;
+                        map_.change_robot_position(id_, coordinates_);
+                        std::cout << "wewe " << map_.robot_start_position().at(id_).x() << "," << map_.robot_start_position().at(id_).y() << std::endl;
+                        
                         if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
                                 arrived_ = true;
                         }   

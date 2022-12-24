@@ -66,16 +66,6 @@ Cell::Cell()
 {
 }
 
-void Map::set_map_busy()
-{
-    is_busy_ = true;
-}
-
-void Map::set_map_not_busy()
-{
-    is_busy_ = false;
-}
-
 // to find the minimum position in the vector of robots' start position
 void Map::find_min_start_position()
 {
@@ -172,17 +162,17 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
 
     // std::cout << "hor, vert: " << number_of_horizontal_cells << "," << number_of_vertical_cells << std::endl;
 
-    Position map_origin{};
-    map_origin = Position(smallest_corner.x() - (edges_surplus / 2), smallest_corner.y() - (edges_surplus / 2));
+    // Position map_origin{};
+    map_origin_ = Position(smallest_corner.x() - (edges_surplus / 2), smallest_corner.y() - (edges_surplus / 2));
 
-    std::cout << "Map origin setted at: (" << map_origin.x() << ", " << map_origin.y() << ")" << std::endl;
+    std::cout << "Map origin setted at: (" << map_origin_.x() << ", " << map_origin_.y() << ")" << std::endl;
 
-    map_initialization(map_origin, number_of_horizontal_cells, number_of_vertical_cells);
+    map_initialization(number_of_horizontal_cells, number_of_vertical_cells);
     print_map();
 }
 
 // function that initialize the map with free cells and obstacles
-void Map::map_initialization(Position& map_origin, const int number_of_horizontal_cells, const int number_of_vertical_cells)
+void Map::map_initialization(const int number_of_horizontal_cells, const int number_of_vertical_cells)
 {
     for(double i{0}; i < number_of_horizontal_cells; i += cell_size_) {
         vector<Cell> v;
@@ -195,8 +185,8 @@ void Map::map_initialization(Position& map_origin, const int number_of_horizonta
 
     int it{0};
     for(size_t i{0}; i < obstacles_.size(); i++) {
-        Position smallest_corner_local_coordinates{((obstacles_[i].min_corner.x() - map_origin.x()) / cell_size_), ((obstacles_[i].min_corner.y() - map_origin.y()) / cell_size_)};
-        Position bigger_corner_local_coordinates{((obstacles_[i].max_corner.x() - map_origin.x()) / cell_size_), ((obstacles_[i].max_corner.y() - map_origin.y()) / cell_size_)};
+        Position smallest_corner_local_coordinates{((obstacles_[i].min_corner.x() - map_origin_.x()) / cell_size_), ((obstacles_[i].min_corner.y() - map_origin_.y()) / cell_size_)};
+        Position bigger_corner_local_coordinates{((obstacles_[i].max_corner.x() - map_origin_.x()) / cell_size_), ((obstacles_[i].max_corner.y() - map_origin_.y()) / cell_size_)};
         // std::cout << "small corner: " << smallest_corner_local_coordinates.x() << "," << smallest_corner_local_coordinates.y() << std::endl;
         // std::cout << "big corner: " << bigger_corner_local_coordinates.x() << "," << bigger_corner_local_coordinates.y() << std::endl;
         
@@ -216,23 +206,25 @@ void Map::map_initialization(Position& map_origin, const int number_of_horizonta
     //     std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
     // } 
 
-    check_start_and_goal_position(map_origin);
+    check_start_and_goal_position();
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
     // std::cout << "New poses: goal: (" << goal_position_.x() << "," << goal_position_.y() << ")" << std::endl;
 
     for(auto& it : robot_start_positions_) {
 
-        it.set_x(it.x() - map_origin.x());
-        it.set_y(it.y() - map_origin.y());
-
+        it.set_x(it.x() - map_origin_.x());
+        it.set_y(it.y() - map_origin_.y());
+        std::cout << "New start: (" << it.x() << "," << it.y() << ")" << std::endl;
+        map_[it.x()][it.y()].set_obstacles_to_cells();
     }
 
     for( auto& it : goal_positions_) {
 
-        it.set_x(it.x() - map_origin.x());
-        it.set_y(it.y() - map_origin.y());
-
+        it.set_x(it.x() - map_origin_.x());
+        it.set_y(it.y() - map_origin_.y());
+        std::cout << "New goal: (" << it.x() << "," << it.y() << ")" << std::endl;
+        map_[it.x()][it.y()].set_obstacles_to_cells();
     }
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
@@ -241,12 +233,12 @@ void Map::map_initialization(Position& map_origin, const int number_of_horizonta
 }
 
 // to verify if a start position or a goal position is inside an obstacle
-void Map::check_start_and_goal_position(const Position& map_origin)
+void Map::check_start_and_goal_position()
 {
     // because robots can't spawn inside an obstacle
     for(auto &it : robot_start_positions_) {
 
-        if(!map_[(it.x() - map_origin.x()) / cell_size_][(it.y() - map_origin.y()) / cell_size_].is_obstacle()) {
+        if(!map_[(it.x() - map_origin_.x()) / cell_size_][(it.y() - map_origin_.y()) / cell_size_].is_obstacle()) {
         }
         else {
             std::cerr << "Map(): invalid map. \n" << "Robot start position is inside an obstacle." << std::endl;
@@ -258,7 +250,7 @@ void Map::check_start_and_goal_position(const Position& map_origin)
     // because a goals can't be inside an obstacle
     for(auto &it : goal_positions_) {
 
-        if(!map_[(it.x() - map_origin.x()) / cell_size_][(it.y() - map_origin.y()) / cell_size_].is_obstacle()) {
+        if(!map_[(it.x() - map_origin_.x()) / cell_size_][(it.y() - map_origin_.y()) / cell_size_].is_obstacle()) {
         }
         else {
             std::cerr << "Map(): invalid map. \n" << "Goal position is inside an obstacle." << std::endl;
@@ -272,38 +264,37 @@ void Map::check_start_and_goal_position(const Position& map_origin)
 // function used to print the map
 void Map::print_map() 
 {
-    // for(size_t i{0}; i < map_.size(); i++) {
-    //     for(size_t j{0}; j < map_[i].size(); j++) {
-    //         std::cout <<  map_[i][j].is_obstacle() << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
-    std::cout << robot_start_positions_.at(1).x() << " " << robot_start_positions_.at(1).y() << std::endl;
-
-    for(auto& rows : map_) {
-        for(auto& cols : rows) {
-            if(cols.is_obstacle())
-                std::cout << "X";
-
-            // it's temporary
-            else if((cols.coordinates().x() == robot_start_positions_.at(0).x()) && (cols.coordinates().y() == robot_start_positions_.at(0).y()))
-                std::cout << "R";
-            else if((cols.coordinates().x() == goal_positions_.at(0).x()) && (cols.coordinates().y() == goal_positions_.at(0).y()))
-                std::cout << "G";
-            else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
-                std::cout << "R";
-            else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
-                std::cout << "G";
-            // else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
-            //     std::cout << "R";
-            // else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
-            //     std::cout << "G";
-            else    
-                std::cout << "-";
+    for(size_t i{0}; i < map_.size(); i++) {
+        for(size_t j{0}; j < map_[i].size(); j++) {
+            std::cout <<  map_[i][j].is_obstacle() << " ";
         }
         std::cout << std::endl;
     }
-    std::cout << std::endl;
+
+    // for(auto& rows : map_) {
+    //     for(auto& cols : rows) {
+    //         if(cols.is_obstacle())
+    //             std::cout << "X";
+
+    //         // it's temporary
+    //         else if((cols.coordinates().x() == robot_start_positions_.at(0).x()) && (cols.coordinates().y() == robot_start_positions_.at(0).y()))
+    //             std::cout << "R";
+    //         else if((cols.coordinates().x() == goal_positions_.at(0).x()) && (cols.coordinates().y() == goal_positions_.at(0).y()))
+    //             std::cout << "G";
+    //         else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
+    //             std::cout << "R";
+    //         else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
+    //             std::cout << "G";
+    //         // else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
+    //         //     std::cout << "R";
+    //         // else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
+    //         //     std::cout << "G";
+    //         else    
+    //             std::cout << "-";
+    //     }
+    //     std::cout << std::endl;
+    // }
+    // std::cout << std::endl;
 
 
     // used to print the coordinates of the map
@@ -321,10 +312,16 @@ void Cell::set_obstacles_to_cells()
     is_obstacle_= true;
 }
 
-Position Map::change_robot_position(const Position& new_position)
+Position Map::change_robot_position(const int robot_id, const Position& new_position)
 {
     // robot_start_positions_.set_x(new_position.x());
     // robot_start_position_.set_y(new_position.y());
+    for(size_t i{0}; i < robot_start_positions_.size(); i++) {
+        if(static_cast<int>(i) == robot_id) {
+            robot_start_positions_.at(i).set_x(new_position.x());
+            robot_start_positions_.at(i).set_y(new_position.y());
+        }
+    }
 
     return new_position;
 }
@@ -340,8 +337,8 @@ bool operator<(const Position& p1, const Position& p2)
 // ***************************  POTENTIAL  ***************************
 // *******************************************************************
 
-const float zeta{10.0};
-const float eta{2.0};
+const double zeta{5};
+const double eta{20};
 
 double Cell::set_potential(const double potential)
 {
@@ -369,7 +366,7 @@ double Cell::potential_calculation(const Position& goal_position, const vector<P
     distance = distance_calculation(coordinates(),obstacles_position.at(0));
     
     // int j{0};
-    for(size_t i{1}; i < obstacles_position.size(); i++) {
+    for(size_t i{0}; i < obstacles_position.size(); i++) {
         double provv_distance = distance_calculation(coordinates(),obstacles_position.at(i));
         // std::cout << "provv_dist: " << provv_distance << " obstacle: (" << obstacles_position.at(i).x() << "," << obstacles_position.at(i).y() << ")" << std::endl;
         if(provv_distance < distance) {
@@ -387,12 +384,17 @@ double Cell::potential_calculation(const Position& goal_position, const vector<P
         repulsive_field = (0.5 * eta * pow(((1 / distance) - (1 / max_influence_distance)),2));
     }
 
+    // if(is_obstacle_) {
+    //     repulsive_field = std::numeric_limits<double>::max();
+    // }
+
     // std::cout << "The repulsive field of this cell is about " << repulsive_field << std::endl;
 
     double total_field = attractive_field + repulsive_field;
     // std::cout << "The total field of this cell is about " << total_field << std::endl;
 
     set_potential(attractive_field + repulsive_field);
+
     // potential_ = total_field;
     // std::cout << "Current potential: " << potential() << std::endl;
 
