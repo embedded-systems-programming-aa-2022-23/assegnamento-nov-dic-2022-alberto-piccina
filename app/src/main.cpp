@@ -5,16 +5,34 @@
 #include <fstream>
 #include <thread>
 
-const int number_of_robots{3};
+const int number_of_robots{2};
 const double cell_size = 1;
 const int k_parameter = 3;
 
 Server monitor;
+std::mutex robot_mutex;
 
-void consumer(const int id)
+void consumer(const int id, Robot robot)
 {
-        Position pos = monitor.position_take();
-        std::cout << "Robot " << id << " fetched (" << pos.x() << "," << pos.y() << ")" << std::endl;
+    robot.set_id(id);
+    bool loop{true};
+
+    while(loop) {
+    robot.set_goal(monitor.position_take());
+    std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() << "," << robot.goal_position().y() << ")" << std::endl;
+
+        // to manage the non-simultaneously robot's movement
+        robot_mutex.lock();
+        while(!robot.arrived()) {
+            robot.step(5.0);
+            std::cout << "Robot " << robot.id() << " moved to (" << robot.coordinates().x() << ","
+                            << robot.coordinates().y() << ")" << std::endl;
+            robot_mutex.unlock();
+        
+        }
+        std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() << " " 
+                                                << robot.coordinates().y() << ")" << std::endl;
+    }
 }
 
 void producer(const int id, const vector<Position>& goals){
@@ -54,8 +72,8 @@ int main()
 
 
     // to stamp what I save from file.txt
-    for(size_t it{0}; it < vector_of_start_position.size(); it++)
-        std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
+    // for(size_t it{0}; it < vector_of_start_position.size(); it++)
+    //     std::cout << vector_of_start_position.at(it).x() << " " << vector_of_start_position.at(it).y() << std::endl;
     // for(size_t it{0}; it < vector_of_goals.size(); it++)
     //     std::cout << vector_of_goals.at(it).x() << " " << vector_of_goals.at(it).y() << std::endl;
     // for(size_t it{0}; it < vector_of_obstacles.size(); it++)
@@ -70,12 +88,22 @@ int main()
     
     // map.print_map();
 
+    vector<Robot> list_of_robots;
+    for(size_t i{0}; i < vector_of_start_position.size(); i++) {
+        list_of_robots.push_back(Robot(vector_of_start_position.at(i), map));
+    }
+
+    // to stamp initial position of each robot
+    for(auto& it : list_of_robots) {
+        std::cout << it.coordinates().x() << "," << it.coordinates().y() << std::endl;
+    }
+
     std::thread satellite1(producer, 0, satellite_1);
     std::thread satellite2(producer, 1, satellite_2);
 
     vector<std::thread> robots_thread;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {
-        robots_thread.push_back(std::thread(consumer, i));
+        robots_thread.push_back(std::thread(consumer, i, list_of_robots.at(i)));
     }
 
     satellite1.join();

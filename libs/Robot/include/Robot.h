@@ -7,6 +7,8 @@
 
 #include <array>
 #include <limits>
+#include <mutex>
+#include <condition_variable>
 
 class Robot {
 public:
@@ -47,8 +49,8 @@ private:
     Map map_;
     bool arrived_;
 
-    std::mutex mutex_;
-    std::condition_variable in_movement;
+    // std::mutex mutex_;
+    // std::condition_variable not_in_movement;
 };
 
 #endif 

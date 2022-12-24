@@ -66,6 +66,16 @@ Cell::Cell()
 {
 }
 
+void Map::set_map_busy()
+{
+    is_busy_ = true;
+}
+
+void Map::set_map_not_busy()
+{
+    is_busy_ = false;
+}
+
 // to find the minimum position in the vector of robots' start position
 void Map::find_min_start_position()
 {

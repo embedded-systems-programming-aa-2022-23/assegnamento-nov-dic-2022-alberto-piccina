@@ -94,6 +94,7 @@ public:
     vector<Position> robot_start_position() const {return robot_start_positions_;}
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
     double cell_size() const {return cell_size_;}
+    bool is_busy() const {return is_busy_;}
 
     // non-const member
     Position smallest_corner;
@@ -104,6 +105,8 @@ public:
     void find_max_goal_position();
     void check_map_limits();
     void check_start_and_goal_position(const Position& map_origin);
+    void set_map_busy();
+    void set_map_not_busy();
 
 
 private:
@@ -113,6 +116,7 @@ private:
     vector<vector<Cell>> map_;
     vector<Position> obstacle_positions_;
     double cell_size_;
+    bool is_busy_;
     void map_initialization(Position& map_origin, const int number_of_horizontal_cells, const int number_of_vertical_cells);
     // void print_map();
 };

@@ -175,7 +175,6 @@ void Robot::find_min_potential()
 // void Robot::move(const vector<Position>& obstacles_position, const double max_influence_distance)
 void Robot::step(const double max_influence_distance)
 {
-        
                 // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
                 position_record_.push_back(coordinates_);
                 set_available_positions(Position(coordinates().x(),coordinates().y()));
@@ -184,8 +183,10 @@ void Robot::step(const double max_influence_distance)
                         if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
                                 coordinates_.set_x(available_positions().at(i).coordinates().x());
                                 coordinates_.set_y(available_positions().at(i).coordinates().y());
-                                std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-                                std::cout << "Done." << std::endl;
+                                // std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                                // std::cout << "Done." << std::endl;
+                                // std::cout << "Robot " << id() << " reached (" << coordinates_.x() << " " 
+                                //                 << coordinates_.y() << ")" << std::endl;
                                 arrived_ = true;
                                 return ;
                         }
@@ -206,7 +207,9 @@ void Robot::step(const double max_influence_distance)
                         coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
 
                         // std::cout << "Previous cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-                        std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                        // std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
+                        // std::cout << "Robot " << id() << " moved to (" << coordinates().x() << ","
+                        //     << coordinates().y() << ")" << std::endl;
                         if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
                                 arrived_ = true;
                         }   
