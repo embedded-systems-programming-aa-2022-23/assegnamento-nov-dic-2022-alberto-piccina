@@ -72,6 +72,7 @@ public:
     // non-const members
     Position set_coordinates(const Position& point);
     void set_obstacles_to_cells();
+    void set_cells_free();
     double set_potential(const double potential);
     double potential_calculation(const Position& goal_position, const vector<Position>& obstacles_position, const double max_influence_distance);
     double distance_calculation(const Position& p1, const Position& p2);
@@ -105,7 +106,6 @@ public:
     void find_min_start_position();
     void find_max_goal_position();
     void check_map_limits();
-    // void check_start_and_goal_position(const Position& map_origin);
     void check_start_and_goal_position();
 
 
@@ -117,7 +117,6 @@ private:
     vector<Position> obstacle_positions_;
     double cell_size_;
     Position map_origin_;
-    // void map_initialization(Position& map_origin, const int number_of_horizontal_cells, const int number_of_vertical_cells);
     void map_initialization(const int number_of_horizontal_cells, const int number_of_vertical_cells);
     // void print_map();
 };

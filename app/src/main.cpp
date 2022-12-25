@@ -11,36 +11,44 @@ const int k_parameter = 3;
 
 Server monitor;
 std::mutex robot_mutex;
+std::mutex cout_mutex;
 
 void consumer(const int id, Robot robot)
 {
     robot.set_id(id);
-    bool loop{true};
+    // bool loop{true};
 
-    while(loop) {
+    // while(loop) {
     robot.set_goal(monitor.position_take());
+    cout_mutex.lock();
     std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() << "," << robot.goal_position().y() << ")" << std::endl;
+    cout_mutex.unlock();
 
         // to manage the non-simultaneously robot's movement
-        robot_mutex.lock();
         while(!robot.arrived()) {
+            robot_mutex.lock();
             robot.step(5.0);
-            std::cout << "Robot " << robot.id() << " moved to (" << robot.coordinates().x() << ","
-                            << robot.coordinates().y() << ")" << std::endl;
             robot_mutex.unlock();
-        
         }
+        cout_mutex.lock();
         std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() << " " 
                                                 << robot.coordinates().y() << ")" << std::endl;
-        // robot.map().print_map();
-    }
+        cout_mutex.unlock();
+    // }
+
+    // to verify
+    std::cout << robot.id() << ": new start (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
+    // std::cout << robot.map().robot_start_position().at(robot.id()).x() << " " << robot.map().robot_start_position().at(robot.id()).y() << std::endl;
+    // robot.map().print_map();
 }
 
 void producer(const int id, const vector<Position>& goals){
     for(auto& new_pos : goals) {
         monitor.position_append(new_pos);
+        cout_mutex.lock();
         std::cout << "Satellite " << id << " produced (" << new_pos.x() << "," << new_pos.y() << ")" << std::endl;
         // std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        cout_mutex.unlock();
     }
 }
 
@@ -80,28 +88,16 @@ int main()
     //     std::cout << vector_of_obstacles.at(it).x() << " " << vector_of_obstacles.at(it).y() << std::endl;
 
     Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, cell_size};
-    // Robot r1(map.robot_start_position(), map.goal_position(), cell_size);
-
-    // r1.move(map.obstacle_positions(), cell_size, 5.0);
-
-    // map.change_robot_position(r1.coordinates());
-    
-    // map.print_map();
-
-    // for(auto& it : map.obstacle_positions()) {
-    //     std::cout << it.x() << " " << it.y() << std::endl;
-    // }
 
     vector<Robot> list_of_robots;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {
-        // list_of_robots.push_back(Robot(vector_of_start_position.at(i), map));
         list_of_robots.push_back(Robot(map.robot_start_position().at(i), map));
     }
 
     // to stamp initial position of each robot
-    for(auto& it : list_of_robots) {
-        std::cout << it.coordinates().x() << "," << it.coordinates().y() << std::endl;
-    }
+    // for(auto& it : list_of_robots) {
+    //     std::cout << it.coordinates().x() << "," << it.coordinates().y() << std::endl;
+    // }
 
     std::thread satellite1(producer, 0, satellite_1);
     std::thread satellite2(producer, 1, satellite_2);
@@ -116,7 +112,6 @@ int main()
     for(auto& it : robots_thread) {
         it.join();
     }
-
 
     return 0;
 }

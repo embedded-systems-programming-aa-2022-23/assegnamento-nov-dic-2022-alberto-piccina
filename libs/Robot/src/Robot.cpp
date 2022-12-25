@@ -17,20 +17,6 @@ Robot::Robot(Position start_position, Map map)
 
         previous_cell_ = start_position;
 }
-// Robot::Robot(Position start_position, Position goal_position, double cell_size)
-//         :coordinates_{start_position}, goal_position_{goal_position}
-// {
-//         if(!check_with_cell_size(cell_size)) {
-//                 std::cout << "Robot(): invalid robot. Verify if start position and goal position are defined correctly." << std::endl;
-//                 exit(EXIT_FAILURE);
-//         }
-//         for(size_t i{0}; i < available_positions().size(); i++) {
-//                 available_positions_.at(i).set_potential(0);
-//         }
-//         set_available_positions(start_position, cell_size);
-
-//         previous_cell_ = start_position;
-// }
 
 // Robot's default constructor
 Robot::Robot(Map map)
@@ -202,12 +188,12 @@ void Robot::step(const double max_influence_distance)
                                 coordinates_.set_x(available_positions().at(i).coordinates().x());
                                 coordinates_.set_y(available_positions().at(i).coordinates().y());
                                 map_.change_robot_position(id_, coordinates_);
-                                std::cout << "wewe " << map_.robot_start_position().at(id_).x() << "," << map_.robot_start_position().at(id_).y() << std::endl;
+                                std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() << "," 
+                                                << map_.robot_start_position().at(id_).y() << std::endl;
                                 arrived_ = true;
                                 return ;
                         }
                         available_positions_.at(i).potential_calculation(goal_position(),map_.obstacle_positions(),max_influence_distance);
-                        // std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;
                 }
 
                 find_min_potential();
@@ -222,8 +208,9 @@ void Robot::step(const double max_influence_distance)
                         coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
                         coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
                         map_.change_robot_position(id_, coordinates_);
-                        std::cout << "wewe " << map_.robot_start_position().at(id_).x() << "," << map_.robot_start_position().at(id_).y() << std::endl;
-                        
+                        std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() << "," 
+                                                << map_.robot_start_position().at(id_).y() << std::endl;
+
                         if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
                                 arrived_ = true;
                         }   

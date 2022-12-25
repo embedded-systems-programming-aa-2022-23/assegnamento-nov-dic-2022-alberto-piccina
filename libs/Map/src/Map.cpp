@@ -202,9 +202,9 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
     }
 
     // to visualize all new coordinates that are obstacles
-    // for(size_t a{0}; a < obstacle_positions().size(); a++) {
-    //     std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
-    // } 
+    for(size_t a{0}; a < obstacle_positions().size(); a++) {
+        std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
+    } 
 
     check_start_and_goal_position();
 
@@ -312,14 +312,19 @@ void Cell::set_obstacles_to_cells()
     is_obstacle_= true;
 }
 
+void Cell::set_cells_free()
+{
+    is_obstacle_ = false;
+}
+
 Position Map::change_robot_position(const int robot_id, const Position& new_position)
 {
-    // robot_start_positions_.set_x(new_position.x());
-    // robot_start_position_.set_y(new_position.y());
     for(size_t i{0}; i < robot_start_positions_.size(); i++) {
         if(static_cast<int>(i) == robot_id) {
+            map_[robot_start_positions_.at(i).x()][robot_start_positions_.at(i).y()].set_cells_free();
             robot_start_positions_.at(i).set_x(new_position.x());
             robot_start_positions_.at(i).set_y(new_position.y());
+            map_[robot_start_positions_.at(i).x()][robot_start_positions_.at(i).y()].set_obstacles_to_cells();
         }
     }
 
