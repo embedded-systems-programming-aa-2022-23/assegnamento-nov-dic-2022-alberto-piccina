@@ -121,6 +121,11 @@ int Robot::set_id(const int id_to_set)
         return id_;
 }
 
+bool Robot::reset()
+{
+        return (arrived_ = false);
+}
+
 void Robot::print_av_pos()
 {
         for(size_t i{0}; i < available_positions().size(); i++) {

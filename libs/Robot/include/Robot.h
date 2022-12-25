@@ -35,6 +35,7 @@ public:
     Position set_coordinates_robot(const Position& new_position);
     Position set_goal(const Position& goal_position);
     int set_id(const int id_to_set);
+    bool reset();
     void print_av_pos();
     void find_min_potential();
     // void move(const vector<Position>& obstacles_position, const double max_influence_distance);

@@ -5,7 +5,7 @@
 #include <fstream>
 #include <thread>
 
-const int number_of_robots{2};
+const int number_of_robots{1};
 const double cell_size = 1;
 const int k_parameter = 3;
 
@@ -16,9 +16,11 @@ std::mutex cout_mutex;
 void consumer(const int id, Robot robot)
 {
     robot.set_id(id);
-    // bool loop{true};
+    bool loop{true};
 
-    // while(loop) {
+    while(loop) {
+    std::cout << robot.id() << ": init (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
+    robot.reset();
     robot.set_goal(monitor.position_take());
     cout_mutex.lock();
     std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() << "," << robot.goal_position().y() << ")" << std::endl;
@@ -34,10 +36,10 @@ void consumer(const int id, Robot robot)
         std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() << " " 
                                                 << robot.coordinates().y() << ")" << std::endl;
         cout_mutex.unlock();
-    // }
+    }
 
     // to verify
-    std::cout << robot.id() << ": new start (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
+    // std::cout << robot.id() << ": new start (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
     // std::cout << robot.map().robot_start_position().at(robot.id()).x() << " " << robot.map().robot_start_position().at(robot.id()).y() << std::endl;
     // robot.map().print_map();
 }

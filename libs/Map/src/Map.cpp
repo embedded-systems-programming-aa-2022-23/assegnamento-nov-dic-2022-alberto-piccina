@@ -202,9 +202,9 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
     }
 
     // to visualize all new coordinates that are obstacles
-    for(size_t a{0}; a < obstacle_positions().size(); a++) {
-        std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
-    } 
+    // for(size_t a{0}; a < obstacle_positions().size(); a++) {
+    //     std::cout << "Obs pos: (" << obstacle_positions().at(a).x() << "," << obstacle_positions().at(a).y() << ")" << std::endl;
+    // } 
 
     check_start_and_goal_position();
 
