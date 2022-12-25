@@ -217,6 +217,7 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
         it.set_y(it.y() - map_origin_.y());
         std::cout << "New start: (" << it.x() << "," << it.y() << ")" << std::endl;
         map_[it.x()][it.y()].set_obstacles_to_cells();
+        obstacle_positions_.push_back(it);
     }
 
     for( auto& it : goal_positions_) {
@@ -225,6 +226,7 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
         it.set_y(it.y() - map_origin_.y());
         std::cout << "New goal: (" << it.x() << "," << it.y() << ")" << std::endl;
         map_[it.x()][it.y()].set_obstacles_to_cells();
+        obstacle_positions_.push_back(it);
     }
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
@@ -322,9 +324,15 @@ Position Map::change_robot_position(const int robot_id, const Position& new_posi
     for(size_t i{0}; i < robot_start_positions_.size(); i++) {
         if(static_cast<int>(i) == robot_id) {
             map_[robot_start_positions_.at(i).x()][robot_start_positions_.at(i).y()].set_cells_free();
+            for(size_t it{0}; it < obstacle_positions_.size(); it++) {
+                if( (obstacle_positions_.at(it).x() == robot_start_positions_.at(i).x()) && (obstacle_positions_.at(it).y() == robot_start_positions_.at(i).y()) )
+                    obstacle_positions_.erase(obstacle_positions_.begin() + (it - 1));
+            }
+        
             robot_start_positions_.at(i).set_x(new_position.x());
             robot_start_positions_.at(i).set_y(new_position.y());
             map_[robot_start_positions_.at(i).x()][robot_start_positions_.at(i).y()].set_obstacles_to_cells();
+            obstacle_positions_.push_back(robot_start_positions_.at(i));
         }
     }
 
