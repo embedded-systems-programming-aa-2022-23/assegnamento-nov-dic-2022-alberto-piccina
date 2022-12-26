@@ -203,10 +203,21 @@ void Robot::step(const double max_influence_distance)
 
                 find_min_potential();
 
-                if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
+                bool check{true};
+                for(auto& it : position_record_) {
+                        if((it.x() ==available_positions_.at(index_of_min_cell_).coordinates().x()) && (it.y() == available_positions_.at(index_of_min_cell_).coordinates().y()))
+                                check = false;
+                }
+                if(!check) {
                         std::cerr << "Error: local minimum found." << std::endl;
                         arrived_ = true;
                 }
+
+
+                // if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
+                //         std::cerr << "Error: local minimum found." << std::endl;
+                //         arrived_ = true;
+                // }
                 else {
                         previous_cell_ = Position(coordinates().x(),coordinates().y());
                 

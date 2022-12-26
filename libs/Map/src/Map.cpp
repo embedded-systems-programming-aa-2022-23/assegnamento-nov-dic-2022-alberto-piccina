@@ -208,9 +208,6 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
 
     check_start_and_goal_position();
 
-    // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
-    // std::cout << "New poses: goal: (" << goal_position_.x() << "," << goal_position_.y() << ")" << std::endl;
-
     for(auto& it : robot_start_positions_) {
 
         it.set_x(it.x() - map_origin_.x());
@@ -225,8 +222,6 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
         it.set_x(it.x() - map_origin_.x());
         it.set_y(it.y() - map_origin_.y());
         std::cout << "New goal: (" << it.x() << "," << it.y() << ")" << std::endl;
-        map_[it.x()][it.y()].set_obstacles_to_cells();
-        obstacle_positions_.push_back(it);
     }
 
     // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
@@ -266,37 +261,41 @@ void Map::check_start_and_goal_position()
 // function used to print the map
 void Map::print_map() 
 {
-    for(size_t i{0}; i < map_.size(); i++) {
-        for(size_t j{0}; j < map_[i].size(); j++) {
-            std::cout <<  map_[i][j].is_obstacle() << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    // for(auto& rows : map_) {
-    //     for(auto& cols : rows) {
-    //         if(cols.is_obstacle())
-    //             std::cout << "X";
-
-    //         // it's temporary
-    //         else if((cols.coordinates().x() == robot_start_positions_.at(0).x()) && (cols.coordinates().y() == robot_start_positions_.at(0).y()))
-    //             std::cout << "R";
-    //         else if((cols.coordinates().x() == goal_positions_.at(0).x()) && (cols.coordinates().y() == goal_positions_.at(0).y()))
-    //             std::cout << "G";
-    //         else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
-    //             std::cout << "R";
-    //         else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
-    //             std::cout << "G";
-    //         // else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
-    //         //     std::cout << "R";
-    //         // else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
-    //         //     std::cout << "G";
-    //         else    
-    //             std::cout << "-";
+    // for(size_t i{0}; i < map_.size(); i++) {
+    //     for(size_t j{0}; j < map_[i].size(); j++) {
+    //         std::cout <<  map_[i][j].is_obstacle() << " ";
     //     }
     //     std::cout << std::endl;
     // }
-    // std::cout << std::endl;
+
+    for(auto& rows : map_) {
+        for(auto& cols : rows) {
+            if(cols.is_obstacle())
+                std::cout << "X";
+
+    //         // it's temporary
+            else if((cols.coordinates().x() == robot_start_positions_.at(0).x()) && (cols.coordinates().y() == robot_start_positions_.at(0).y()))
+                std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(0).x()) && (cols.coordinates().y() == goal_positions_.at(0).y()))
+                std::cout << "G";
+            else if((cols.coordinates().x() == robot_start_positions_.at(1).x()) && (cols.coordinates().y() == robot_start_positions_.at(1).y()))
+                std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(1).x()) && (cols.coordinates().y() == goal_positions_.at(1).y()))
+                std::cout << "G";
+            // else if((cols.coordinates().x() == robot_start_positions_.at(2).x()) && (cols.coordinates().y() == robot_start_positions_.at(2).y()))
+            //     std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(2).x()) && (cols.coordinates().y() == goal_positions_.at(2).y()))
+                std::cout << "G";
+            // else if((cols.coordinates().x() == robot_start_positions_.at(3).x()) && (cols.coordinates().y() == robot_start_positions_.at(3).y()))
+            //     std::cout << "R";
+            else if((cols.coordinates().x() == goal_positions_.at(3).x()) && (cols.coordinates().y() == goal_positions_.at(3).y()))
+                std::cout << "G";
+            else    
+                std::cout << "-";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
 
 
     // used to print the coordinates of the map
