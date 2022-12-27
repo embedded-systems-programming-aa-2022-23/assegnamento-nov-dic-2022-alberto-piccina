@@ -8,9 +8,13 @@
 #include <queue>
 using std::queue;
 
+#include <deque>
+using std::deque;
+
 #include <istream>
 #include <fstream>
 #include <list>
+#include <string>
 #include <mutex>
 #include <condition_variable>
 
@@ -24,17 +28,21 @@ public:
     Server();
 
     // const members
-    queue<Position> goal_queue() const {return goal_queue_;}
+    // queue<Position> goal_queue() const {return goal_queue_;}
+    deque<Position> goal_queue() const {return goal_queue_;}
     int parameter() const {return parameter_;}
 
     // producer-consumer functions
     void position_append(Position new_pos);
+    Position position_take(Position robot_coordinates);
     Position position_take();
 
     void update_queue(const int number_of_robots, const int arbitrary_parameter);
+    Position find_minimum_position(Position robot_coordinates);
 
 private:
-    queue<Position> goal_queue_;
+    // queue<Position> goal_queue_;
+    deque<Position> goal_queue_;
     int number_of_robots_;
     int parameter_;
     int capacity_;

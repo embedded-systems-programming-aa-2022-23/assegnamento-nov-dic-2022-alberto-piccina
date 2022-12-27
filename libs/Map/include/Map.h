@@ -15,24 +15,6 @@
 using std::vector;
 
 class Position {
-// public:
-
-//     // constructor
-//     Position(int x, int y);
-//     Position();
-
-//     // const members
-//     int x() const {return x_; }
-//     int y() const {return y_; }
-
-//     // non-const members
-//     int set_x(int x);
-//     int set_y(int y);
-
-// private:
-//     int x_;
-//     int y_;
-
 public:
 
     // constructor
@@ -46,6 +28,7 @@ public:
     // non-const members
     double set_x(const double x);
     double set_y(const double y);
+    double distance(Position p1, Position p2);
 
 private:
     double x_;

@@ -46,6 +46,13 @@ double Position::set_y(const double y)
     return y;
 }
 
+double Position::distance(Position p1, Position p2)
+{
+    double distance{sqrt(pow(p2.x() - p1.x(), 2) + pow(p2.y() - p1.y(), 2))};
+
+    return distance;
+}
+
 // function that set Cell's coordinates_ 
 Position Cell::set_coordinates(const Position& point)
 {

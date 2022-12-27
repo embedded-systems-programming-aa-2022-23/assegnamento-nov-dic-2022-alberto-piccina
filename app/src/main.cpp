@@ -5,10 +5,6 @@
 #include <fstream>
 #include <thread>
 
-const int number_of_robots{1};
-const double cell_size = 1;
-const int k_parameter = 3;
-
 Server monitor;
 std::mutex robot_mutex;
 std::mutex cout_mutex;
@@ -21,6 +17,7 @@ void consumer(const int id, Robot robot)
     while(loop) {
     std::cout << robot.id() << ": init (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
     robot.reset();
+    // robot.set_goal(monitor.position_take(robot.coordinates()));
     robot.set_goal(monitor.position_take());
     cout_mutex.lock();
     std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() << "," << robot.goal_position().y() << ")" << std::endl;
@@ -54,9 +51,19 @@ void producer(const int id, const vector<Position>& goals){
     }
 }
 
-int main()
+const int MAX_NUMBER_OF_VALUES{3};
+
+int main(int argc, char* argv[])
+// int main()
 {
-    monitor.update_queue(number_of_robots, k_parameter);
+    if(argc != MAX_NUMBER_OF_VALUES) {
+        std::cerr << "ERROR: this programm requires " << (MAX_NUMBER_OF_VALUES - 1) << " arguments, but the user actually insert " << argc << " arguments." << std::endl;
+        std::cerr << "The correct syntax is:\n"
+                << "argv[1] ---> cell size as an int\n"
+                << "argv[2] ---> an int as the parameter K used in the goal queue to define the queue size" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    // monitor.update_queue(number_of_robots, k_parameter);
 
     std::string filename_start_position{"start_robots_coordinates.txt"};
     std::string filename_goal_position_1{"goals_coordinates_satellite_1.txt"};
@@ -72,6 +79,9 @@ int main()
     read_from_file(filename_goal_position_1, satellite_1);
     read_from_file(filename_goal_position_2, satellite_2);
     read_from_file_obstacle(filename_obstacles, vector_of_obstacles);
+
+    // monitor.update_queue(vector_of_start_position.size(), k_parameter);
+    monitor.update_queue(vector_of_start_position.size(), std::stoi(argv[2]));
 
     vector<Position> vector_of_goals;
     for(auto& it : satellite_1) {
@@ -89,7 +99,7 @@ int main()
     // for(size_t it{0}; it < vector_of_obstacles.size(); it++)
     //     std::cout << vector_of_obstacles.at(it).x() << " " << vector_of_obstacles.at(it).y() << std::endl;
 
-    Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, cell_size};
+    Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, std::stod(argv[1])};
 
     vector<Robot> list_of_robots;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {
