@@ -123,6 +123,7 @@ int Robot::set_id(const int id_to_set)
 
 bool Robot::reset()
 {
+        position_record_.clear();
         return (arrived_ = false);
 }
 
@@ -193,8 +194,8 @@ void Robot::step(const double max_influence_distance)
                                 coordinates_.set_x(available_positions().at(i).coordinates().x());
                                 coordinates_.set_y(available_positions().at(i).coordinates().y());
                                 map_.change_robot_position(id_, coordinates_);
-                                std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() << "," 
-                                                << map_.robot_start_position().at(id_).y() << std::endl;
+                                std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
+                                                << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
                                 arrived_ = true;
                                 return ;
                         }
@@ -205,7 +206,7 @@ void Robot::step(const double max_influence_distance)
 
                 bool check{true};
                 for(auto& it : position_record_) {
-                        if((it.x() ==available_positions_.at(index_of_min_cell_).coordinates().x()) && (it.y() == available_positions_.at(index_of_min_cell_).coordinates().y()))
+                        if((it.x() == available_positions_.at(index_of_min_cell_).coordinates().x()) && (it.y() == available_positions_.at(index_of_min_cell_).coordinates().y()))
                                 check = false;
                 }
                 if(!check) {
@@ -224,8 +225,8 @@ void Robot::step(const double max_influence_distance)
                         coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
                         coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
                         map_.change_robot_position(id_, coordinates_);
-                        std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() << "," 
-                                                << map_.robot_start_position().at(id_).y() << std::endl;
+                        std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
+                                                << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
 
                         if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
                                 arrived_ = true;

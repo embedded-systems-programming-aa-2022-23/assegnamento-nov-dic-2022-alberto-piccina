@@ -37,15 +37,16 @@ void Server::position_append(Position new_pos)
     not_empty_.notify_one();
 }
 
-// Position Server::position_take(Position robot_coordinates)
-Position Server::position_take()
+Position Server::position_take(Position robot_coordinates)
+// Position Server::position_take()
 {
     std::unique_lock<std::mutex> mlock(mutex_);
     while(count_ == 0)
         not_empty_.wait(mlock);
-    Position pos{goal_queue_.front()};
-    // Position pos{find_minimum_position(robot_coordinates)};
-    goal_queue_.pop_front();
+    // Position pos{goal_queue_.front()};
+    Position pos{find_minimum_position(robot_coordinates)};
+    // goal_queue_.pop_front();
+    goal_queue_.erase(goal_queue_.begin() + min_index_);
     --count_;
     mlock.unlock();
     not_full_.notify_one();
@@ -58,18 +59,15 @@ Position Server::find_minimum_position(Position robot_coordinates)
     int min_index{0};
     double minimum{std::numeric_limits<double>::infinity()};
     double distance{std::numeric_limits<double>::infinity()};
-    for(size_t it{0}; it < goal_queue_.size(); it++) {
-        distance = sqrt(pow(goal_queue_.at(it).x() - robot_coordinates.x(), 2) + pow(goal_queue_.at(it).y() - robot_coordinates.y(), 2));
+    for(size_t i{0}; i < goal_queue_.size(); i++) {
+        distance = sqrt(pow(goal_queue_.at(i).x() - robot_coordinates.x(), 2) + pow(goal_queue_.at(i).y() - robot_coordinates.y(), 2));
         if(distance < minimum) {
             minimum = distance;
-            min_index = it;
+            min_index = i;
         }
     }
 
-    if(min_index == 0)
-        goal_queue_.pop_front();
-    else
-        goal_queue_.erase(goal_queue_.begin() + (min_index - 1));
+    min_index_ = min_index;
 
     return goal_queue_.at(min_index);
 }

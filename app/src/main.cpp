@@ -15,12 +15,12 @@ void consumer(const int id, Robot robot)
     bool loop{true};
 
     while(loop) {
-    std::cout << robot.id() << ": init (" << robot.coordinates().x() << "," << robot.coordinates().y() << ")" << std::endl;
+    std::cout << robot.id() << ": init (" << robot.coordinates().x() + robot.map().origin().x() << "," << robot.coordinates().y() + robot.map().origin().y() << ")" << std::endl;
     robot.reset();
-    // robot.set_goal(monitor.position_take(robot.coordinates()));
-    robot.set_goal(monitor.position_take());
+    robot.set_goal(monitor.position_take(robot.coordinates()));
+    // robot.set_goal(monitor.position_take());
     cout_mutex.lock();
-    std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() << "," << robot.goal_position().y() << ")" << std::endl;
+    std::cout << "Robot " << id << " fetched (" << robot.goal_position().x() + robot.map().origin().x() << "," << robot.goal_position().y() + robot.map().origin().y() << ")" << std::endl;
     cout_mutex.unlock();
 
         // to manage the non-simultaneously robot's movement
@@ -30,8 +30,8 @@ void consumer(const int id, Robot robot)
             robot_mutex.unlock();
         }
         cout_mutex.lock();
-        std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() << " " 
-                                                << robot.coordinates().y() << ")" << std::endl;
+        std::cout << "Robot " << robot.id() << " reached (" << robot.coordinates().x() + robot.map().origin().x() << " " 
+                                                << robot.coordinates().y() + robot.map().origin().y() << ")" << std::endl;
         cout_mutex.unlock();
     }
 

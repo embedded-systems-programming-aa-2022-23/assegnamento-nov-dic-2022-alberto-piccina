@@ -215,11 +215,12 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
 
     check_start_and_goal_position();
 
+    // to see the new coordinates after the translation
     for(auto& it : robot_start_positions_) {
 
         it.set_x(it.x() - map_origin_.x());
         it.set_y(it.y() - map_origin_.y());
-        std::cout << "New start: (" << it.x() << "," << it.y() << ")" << std::endl;
+        // std::cout << "New start: (" << it.x() << "," << it.y() << ")" << std::endl;
         map_[it.x()][it.y()].set_obstacles_to_cells();
         obstacle_positions_.push_back(it);
     }
@@ -228,12 +229,8 @@ void Map::map_initialization(const int number_of_horizontal_cells, const int num
 
         it.set_x(it.x() - map_origin_.x());
         it.set_y(it.y() - map_origin_.y());
-        std::cout << "New goal: (" << it.x() << "," << it.y() << ")" << std::endl;
+        // std::cout << "New goal: (" << it.x() << "," << it.y() << ")" << std::endl;
     }
-
-    // std::cout << "New poses: start: (" << robot_start_position_.x() << "," << robot_start_position_.y() << ")" << std::endl;
-    // std::cout << "New poses: goal: (" << goal_position_.x() << "," << goal_position_.y() << ")" << std::endl;
-    
 }
 
 // to verify if a start position or a goal position is inside an obstacle
