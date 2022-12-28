@@ -34,7 +34,7 @@ public:
 
     // producer-consumer functions
     void position_append(Position new_pos);
-    Position position_take(Position robot_coordinates);
+    // Position position_take(Position robot_coordinates);
     Position position_take();
 
     void update_queue(const int number_of_robots, const int arbitrary_parameter);

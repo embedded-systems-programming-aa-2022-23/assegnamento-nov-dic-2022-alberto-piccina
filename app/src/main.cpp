@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
     std::string filename_start_position{"start_robots_coordinates.txt"};
     std::string filename_goal_position_1{"goals_coordinates_satellite_1.txt"};
     std::string filename_goal_position_2{"goals_coordinates_satellite_2.txt"};
-    std::string filename_obstacles{"obstacles_coordinates.txt"};
+    std::string filename_obstacles{"obstacle_positions.txt"};
 
     vector<Position> vector_of_start_position;
     vector<obstacle> vector_of_obstacles;
@@ -111,8 +111,8 @@ int main(int argc, char* argv[])
     //     std::cout << it.coordinates().x() << "," << it.coordinates().y() << std::endl;
     // }
 
-    std::thread satellite1(producer, 0, satellite_1);
-    std::thread satellite2(producer, 1, satellite_2);
+    std::thread satellite1(producer, 0, std::ref(satellite_1));
+    std::thread satellite2(producer, 1, std::ref(satellite_2));
 
     vector<std::thread> robots_thread;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {

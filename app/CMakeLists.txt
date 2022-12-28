@@ -12,7 +12,7 @@ add_custom_command(TARGET main POST_BUILD        # Adds a post-build event to My
 		"${dati}/start_robots_coordinates.txt"   # <--this is in-file
 		"${dati}/goals_coordinates_satellite_1.txt"
         "${dati}/goals_coordinates_satellite_2.txt"
-		"${dati}/obstacles_coordinates.txt"
+		"${dati}/obstacle_positions.txt"
         $<TARGET_FILE_DIR:main>)                 # <--this is out-file path
 
 target_link_libraries( main

@@ -103,28 +103,37 @@ void read_from_file_obstacle(const std::string& filename, vector<obstacle>& vect
     // input file stream as a class, is created by
     // providing a filename as its constructor argument
     std::ifstream infile{filename,std::iostream::in};
-    bool flag{true};
-    obstacle temp;
 
-    while (!infile.eof()) {
-        double x1, y1, x2, y2;
-        if(flag) {
-            infile >> x1 >> y1;
-            if (infile.fail() || infile.bad()) {
-                std::cerr << "Error in input or eof  \n";
-                break;
-            }
-            flag = !flag;
+    while(!infile.eof()) {
+        double x_min, y_min, x_max, y_max;
+        infile >> x_min >> y_min >> x_max >> y_max;
+        if (infile.fail() || infile.bad()) {
+            std::cerr << "Error in input or eof  \n";
+            break;
         }
-        else {
-            infile >> x2 >> y2;
-            if (infile.fail() || infile.bad()) {
-                std::cerr << "Error in input or eof  \n";
-                break;
-            }
-            obstacle temp{.min_corner{x1, y1}, .max_corner{x2, y2}};
-            vector_of_obstacles.push_back(temp);
-            flag = !flag;
-        }        
+        obstacle temp{.min_corner{x_min, y_min}, .max_corner{x_max, y_max}};
+        vector_of_obstacles.push_back(temp);
     }
+
+    // while (!infile.eof()) {
+    //     double x1, y1, x2, y2;
+    //     if(flag) {
+    //         infile >> x1 >> y1;
+    //         if (infile.fail() || infile.bad()) {
+    //             std::cerr << "Error in input or eof  \n";
+    //             break;
+    //         }
+    //         flag = !flag;
+    //     }
+    //     else {
+    //         infile >> x2 >> y2;
+    //         if (infile.fail() || infile.bad()) {
+    //             std::cerr << "Error in input or eof  \n";
+    //             break;
+    //         }
+    //         obstacle temp{.min_corner{x1, y1}, .max_corner{x2, y2}};
+    //         vector_of_obstacles.push_back(temp);
+    //         flag = !flag;
+    //     }        
+    // }
 }
