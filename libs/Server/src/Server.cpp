@@ -57,12 +57,13 @@ Position Server::position_take(Position robot_coordinates)
 Position Server::find_minimum_position(Position robot_coordinates)
 {
     int min_index{0};
-    double minimum{std::numeric_limits<double>::infinity()};
-    double distance{std::numeric_limits<double>::infinity()};
+    // double minimum{std::numeric_limits<double>::infinity()};
+    double distance{sqrt(pow(goal_queue_.at(0).x() - robot_coordinates.x(), 2) + pow(goal_queue_.at(0).y() - robot_coordinates.y(), 2))};
     for(size_t i{0}; i < goal_queue_.size(); i++) {
-        distance = sqrt(pow(goal_queue_.at(i).x() - robot_coordinates.x(), 2) + pow(goal_queue_.at(i).y() - robot_coordinates.y(), 2));
-        if(distance < minimum) {
-            minimum = distance;
+        double provv_distance = sqrt(pow(goal_queue_.at(i).x() - robot_coordinates.x(), 2) + pow(goal_queue_.at(i).y() - robot_coordinates.y(), 2));
+        if(provv_distance < distance) {
+            // minimum = distance;
+            distance = provv_distance;
             min_index = i;
         }
     }

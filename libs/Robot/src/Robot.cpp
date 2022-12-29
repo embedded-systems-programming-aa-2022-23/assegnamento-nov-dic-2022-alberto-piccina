@@ -149,6 +149,7 @@ void Robot::find_min_potential()
                         }
                 }
         }
+        
 
         index_of_min_cell_ = index;
         
@@ -228,9 +229,9 @@ void Robot::step(const double max_influence_distance)
                         std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
                                                 << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
 
-                        if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
-                                arrived_ = true;
-                        }   
+                        // if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
+                        //         arrived_ = true;
+                        // }   
                 }
         
 
