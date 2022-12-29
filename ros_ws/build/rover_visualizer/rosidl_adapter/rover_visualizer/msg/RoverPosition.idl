@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from rover_visualizer/msg/RoverPosition.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+
+module rover_visualizer {
+  module msg {
+    struct RoverPosition {
+      int32 id;
+
+      geometry_msgs::msg::Point position;
+    };
+  };
+};

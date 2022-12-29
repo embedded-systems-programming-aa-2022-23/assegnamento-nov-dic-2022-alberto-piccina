@@ -1,0 +1,1 @@
+/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer/rosidl_typesupport_introspection_c/rover_visualizer/msg/rosidl_typesupport_introspection_c__visibility_control.h

@@ -1,0 +1,6 @@
+{
+  "package_name": "rover_visualizer",
+  "non_idl_tuples": [
+    "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover_visualizer:msg/RoverPosition.msg"
+  ]
+}

@@ -1,0 +1,1 @@
+/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
