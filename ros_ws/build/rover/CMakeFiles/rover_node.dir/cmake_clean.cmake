@@ -1,4 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rover_node.dir/src/Map.cpp.o"
+  "CMakeFiles/rover_node.dir/src/Map.cpp.o.d"
+  "CMakeFiles/rover_node.dir/src/Robot.cpp.o"
+  "CMakeFiles/rover_node.dir/src/Robot.cpp.o.d"
+  "CMakeFiles/rover_node.dir/src/Server.cpp.o"
+  "CMakeFiles/rover_node.dir/src/Server.cpp.o.d"
   "CMakeFiles/rover_node.dir/src/main.cpp.o"
   "CMakeFiles/rover_node.dir/src/main.cpp.o.d"
   "CMakeFiles/rover_node.dir/src/publisher.cpp.o"

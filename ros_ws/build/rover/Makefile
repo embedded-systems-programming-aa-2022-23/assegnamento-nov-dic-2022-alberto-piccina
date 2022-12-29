@@ -210,6 +210,78 @@ rover_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/build
 .PHONY : rover_node/fast
 
+src/Map.o: src/Map.cpp.o
+.PHONY : src/Map.o
+
+# target to build an object file
+src/Map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Map.cpp.o
+.PHONY : src/Map.cpp.o
+
+src/Map.i: src/Map.cpp.i
+.PHONY : src/Map.i
+
+# target to preprocess a source file
+src/Map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Map.cpp.i
+.PHONY : src/Map.cpp.i
+
+src/Map.s: src/Map.cpp.s
+.PHONY : src/Map.s
+
+# target to generate assembly for a file
+src/Map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Map.cpp.s
+.PHONY : src/Map.cpp.s
+
+src/Robot.o: src/Robot.cpp.o
+.PHONY : src/Robot.o
+
+# target to build an object file
+src/Robot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Robot.cpp.o
+.PHONY : src/Robot.cpp.o
+
+src/Robot.i: src/Robot.cpp.i
+.PHONY : src/Robot.i
+
+# target to preprocess a source file
+src/Robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Robot.cpp.i
+.PHONY : src/Robot.cpp.i
+
+src/Robot.s: src/Robot.cpp.s
+.PHONY : src/Robot.s
+
+# target to generate assembly for a file
+src/Robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Robot.cpp.s
+.PHONY : src/Robot.cpp.s
+
+src/Server.o: src/Server.cpp.o
+.PHONY : src/Server.o
+
+# target to build an object file
+src/Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Server.cpp.o
+.PHONY : src/Server.cpp.o
+
+src/Server.i: src/Server.cpp.i
+.PHONY : src/Server.i
+
+# target to preprocess a source file
+src/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Server.cpp.i
+.PHONY : src/Server.cpp.i
+
+src/Server.s: src/Server.cpp.s
+.PHONY : src/Server.s
+
+# target to generate assembly for a file
+src/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rover_node.dir/build.make CMakeFiles/rover_node.dir/src/Server.cpp.s
+.PHONY : src/Server.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -274,6 +346,15 @@ help:
 	@echo "... rover_uninstall"
 	@echo "... uninstall"
 	@echo "... rover_node"
+	@echo "... src/Map.o"
+	@echo "... src/Map.i"
+	@echo "... src/Map.s"
+	@echo "... src/Robot.o"
+	@echo "... src/Robot.i"
+	@echo "... src/Robot.s"
+	@echo "... src/Server.o"
+	@echo "... src/Server.i"
+	@echo "... src/Server.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

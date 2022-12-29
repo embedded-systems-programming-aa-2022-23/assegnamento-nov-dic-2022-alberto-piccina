@@ -97,16 +97,64 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rover_node.dir/src/publisher.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp -o CMakeFiles/rover_node.dir/src/publisher.cpp.s
 
+CMakeFiles/rover_node.dir/src/Map.cpp.o: CMakeFiles/rover_node.dir/flags.make
+CMakeFiles/rover_node.dir/src/Map.cpp.o: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp
+CMakeFiles/rover_node.dir/src/Map.cpp.o: CMakeFiles/rover_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rover_node.dir/src/Map.cpp.o -MF CMakeFiles/rover_node.dir/src/Map.cpp.o.d -o CMakeFiles/rover_node.dir/src/Map.cpp.o -c /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp
+
+CMakeFiles/rover_node.dir/src/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rover_node.dir/src/Map.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp > CMakeFiles/rover_node.dir/src/Map.cpp.i
+
+CMakeFiles/rover_node.dir/src/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rover_node.dir/src/Map.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp -o CMakeFiles/rover_node.dir/src/Map.cpp.s
+
+CMakeFiles/rover_node.dir/src/Robot.cpp.o: CMakeFiles/rover_node.dir/flags.make
+CMakeFiles/rover_node.dir/src/Robot.cpp.o: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp
+CMakeFiles/rover_node.dir/src/Robot.cpp.o: CMakeFiles/rover_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rover_node.dir/src/Robot.cpp.o -MF CMakeFiles/rover_node.dir/src/Robot.cpp.o.d -o CMakeFiles/rover_node.dir/src/Robot.cpp.o -c /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp
+
+CMakeFiles/rover_node.dir/src/Robot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rover_node.dir/src/Robot.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp > CMakeFiles/rover_node.dir/src/Robot.cpp.i
+
+CMakeFiles/rover_node.dir/src/Robot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rover_node.dir/src/Robot.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp -o CMakeFiles/rover_node.dir/src/Robot.cpp.s
+
+CMakeFiles/rover_node.dir/src/Server.cpp.o: CMakeFiles/rover_node.dir/flags.make
+CMakeFiles/rover_node.dir/src/Server.cpp.o: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp
+CMakeFiles/rover_node.dir/src/Server.cpp.o: CMakeFiles/rover_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rover_node.dir/src/Server.cpp.o -MF CMakeFiles/rover_node.dir/src/Server.cpp.o.d -o CMakeFiles/rover_node.dir/src/Server.cpp.o -c /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp
+
+CMakeFiles/rover_node.dir/src/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rover_node.dir/src/Server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp > CMakeFiles/rover_node.dir/src/Server.cpp.i
+
+CMakeFiles/rover_node.dir/src/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rover_node.dir/src/Server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp -o CMakeFiles/rover_node.dir/src/Server.cpp.s
+
 # Object files for target rover_node
 rover_node_OBJECTS = \
 "CMakeFiles/rover_node.dir/src/main.cpp.o" \
-"CMakeFiles/rover_node.dir/src/publisher.cpp.o"
+"CMakeFiles/rover_node.dir/src/publisher.cpp.o" \
+"CMakeFiles/rover_node.dir/src/Map.cpp.o" \
+"CMakeFiles/rover_node.dir/src/Robot.cpp.o" \
+"CMakeFiles/rover_node.dir/src/Server.cpp.o"
 
 # External object files for target rover_node
 rover_node_EXTERNAL_OBJECTS =
 
 rover: CMakeFiles/rover_node.dir/src/main.cpp.o
 rover: CMakeFiles/rover_node.dir/src/publisher.cpp.o
+rover: CMakeFiles/rover_node.dir/src/Map.cpp.o
+rover: CMakeFiles/rover_node.dir/src/Robot.cpp.o
+rover: CMakeFiles/rover_node.dir/src/Server.cpp.o
 rover: CMakeFiles/rover_node.dir/build.make
 rover: /opt/ros/humble/lib/librclcpp.so
 rover: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_c.so
@@ -203,7 +251,7 @@ rover: /opt/ros/humble/lib/librcpputils.so
 rover: /opt/ros/humble/lib/librosidl_runtime_c.so
 rover: /opt/ros/humble/lib/librcutils.so
 rover: CMakeFiles/rover_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable rover"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rover"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rover_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

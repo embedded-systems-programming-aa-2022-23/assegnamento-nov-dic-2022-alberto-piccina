@@ -4,3 +4,5 @@ rover_visualizer.egg-info/PKG-INFO
 rover_visualizer.egg-info/SOURCES.txt
 rover_visualizer.egg-info/dependency_links.txt
 rover_visualizer.egg-info/top_level.txt
+rover_visualizer/msg/__init__.py
+rover_visualizer/msg/_rover_position.py

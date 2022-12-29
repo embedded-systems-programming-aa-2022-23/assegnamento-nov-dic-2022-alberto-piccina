@@ -1,0 +1,23 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KRobot.h: No such file or directory
+    3 | #include [01;31m[K"Robot.h"[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KServer.h: No such file or directory
+    3 | #include [01;31m[K"Server.h"[m[K
+      |          [01;31m[K^~~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KMap.h: No such file or directory
+    3 | #include [01;31m[K"Map.h"[m[K
+      |          [01;31m[K^~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:132: CMakeFiles/rover_node.dir/src/Server.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:118: CMakeFiles/rover_node.dir/src/Robot.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:104: CMakeFiles/rover_node.dir/src/Map.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

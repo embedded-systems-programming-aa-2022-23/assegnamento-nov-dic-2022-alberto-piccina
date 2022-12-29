@@ -48,40 +48,40 @@
 [  2%] [34m[1mGenerating C code for ROS interfaces[0m
 [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
 [  5%] Built target ament_cmake_python_symlink_rover_visualizer
-[  5%] Built target rover_visualizer__cpp
 running egg_info
 creating rover_visualizer.egg-info
 writing rover_visualizer.egg-info/PKG-INFO
 writing dependency_links to rover_visualizer.egg-info/dependency_links.txt
 writing top-level names to rover_visualizer.egg-info/top_level.txt
 writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'
-[  8%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
-[ 11%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
 reading manifest file 'rover_visualizer.egg-info/SOURCES.txt'
-[ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
 writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'
+[  5%] Built target rover_visualizer__cpp
+[  5%] Built target ament_cmake_python_build_rover_visualizer_egg
+[  8%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
 [ 17%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_c.dir/rosidl_generator_c/rover_visualizer/msg/detail/rover_position__functions.c.o[0m
-[ 17%] Built target ament_cmake_python_build_rover_visualizer_egg
 [ 20%] [32m[1mLinking C shared library librover_visualizer__rosidl_generator_c.so[0m
 [ 20%] Built target rover_visualizer__rosidl_generator_c
-[ 23%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
 [ 26%] [34m[1mGenerating C introspection for ROS interfaces[0m
-[ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
-[ 32%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rover_visualizer/msg/detail/rover_position__type_support.cpp.o[0m
-[ 35%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rover_visualizer/msg/rover_position__type_support.cpp.o[0m
+[ 29%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rover_visualizer/msg/rover_position__type_support.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rover_visualizer/msg/detail/rover_position__type_support.cpp.o[0m
 [ 38%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rover_visualizer/msg/detail/dds_fastrtps/rover_position__type_support.cpp.o[0m
 [ 41%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_c.dir/rosidl_typesupport_c/rover_visualizer/msg/rover_position__type_support.cpp.o[0m
-[ 44%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rover_visualizer/msg/detail/rover_position__type_support_c.cpp.o[0m
-[ 47%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rover_visualizer/msg/detail/rover_position__type_support.c.o[0m
+[ 44%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rover_visualizer/msg/detail/rover_position__type_support.c.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rover_visualizer/msg/detail/rover_position__type_support_c.cpp.o[0m
 [ 50%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_c.so[0m
-[ 52%] [32m[1mLinking C shared library librover_visualizer__rosidl_typesupport_introspection_c.so[0m
-[ 55%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_cpp.so[0m
+[ 52%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_cpp.so[0m
+[ 55%] [32m[1mLinking C shared library librover_visualizer__rosidl_typesupport_introspection_c.so[0m
 [ 55%] Built target rover_visualizer__rosidl_typesupport_c
-[ 55%] Built target rover_visualizer__rosidl_typesupport_introspection_c
 [ 55%] Built target rover_visualizer__rosidl_typesupport_cpp
-[ 58%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/main.cpp.o[0m
-[ 61%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/Visualizer.cpp.o[0m
-[ 64%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_introspection_cpp.so[0m
+[ 55%] Built target rover_visualizer__rosidl_typesupport_introspection_c
+[ 58%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_introspection_cpp.so[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/main.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/Visualizer.cpp.o[0m
 [ 67%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_cpp.so[0m
 [ 67%] Built target rover_visualizer__rosidl_typesupport_introspection_cpp
 [ 70%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_c.so[0m
@@ -93,15 +93,15 @@ writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'
 [ 76%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_py.dir/rosidl_generator_py/rover_visualizer/msg/_rover_position_s.c.o[0m
 [ 79%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/librover_visualizer__rosidl_generator_py.so[0m
 [ 79%] Built target rover_visualizer__rosidl_generator_py
-[ 88%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c.o[0m
-[ 88%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 82%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c.o[0m
 [ 88%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_c.c.o[0m
-[ 91%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
-[ 94%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
-[ 97%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 91%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 94%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
 [ 97%] Built target rover_visualizer__rosidl_typesupport_fastrtps_c__pyext
-[ 97%] Built target rover_visualizer__rosidl_typesupport_c__pyext
 [ 97%] Built target rover_visualizer__rosidl_typesupport_introspection_c__pyext
+[ 97%] Built target rover_visualizer__rosidl_typesupport_c__pyext
 [100%] [32m[1mLinking CXX executable rover_visualizer[0m
 [100%] Built target rover_visualizer_node
 -- Install configuration: ""

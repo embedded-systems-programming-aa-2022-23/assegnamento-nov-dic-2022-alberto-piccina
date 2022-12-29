@@ -1,0 +1,436 @@
+[0.000000] (-) TimerEvent: {}
+[0.000146] (rover_visualizer) JobQueued: {'identifier': 'rover_visualizer', 'dependencies': OrderedDict()}
+[0.000193] (rover) JobQueued: {'identifier': 'rover', 'dependencies': OrderedDict([('rover_visualizer', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer')])}
+[0.000211] (rover_visualizer) JobStarted: {'identifier': 'rover_visualizer'}
+[0.008256] (rover_visualizer) JobProgress: {'identifier': 'rover_visualizer', 'progress': 'cmake'}
+[0.008327] (rover_visualizer) Command: {'cmd': ['/usr/bin/cmake', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover_visualizer', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer'], 'cwd': '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alberto'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alberto'), ('OLDPWD', '/home/alberto'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1792'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alberto'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alberto'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alb-server:@/tmp/.ICE-unix/1756,unix/alb-server:/tmp/.ICE-unix/1756'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d078c6c0_a3ac_43df_b1b2_c8b9f1a3a19c'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.HIWLX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.302'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.101759] (-) TimerEvent: {}
+[0.168510] (rover_visualizer) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[0.201873] (-) TimerEvent: {}
+[0.220243] (rover_visualizer) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[0.229193] (rover_visualizer) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.301623] (rover_visualizer) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.301949] (-) TimerEvent: {}
+[0.308850] (rover_visualizer) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.309328] (rover_visualizer) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.310206] (rover_visualizer) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.313198] (rover_visualizer) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.392304] (rover_visualizer) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.399279] (rover_visualizer) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.399786] (rover_visualizer) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.400148] (rover_visualizer) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.402068] (-) TimerEvent: {}
+[0.410146] (rover_visualizer) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.502261] (-) TimerEvent: {}
+[0.544443] (rover_visualizer) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[0.586101] (rover_visualizer) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.603043] (-) TimerEvent: {}
+[0.607561] (rover_visualizer) StdoutLine: {'line': b'-- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.650909] (rover_visualizer) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.655752] (rover_visualizer) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.662550] (rover_visualizer) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.675608] (rover_visualizer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.692323] (rover_visualizer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.705601] (-) TimerEvent: {}
+[0.757106] (rover_visualizer) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.759104] (rover_visualizer) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.806493] (-) TimerEvent: {}
+[0.847238] (rover_visualizer) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.871100] (rover_visualizer) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.910509] (-) TimerEvent: {}
+[0.913615] (rover_visualizer) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.921748] (rover_visualizer) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.990594] (rover_visualizer) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.991616] (rover_visualizer) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.010651] (-) TimerEvent: {}
+[1.063161] (rover_visualizer) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.064499] (rover_visualizer) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.112378] (-) TimerEvent: {}
+[1.213518] (-) TimerEvent: {}
+[1.223892] (rover_visualizer) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.235074] (rover_visualizer) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.2 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.281030] (rover_visualizer) StdoutLine: {'line': b'-- Found visualization_msgs: 4.2.2 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[1.314731] (-) TimerEvent: {}
+[1.419316] (-) TimerEvent: {}
+[1.519736] (-) TimerEvent: {}
+[1.620477] (-) TimerEvent: {}
+[1.720896] (-) TimerEvent: {}
+[1.771773] (rover_visualizer) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.820983] (-) TimerEvent: {}
+[1.921604] (-) TimerEvent: {}
+[2.022979] (-) TimerEvent: {}
+[2.123258] (-) TimerEvent: {}
+[2.209721] (rover_visualizer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.223341] (-) TimerEvent: {}
+[2.323634] (-) TimerEvent: {}
+[2.380209] (rover_visualizer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.397726] (rover_visualizer) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.6", minimum required is "3.6") \n'}
+[2.399389] (rover_visualizer) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.421580] (rover_visualizer) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.6", minimum required is "3.5") \n'}
+[2.422003] (rover_visualizer) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[2.422075] (rover_visualizer) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[2.422115] (rover_visualizer) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[2.423718] (-) TimerEvent: {}
+[2.437561] (rover_visualizer) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[2.523229] (rover_visualizer) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.523821] (-) TimerEvent: {}
+[2.567930] (rover_visualizer) StdoutLine: {'line': b'-- Generating done\n'}
+[2.572709] (rover_visualizer) StdoutLine: {'line': b'-- Build files have been written to: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer\n'}
+[2.582073] (rover_visualizer) CommandEnded: {'returncode': 0}
+[2.582599] (rover_visualizer) JobProgress: {'identifier': 'rover_visualizer', 'progress': 'build'}
+[2.582924] (rover_visualizer) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer', '--', '-j6', '-l6'], 'cwd': '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alberto'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alberto'), ('OLDPWD', '/home/alberto'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1792'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alberto'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alberto'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alb-server:@/tmp/.ICE-unix/1756,unix/alb-server:/tmp/.ICE-unix/1756'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d078c6c0_a3ac_43df_b1b2_c8b9f1a3a19c'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.HIWLX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.302'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.620646] (rover_visualizer) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[2.623946] (-) TimerEvent: {}
+[2.631331] (rover_visualizer) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.638464] (rover_visualizer) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_symlink_rover_visualizer\n'}
+[2.724071] (-) TimerEvent: {}
+[2.811863] (rover_visualizer) StdoutLine: {'line': b'running egg_info\n'}
+[2.812162] (rover_visualizer) StdoutLine: {'line': b'creating rover_visualizer.egg-info\n'}
+[2.812392] (rover_visualizer) StdoutLine: {'line': b'writing rover_visualizer.egg-info/PKG-INFO\n'}
+[2.812687] (rover_visualizer) StdoutLine: {'line': b'writing dependency_links to rover_visualizer.egg-info/dependency_links.txt\n'}
+[2.812738] (rover_visualizer) StdoutLine: {'line': b'writing top-level names to rover_visualizer.egg-info/top_level.txt\n'}
+[2.813017] (rover_visualizer) StdoutLine: {'line': b"writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'\n"}
+[2.814490] (rover_visualizer) StdoutLine: {'line': b"reading manifest file 'rover_visualizer.egg-info/SOURCES.txt'\n"}
+[2.814807] (rover_visualizer) StdoutLine: {'line': b"writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'\n"}
+[2.824724] (-) TimerEvent: {}
+[2.830193] (rover_visualizer) StdoutLine: {'line': b'[  5%] Built target rover_visualizer__cpp\n'}
+[2.837352] (rover_visualizer) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_build_rover_visualizer_egg\n'}
+[2.840581] (rover_visualizer) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.843738] (rover_visualizer) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.843839] (rover_visualizer) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.854185] (rover_visualizer) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_c.dir/rosidl_generator_c/rover_visualizer/msg/detail/rover_position__functions.c.o\x1b[0m\n'}
+[2.908631] (rover_visualizer) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library librover_visualizer__rosidl_generator_c.so\x1b[0m\n'}
+[2.925056] (-) TimerEvent: {}
+[2.951213] (rover_visualizer) StdoutLine: {'line': b'[ 20%] Built target rover_visualizer__rosidl_generator_c\n'}
+[2.963810] (rover_visualizer) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.969275] (rover_visualizer) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.970150] (rover_visualizer) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.025157] (-) TimerEvent: {}
+[3.031868] (rover_visualizer) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rover_visualizer/msg/rover_position__type_support.cpp.o\x1b[0m\n'}
+[3.043519] (rover_visualizer) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rover_visualizer/msg/detail/rover_position__type_support.cpp.o\x1b[0m\n'}
+[3.088395] (rover_visualizer) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rover_visualizer/msg/detail/dds_fastrtps/rover_position__type_support.cpp.o\x1b[0m\n'}
+[3.125270] (-) TimerEvent: {}
+[3.177260] (rover_visualizer) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_c.dir/rosidl_typesupport_c/rover_visualizer/msg/rover_position__type_support.cpp.o\x1b[0m\n'}
+[3.219319] (rover_visualizer) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rover_visualizer/msg/detail/rover_position__type_support.c.o\x1b[0m\n'}
+[3.225387] (-) TimerEvent: {}
+[3.229797] (rover_visualizer) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rover_visualizer/msg/detail/rover_position__type_support_c.cpp.o\x1b[0m\n'}
+[3.245999] (rover_visualizer) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_c.so\x1b[0m\n'}
+[3.261079] (rover_visualizer) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[3.284650] (rover_visualizer) StdoutLine: {'line': b'[ 55%] \x1b[32m\x1b[1mLinking C shared library librover_visualizer__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[3.318692] (rover_visualizer) StdoutLine: {'line': b'[ 55%] Built target rover_visualizer__rosidl_typesupport_c\n'}
+[3.325778] (-) TimerEvent: {}
+[3.330313] (rover_visualizer) StdoutLine: {'line': b'[ 55%] Built target rover_visualizer__rosidl_typesupport_cpp\n'}
+[3.344052] (rover_visualizer) StdoutLine: {'line': b'[ 55%] Built target rover_visualizer__rosidl_typesupport_introspection_c\n'}
+[3.345687] (rover_visualizer) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[3.353383] (rover_visualizer) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/main.cpp.o\x1b[0m\n'}
+[3.357959] (rover_visualizer) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/Visualizer.cpp.o\x1b[0m\n'}
+[3.425889] (-) TimerEvent: {}
+[3.426479] (rover_visualizer) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.454546] (rover_visualizer) StdoutLine: {'line': b'[ 67%] Built target rover_visualizer__rosidl_typesupport_introspection_cpp\n'}
+[3.520334] (rover_visualizer) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[3.525996] (-) TimerEvent: {}
+[3.530092] (rover_visualizer) StdoutLine: {'line': b'[ 70%] Built target rover_visualizer__rosidl_typesupport_fastrtps_cpp\n'}
+[3.585434] (rover_visualizer) StdoutLine: {'line': b'[ 70%] Built target rover_visualizer__rosidl_typesupport_fastrtps_c\n'}
+[3.606400] (rover_visualizer) StdoutLine: {'line': b'[ 70%] Built target rover_visualizer\n'}
+[3.626150] (-) TimerEvent: {}
+[3.627672] (rover_visualizer) StdoutLine: {'line': b'[ 73%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.726260] (-) TimerEvent: {}
+[3.826541] (-) TimerEvent: {}
+[3.866029] (rover_visualizer) StdoutLine: {'line': b'[ 73%] Built target rover_visualizer__py\n'}
+[3.887142] (rover_visualizer) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_py.dir/rosidl_generator_py/rover_visualizer/msg/_rover_position_s.c.o\x1b[0m\n'}
+[3.927368] (-) TimerEvent: {}
+[4.016020] (rover_visualizer) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/rover_visualizer/librover_visualizer__rosidl_generator_py.so\x1b[0m\n'}
+[4.027567] (-) TimerEvent: {}
+[4.060252] (rover_visualizer) StdoutLine: {'line': b'[ 79%] Built target rover_visualizer__rosidl_generator_py\n'}
+[4.086742] (rover_visualizer) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[4.087028] (rover_visualizer) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[4.107218] (rover_visualizer) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[4.127717] (-) TimerEvent: {}
+[4.196173] (rover_visualizer) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[4.199109] (rover_visualizer) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[4.209020] (rover_visualizer) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[4.228519] (-) TimerEvent: {}
+[4.236081] (rover_visualizer) StdoutLine: {'line': b'[ 97%] Built target rover_visualizer__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.238577] (rover_visualizer) StdoutLine: {'line': b'[ 97%] Built target rover_visualizer__rosidl_typesupport_introspection_c__pyext\n'}
+[4.252461] (rover_visualizer) StdoutLine: {'line': b'[ 97%] Built target rover_visualizer__rosidl_typesupport_c__pyext\n'}
+[4.330271] (-) TimerEvent: {}
+[4.430664] (-) TimerEvent: {}
+[4.531049] (-) TimerEvent: {}
+[4.632015] (-) TimerEvent: {}
+[4.732378] (-) TimerEvent: {}
+[4.837148] (-) TimerEvent: {}
+[4.937769] (-) TimerEvent: {}
+[5.038221] (-) TimerEvent: {}
+[5.138570] (-) TimerEvent: {}
+[5.240270] (-) TimerEvent: {}
+[5.340966] (-) TimerEvent: {}
+[5.444021] (-) TimerEvent: {}
+[5.548932] (-) TimerEvent: {}
+[5.649654] (-) TimerEvent: {}
+[5.749987] (-) TimerEvent: {}
+[5.851536] (-) TimerEvent: {}
+[5.953842] (-) TimerEvent: {}
+[6.055422] (-) TimerEvent: {}
+[6.155807] (-) TimerEvent: {}
+[6.256213] (-) TimerEvent: {}
+[6.359428] (-) TimerEvent: {}
+[6.459716] (-) TimerEvent: {}
+[6.560102] (-) TimerEvent: {}
+[6.660403] (-) TimerEvent: {}
+[6.760712] (-) TimerEvent: {}
+[6.861913] (-) TimerEvent: {}
+[6.962289] (-) TimerEvent: {}
+[7.064032] (-) TimerEvent: {}
+[7.165564] (-) TimerEvent: {}
+[7.265874] (-) TimerEvent: {}
+[7.370329] (-) TimerEvent: {}
+[7.470643] (-) TimerEvent: {}
+[7.575331] (-) TimerEvent: {}
+[7.677966] (-) TimerEvent: {}
+[7.778440] (-) TimerEvent: {}
+[7.881826] (-) TimerEvent: {}
+[7.986481] (-) TimerEvent: {}
+[8.090443] (-) TimerEvent: {}
+[8.195187] (-) TimerEvent: {}
+[8.295472] (-) TimerEvent: {}
+[8.395826] (-) TimerEvent: {}
+[8.500459] (-) TimerEvent: {}
+[8.601364] (-) TimerEvent: {}
+[8.701667] (-) TimerEvent: {}
+[8.804584] (-) TimerEvent: {}
+[8.905990] (-) TimerEvent: {}
+[9.006296] (-) TimerEvent: {}
+[9.110951] (-) TimerEvent: {}
+[9.211857] (-) TimerEvent: {}
+[9.312192] (-) TimerEvent: {}
+[9.413537] (-) TimerEvent: {}
+[9.472214] (rover_visualizer) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable rover_visualizer\x1b[0m\n'}
+[9.513642] (-) TimerEvent: {}
+[9.613945] (-) TimerEvent: {}
+[9.716717] (-) TimerEvent: {}
+[9.819316] (-) TimerEvent: {}
+[9.885845] (rover_visualizer) StdoutLine: {'line': b'[100%] Built target rover_visualizer_node\n'}
+[9.898999] (rover_visualizer) CommandEnded: {'returncode': 0}
+[9.919405] (-) TimerEvent: {}
+[9.966738] (rover_visualizer) JobProgress: {'identifier': 'rover_visualizer', 'progress': 'install'}
+[9.975273] (rover_visualizer) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer'], 'cwd': '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alberto'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alberto'), ('OLDPWD', '/home/alberto'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1792'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alberto'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alberto'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alb-server:@/tmp/.ICE-unix/1756,unix/alb-server:/tmp/.ICE-unix/1756'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d078c6c0_a3ac_43df_b1b2_c8b9f1a3a19c'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.HIWLX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.302'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[9.982373] (rover_visualizer) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.983706] (rover_visualizer) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[9.984005] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/rosidl_interfaces/rover_visualizer\n'}
+[9.992554] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__functions.h\n'}
+[10.000290] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__struct.h\n'}
+[10.009136] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__type_support.h\n'}
+[10.016949] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_generator_c__visibility_control.h\n'}
+[10.020029] (-) TimerEvent: {}
+[10.025859] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rover_position.h\n'}
+[10.033782] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/library_path.sh\n'}
+[10.041888] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/library_path.dsv\n'}
+[10.050188] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_fastrtps_c.h\n'}
+[10.059195] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[10.067745] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__builder.hpp\n'}
+[10.077075] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__struct.hpp\n'}
+[10.085350] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__traits.hpp\n'}
+[10.093768] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rover_position.hpp\n'}
+[10.102763] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.110588] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[10.119639] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_introspection_c.h\n'}
+[10.120200] (-) TimerEvent: {}
+[10.127703] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[10.136251] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.144948] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/pythonpath.sh\n'}
+[10.155273] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/pythonpath.dsv\n'}
+[10.164194] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[10.172083] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[10.181111] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[10.189832] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[10.199056] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/__init__.py\n'}
+[10.206657] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_c.c\n'}
+[10.215365] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[10.221162] (-) TimerEvent: {}
+[10.223306] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[10.232027] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/librover_visualizer__rosidl_generator_py.so\n'}
+[10.239990] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/__init__.py\n'}
+[10.249267] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/_rover_position.py\n'}
+[10.258289] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/_rover_position_s.c\n'}
+[10.267190] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.274946] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.283535] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.321618] (-) TimerEvent: {}
+[10.355873] (rover_visualizer) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.358104] (rover_visualizer) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.422340] (-) TimerEvent: {}
+[10.440690] (rover_visualizer) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[10.441142] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/msg/RoverPosition.idl\n'}
+[10.449736] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/msg/RoverPosition.msg\n'}
+[10.460896] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/rover_visualizer/rover_visualizer\n'}
+[10.469559] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/config/mars.rviz\n'}
+[10.478669] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rover_launch.py\n'}
+[10.486241] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rover_visualizer_launch.py\n'}
+[10.493849] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rviz_launch.py\n'}
+[10.504003] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/package_run_dependencies/rover_visualizer\n'}
+[10.513169] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/parent_prefix_path/rover_visualizer\n'}
+[10.522353] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/ament_prefix_path.sh\n'}
+[10.522464] (-) TimerEvent: {}
+[10.530554] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/ament_prefix_path.dsv\n'}
+[10.539396] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/path.sh\n'}
+[10.547932] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/path.dsv\n'}
+[10.556071] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.bash\n'}
+[10.565136] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.sh\n'}
+[10.573883] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.zsh\n'}
+[10.581787] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.dsv\n'}
+[10.589765] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/package.dsv\n'}
+[10.598252] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/packages/rover_visualizer\n'}
+[10.607390] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake-extras.cmake\n'}
+[10.615402] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[10.622588] (-) TimerEvent: {}
+[10.622851] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[10.630412] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[10.637994] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[10.645215] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[10.653403] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[10.661728] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizerConfig.cmake\n'}
+[10.669842] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizerConfig-version.cmake\n'}
+[10.678779] (rover_visualizer) StdoutLine: {'line': b'-- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/package.xml\n'}
+[10.687054] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_c.so\n'}
+[10.687451] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_c.so" to ""\n'}
+[10.687613] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_c.so\n'}
+[10.687830] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[10.687952] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_cpp.so\n'}
+[10.688180] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[10.688276] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_c.so\n'}
+[10.688588] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_c.so" to ""\n'}
+[10.688728] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_c.so\n'}
+[10.689277] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_c.so" to ""\n'}
+[10.689368] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_cpp.so\n'}
+[10.689625] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[10.689707] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_cpp.so\n'}
+[10.689850] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_cpp.so" to ""\n'}
+[10.723915] (-) TimerEvent: {}
+[10.729780] (rover_visualizer) StdoutLine: {'line': b"Listing '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer'...\n"}
+[10.730110] (rover_visualizer) StdoutLine: {'line': b"Compiling '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/__init__.py'...\n"}
+[10.730183] (rover_visualizer) StdoutLine: {'line': b"Listing '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg'...\n"}
+[10.730226] (rover_visualizer) StdoutLine: {'line': b"Compiling '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/__init__.py'...\n"}
+[10.730356] (rover_visualizer) StdoutLine: {'line': b"Compiling '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/_rover_position.py'...\n"}
+[10.733458] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_py.so\n'}
+[10.733939] (rover_visualizer) StdoutLine: {'line': b'-- Set runtime path of "/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_py.so" to ""\n'}
+[10.734062] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cExport.cmake\n'}
+[10.734291] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cExport-noconfig.cmake\n'}
+[10.734414] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[10.734869] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[10.734943] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cppExport.cmake\n'}
+[10.735014] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[10.735176] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[10.735349] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cExport.cmake\n'}
+[10.735514] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[10.735564] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cExport.cmake\n'}
+[10.735631] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[10.735688] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[10.735732] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[10.735867] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cppExport.cmake\n'}
+[10.735915] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[10.735986] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_pyExport.cmake\n'}
+[10.736038] (rover_visualizer) StdoutLine: {'line': b'-- Installing: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_pyExport-noconfig.cmake\n'}
+[10.738346] (rover_visualizer) CommandEnded: {'returncode': 0}
+[10.825805] (-) TimerEvent: {}
+[10.830696] (rover_visualizer) JobEnded: {'identifier': 'rover_visualizer', 'rc': 0}
+[10.831103] (rover) JobStarted: {'identifier': 'rover'}
+[10.837767] (rover) JobProgress: {'identifier': 'rover', 'progress': 'cmake'}
+[10.838536] (rover) Command: {'cmd': ['/usr/bin/cmake', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover'], 'cwd': '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alberto'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alberto'), ('OLDPWD', '/home/alberto'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1792'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alberto'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alberto'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alb-server:@/tmp/.ICE-unix/1756,unix/alb-server:/tmp/.ICE-unix/1756'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d078c6c0_a3ac_43df_b1b2_c8b9f1a3a19c'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.HIWLX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.302'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble')]), 'shell': False}
+[10.903215] (rover) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[10.926003] (-) TimerEvent: {}
+[10.956513] (rover) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[10.964025] (rover) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[11.026116] (-) TimerEvent: {}
+[11.030520] (rover) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[11.037493] (rover) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[11.037717] (rover) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[11.038155] (rover) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[11.040651] (rover) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[11.118215] (rover) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[11.125257] (rover) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[11.125617] (rover) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[11.126052] (rover) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[11.126216] (-) TimerEvent: {}
+[11.127636] (rover) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[11.226430] (-) TimerEvent: {}
+[11.266270] (rover) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[11.312570] (rover) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[11.327591] (-) TimerEvent: {}
+[11.332349] (rover) StdoutLine: {'line': b'-- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[11.376468] (rover) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[11.380420] (rover) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[11.387557] (rover) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[11.399312] (rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[11.415994] (rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[11.428680] (-) TimerEvent: {}
+[11.480176] (rover) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[11.482200] (rover) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[11.528942] (-) TimerEvent: {}
+[11.569819] (rover) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[11.593378] (rover) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[11.629061] (-) TimerEvent: {}
+[11.635141] (rover) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[11.642714] (rover) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[11.712498] (rover) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[11.713233] (rover) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[11.729651] (-) TimerEvent: {}
+[11.783875] (rover) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[11.785250] (rover) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[11.830889] (-) TimerEvent: {}
+[11.934302] (-) TimerEvent: {}
+[11.943507] (rover) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.2 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[11.989282] (rover) StdoutLine: {'line': b'-- Found rover_visualizer: 0.0.0 (/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake)\n'}
+[12.035741] (-) TimerEvent: {}
+[12.140559] (-) TimerEvent: {}
+[12.244177] (-) TimerEvent: {}
+[12.345377] (-) TimerEvent: {}
+[12.445784] (-) TimerEvent: {}
+[12.447821] (rover) StdoutLine: {'line': b'-- Configuring done\n'}
+[12.458692] (rover) StdoutLine: {'line': b'-- Generating done\n'}
+[12.460452] (rover) StdoutLine: {'line': b'-- Build files have been written to: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover\n'}
+[12.466972] (rover) CommandEnded: {'returncode': 0}
+[12.468669] (rover) JobProgress: {'identifier': 'rover', 'progress': 'build'}
+[12.468705] (rover) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover', '--', '-j6', '-l6'], 'cwd': '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alberto'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alberto'), ('OLDPWD', '/home/alberto'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1792'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alberto'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alberto'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alb-server:@/tmp/.ICE-unix/1756,unix/alb-server:/tmp/.ICE-unix/1756'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d078c6c0_a3ac_43df_b1b2_c8b9f1a3a19c'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.HIWLX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.302'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble')]), 'shell': False}
+[12.518251] (rover) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o\x1b[0m\n'}
+[12.518545] (rover) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o\x1b[0m\n'}
+[12.518812] (rover) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o\x1b[0m\n'}
+[12.519008] (rover) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o\x1b[0m\n'}
+[12.519624] (rover) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o\x1b[0m\n'}
+[12.530515] (rover) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:3:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KMap.h: No such file or directory\n'}
+[12.530739] (rover) StderrLine: {'line': b'    3 | #include \x1b[01;31m\x1b[K"Map.h"\x1b[m\x1b[K\n'}
+[12.530957] (rover) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[12.531324] (rover) StderrLine: {'line': b'compilation terminated.\n'}
+[12.531378] (rover) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp:3:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KServer.h: No such file or directory\n'}
+[12.531417] (rover) StderrLine: {'line': b'    3 | #include \x1b[01;31m\x1b[K"Server.h"\x1b[m\x1b[K\n'}
+[12.531453] (rover) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.531489] (rover) StderrLine: {'line': b'compilation terminated.\n'}
+[12.532102] (rover) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:3:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KRobot.h: No such file or directory\n'}
+[12.532214] (rover) StderrLine: {'line': b'    3 | #include \x1b[01;31m\x1b[K"Robot.h"\x1b[m\x1b[K\n'}
+[12.532279] (rover) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[12.532318] (rover) StderrLine: {'line': b'compilation terminated.\n'}
+[12.532355] (rover) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:132: CMakeFiles/rover_node.dir/src/Server.cpp.o] Error 1\n'}
+[12.532393] (rover) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[12.532431] (rover) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:104: CMakeFiles/rover_node.dir/src/Map.cpp.o] Error 1\n'}
+[12.533153] (rover) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:118: CMakeFiles/rover_node.dir/src/Robot.cpp.o] Error 1\n'}
+[12.545868] (-) TimerEvent: {}
+[12.647923] (-) TimerEvent: {}
+[12.715512] (rover) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:9\x1b[m\x1b[K,\n'}
+[12.715872] (rover) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2\x1b[m\x1b[K:\n'}
+[12.716063] (rover) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:6:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KMap.h: No such file or directory\n'}
+[12.716139] (rover) StderrLine: {'line': b'    6 | #include \x1b[01;31m\x1b[K"Map.h"\x1b[m\x1b[K\n'}
+[12.716194] (rover) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[12.716247] (rover) StderrLine: {'line': b'compilation terminated.\n'}
+[12.716298] (rover) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:9\x1b[m\x1b[K,\n'}
+[12.716354] (rover) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:2\x1b[m\x1b[K:\n'}
+[12.716424] (rover) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:6:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[KMap.h: No such file or directory\n'}
+[12.716478] (rover) StderrLine: {'line': b'    6 | #include \x1b[01;31m\x1b[K"Map.h"\x1b[m\x1b[K\n'}
+[12.716528] (rover) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[12.716570] (rover) StderrLine: {'line': b'compilation terminated.\n'}
+[12.718207] (rover) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:90: CMakeFiles/rover_node.dir/src/publisher.cpp.o] Error 1\n'}
+[12.719279] (rover) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:76: CMakeFiles/rover_node.dir/src/main.cpp.o] Error 1\n'}
+[12.719541] (rover) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2\n'}
+[12.720049] (rover) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[12.722294] (rover) CommandEnded: {'returncode': 2}
+[12.748813] (-) TimerEvent: {}
+[12.762182] (rover) JobEnded: {'identifier': 'rover', 'rc': 2}
+[12.773390] (-) EventReactorShutdown: {}

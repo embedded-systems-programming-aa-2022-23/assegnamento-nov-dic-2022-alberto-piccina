@@ -1,0 +1,25 @@
+[0.009s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': AMENT_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble LD_LIBRARY_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.061s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[0.061s] [ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[0.061s] [ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o[0m
+[0.061s] [ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[0.062s] [ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[0.073s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KRobot.h: No such file or directory
+[0.073s]     3 | #include [01;31m[K"Robot.h"[m[K
+[0.073s]       |          [01;31m[K^~~~~~~~~[m[K
+[0.073s] compilation terminated.
+[0.074s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KServer.h: No such file or directory
+[0.074s]     3 | #include [01;31m[K"Server.h"[m[K
+[0.074s]       |          [01;31m[K^~~~~~~~~~[m[K
+[0.074s] compilation terminated.
+[0.075s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:3:10:[m[K [01;31m[Kfatal error: [m[KMap.h: No such file or directory
+[0.081s]     3 | #include [01;31m[K"Map.h"[m[K
+[0.082s]       |          [01;31m[K^~~~~~~[m[K
+[0.082s] compilation terminated.
+[0.082s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:132: CMakeFiles/rover_node.dir/src/Server.cpp.o] Error 1
+[0.082s] gmake[2]: *** Waiting for unfinished jobs....
+[0.082s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:118: CMakeFiles/rover_node.dir/src/Robot.cpp.o] Error 1
+[0.082s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:104: CMakeFiles/rover_node.dir/src/Map.cpp.o] Error 1
+[4.264s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+[4.264s] gmake: *** [Makefile:146: all] Error 2
+[4.267s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '2': AMENT_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/opt/ros/humble LD_LIBRARY_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6

@@ -12,10 +12,17 @@ find_package(geometry_msgs REQUIRED)
 
 find_package(rover_visualizer REQUIRED)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Debug)
+
 add_executable(${PROJECT_NAME}_node
     src/main.cpp
     src/publisher.cpp
     # Add your cpp files here
+    src/Map.cpp
+    src/Robot.cpp
+    src/Server.cpp
 )
 
 set_target_properties(${PROJECT_NAME}_node
