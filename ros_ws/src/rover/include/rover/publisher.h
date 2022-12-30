@@ -15,21 +15,20 @@ extern rclcpp::Publisher<rover_visualizer::msg::RoverPosition>::SharedPtr
 
 class Rover {
  public:
-  Rover(int id, double speed);
+  Rover(Robot robot, Server& monitor, int id, double speed);
   ~Rover();
 
   void timer_callback();
-
-  void setX_pos(double x_pos);
-  void setY_pos(double y_pos);
+  void new_goal();
+  void operator()();
 
  private:
   rclcpp::TimerBase::SharedPtr timer_{};
 
-  int id_{-1};
+  Robot robot_;
+  Server& monitor_;
+  int id_;
   double speed_{0.};
-  double x_pos_{0.};
-  double y_pos_{0.};
 };
 
 #endif

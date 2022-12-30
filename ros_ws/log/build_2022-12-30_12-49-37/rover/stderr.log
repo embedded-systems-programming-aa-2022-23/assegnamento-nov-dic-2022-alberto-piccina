@@ -1,0 +1,33 @@
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:3[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:[m[K In constructor ‘[01m[KRobot::Robot(Position, Map)[m[K’:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:46:14:[m[K [01;35m[Kwarning: [m[K‘[01m[KRobot::coordinates_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   46 |     Position [01;35m[Kcoordinates_[m[K;
+      |              [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:43:13:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KMap Robot::map_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   43 |         Map [01;35m[Kmap_[m[K;
+      |             [01;35m[K^~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KRobot[m[K::Robot(Position start_position, Map map)
+      | [01;35m[K^~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:3[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:[m[K In constructor ‘[01m[KRobot::Robot(Map)[m[K’:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:46:14:[m[K [01;35m[Kwarning: [m[K‘[01m[KRobot::coordinates_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   46 |     Position [01;35m[Kcoordinates_[m[K;
+      |              [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:43:13:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KMap Robot::map_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   43 |         Map [01;35m[Kmap_[m[K;
+      |             [01;35m[K^~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Robot.cpp:22:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   22 | [01;35m[KRobot[m[K::Robot(Map map)
+      | [01;35m[K^~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:[m[K In member function ‘[01m[Kvoid Rover::timer_callback()[m[K’:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:45:62:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Map) ()[m[K’
+   45 |   message.position.x = robot_.coordinates().x() + [01;31m[Krobot_.map_()[m[K.origin().x();
+      |                                                   [01;31m[K~~~~~~~~~~~^~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:46:62:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Map) ()[m[K’
+   46 |   message.position.y = robot_.coordinates().y() + [01;31m[Krobot_.map_()[m[K.origin().y();
+      |                                                   [01;31m[K~~~~~~~~~~~^~[m[K
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:90: CMakeFiles/rover_node.dir/src/publisher.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

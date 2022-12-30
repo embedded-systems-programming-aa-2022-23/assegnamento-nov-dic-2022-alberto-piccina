@@ -1,0 +1,3 @@
+[35m[1mConsolidate compiler generated dependencies of target rover_node[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m

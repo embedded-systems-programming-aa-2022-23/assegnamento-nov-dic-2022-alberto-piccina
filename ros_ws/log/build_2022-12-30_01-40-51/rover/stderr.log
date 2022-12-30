@@ -1,0 +1,108 @@
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:[m[K In constructor ‘[01m[KRover::Rover(Robot, Server, int, double)[m[K’:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:29:10:[m[K [01;35m[Kwarning: [m[K‘[01m[KRover::monitor_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   29 |   Server [01;35m[Kmonitor_[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:27:7:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kint Rover::id_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   27 |   int [01;35m[Kid_[m[K{-1};
+      |       [01;35m[K^~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:12:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   12 | [01;35m[KRover[m[K::Rover(Robot robot, Server monitor, int id, double speed)
+      | [01;35m[K^~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:13:26:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[KServer::Server(const Server&)[m[K’
+   13 |         : robot_{robot}, [01;31m[Kmonitor_{monitor}[m[K, id_(id), speed_(speed)
+      |                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;36m[Knote: [m[K‘[01m[KServer::Server(const Server&)[m[K’ is implicitly deleted because the default definition would be ill-formed:
+   21 | class [01;36m[KServer[m[K {
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::mutex::mutex(const std::mutex&)[m[K’
+In file included from [01m[K/usr/include/c++/11/bits/atomic_wait.h:49[m[K,
+                 from [01m[K/usr/include/c++/11/bits/atomic_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/bits/shared_ptr_atomic.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/memory:78[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:4[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/usr/include/c++/11/bits/std_mutex.h:94:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   94 |     [01;36m[Kmutex[m[K(const mutex&) = delete;
+      |     [01;36m[K^~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::condition_variable::condition_variable(const std::condition_variable&)[m[K’
+   21 | class [01;31m[KServer[m[K {
+      |       [01;31m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/future:39[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:4[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/usr/include/c++/11/condition_variable:86:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     [01;36m[Kcondition_variable[m[K(const condition_variable&) = delete;
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::condition_variable::condition_variable(const std::condition_variable&)[m[K’
+   21 | class [01;31m[KServer[m[K {
+      |       [01;31m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/future:39[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:4[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[01m[K/usr/include/c++/11/condition_variable:86:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     [01;36m[Kcondition_variable[m[K(const condition_variable&) = delete;
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:67:77:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[KServer::Server(const Server&)[m[K’
+   67 |         list_of_rovers.push_back(Rover(list_of_robots.at(i), monitor, i, 0.5[01;31m[K)[m[K);
+      |                                                                             [01;31m[K^[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;36m[Knote: [m[K‘[01m[KServer::Server(const Server&)[m[K’ is implicitly deleted because the default definition would be ill-formed:
+   21 | class [01;36m[KServer[m[K {
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::mutex::mutex(const std::mutex&)[m[K’
+In file included from [01m[K/usr/include/c++/11/bits/atomic_wait.h:49[m[K,
+                 from [01m[K/usr/include/c++/11/bits/atomic_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/bits/shared_ptr_atomic.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/memory:78[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/std_mutex.h:94:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   94 |     [01;36m[Kmutex[m[K(const mutex&) = delete;
+      |     [01;36m[K^~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::condition_variable::condition_variable(const std::condition_variable&)[m[K’
+   21 | class [01;31m[KServer[m[K {
+      |       [01;31m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/future:39[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:1[m[K:
+[01m[K/usr/include/c++/11/condition_variable:86:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     [01;36m[Kcondition_variable[m[K(const condition_variable&) = delete;
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:10[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h:21:7:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::condition_variable::condition_variable(const std::condition_variable&)[m[K’
+   21 | class [01;31m[KServer[m[K {
+      |       [01;31m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/future:39[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:1[m[K:
+[01m[K/usr/include/c++/11/condition_variable:86:5:[m[K [01;36m[Knote: [m[Kdeclared here
+   86 |     [01;36m[Kcondition_variable[m[K(const condition_variable&) = delete;
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/main.cpp:2[m[K:
+[01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:18:29:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[KRover::Rover(Robot, Server, int, double)[m[K’
+   18 |   Rover(Robot robot, [01;36m[KServer monitor[m[K, int id, double speed);
+      |                      [01;36m[K~~~~~~~^~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:90: CMakeFiles/rover_node.dir/src/publisher.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:76: CMakeFiles/rover_node.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

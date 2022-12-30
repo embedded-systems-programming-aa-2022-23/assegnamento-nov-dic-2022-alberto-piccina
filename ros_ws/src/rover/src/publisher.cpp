@@ -9,26 +9,45 @@
 
 using namespace std::chrono_literals;
 
-Rover::Rover(int id, double speed) : id_(id), speed_(speed) {
-  timer_ =
-      g_node->create_wall_timer(500ms, std::bind(&Rover::timer_callback, this));
+Rover::Rover(Robot robot, Server& monitor, int id, double speed) 
+        : robot_{robot}, monitor_{monitor}, id_(id), speed_(speed)
+{
 }
 
 Rover::~Rover() {}
 
-void Rover::timer_callback() {
-  auto message{rover_visualizer::msg::RoverPosition()};
-
-  x_pos_ += speed_;
-  y_pos_ += speed_;
-
-  message.id = id_;
-  message.position.x = x_pos_;
-  message.position.y = y_pos_;
-
-  g_publisher->publish(message);
+void Rover::operator()()
+{
+  robot_.set_id(id_);
+  // std::cout << "Robot's ID setted correctly." << std::endl;
+  new_goal();
+    // std::cout << "New goal taken correctly." << std::endl;
+  timer_ = g_node->create_wall_timer(500ms, std::bind(&Rover::timer_callback, this));
+  bool loop{true};
+  while(loop) {
+  }
 }
 
-void Rover::setY_pos(double y_pos) { y_pos_ = y_pos; }
+void Rover::timer_callback() {
+    // std::cout << "Start timer_callback:" << std::endl;
 
-void Rover::setX_pos(double x_pos) { x_pos_ = x_pos; }
+  if(!robot_.arrived()) {
+    robot_.step(5.0);
+    // std::cout << "Robot " << robot_.id() << "moved to (" << robot_.coordinates().x() << "," << robot_.coordinates().y() << ")" << std::endl;
+  
+    auto message{rover_visualizer::msg::RoverPosition()};
+
+    message.id = id_;
+    message.position.x = robot_.coordinates().x() + robot_.map().origin().x();
+    message.position.y = robot_.coordinates().y() + robot_.map().origin().y();
+
+    g_publisher->publish(message);
+  }
+}
+
+void Rover::new_goal()
+{
+  robot_.reset();
+  robot_.set_goal(monitor_.position_take(robot_.coordinates()));
+  std::cout << "Robot " << robot_.id() << " fetched (" << robot_.goal_position().x() + robot_.map().origin().x() << "," << robot_.goal_position().y() + robot_.map().origin().y() << ")" << std::endl;
+}

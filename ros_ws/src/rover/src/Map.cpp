@@ -175,7 +175,7 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
     std::cout << "Map origin setted at: (" << map_origin_.x() << ", " << map_origin_.y() << ")" << std::endl;
 
     map_initialization(number_of_horizontal_cells, number_of_vertical_cells);
-    print_map();
+    // print_map();
 }
 
 // function that initialize the map with free cells and obstacles

@@ -1,0 +1,31 @@
+[0.009s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.057s] [ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[1.887s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:[m[K In member function ‘[01m[Kvoid Rover::timer_callback()[m[K’:
+[1.887s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:45:58:[m[K [01;31m[Kerror: [m[K‘[01m[KMap Robot::map_[m[K’ is private within this context
+[1.887s]    45 |   message.position.x = robot_.coordinates().x() + robot_.[01;31m[Kmap_[m[K().origin().x();
+[1.887s]       |                                                          [01;31m[K^~~~[m[K
+[1.887s] In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:9[m[K,
+[1.887s]                  from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[1.887s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:52:9:[m[K [01;36m[Knote: [m[Kdeclared private here
+[1.887s]    52 |     Map [01;36m[Kmap_[m[K;
+[1.887s]       |         [01;36m[K^~~~[m[K
+[1.888s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:45:62:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Map) ()[m[K’
+[1.888s]    45 |  message.position.x = robot_.coordinates().x() + [01;31m[Krobot_.map_()[m[K.origin().x();
+[1.888s]       |                                                  [01;31m[K~~~~~~~~~~~^~[m[K
+[1.888s] 
+[1.888s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:46:58:[m[K [01;31m[Kerror: [m[K‘[01m[KMap Robot::map_[m[K’ is private within this context
+[1.888s]    46 |   message.position.y = robot_.coordinates().y() + robot_.[01;31m[Kmap_[m[K().origin().y();
+[1.888s]       |                                                          [01;31m[K^~~~[m[K
+[1.888s] In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/rover/publisher.h:9[m[K,
+[1.888s]                  from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:2[m[K:
+[1.888s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:52:9:[m[K [01;36m[Knote: [m[Kdeclared private here
+[1.889s]    52 |     Map [01;36m[Kmap_[m[K;
+[1.889s]       |         [01;36m[K^~~~[m[K
+[1.889s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/publisher.cpp:46:62:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Map) ()[m[K’
+[1.889s]    46 |  message.position.y = robot_.coordinates().y() + [01;31m[Krobot_.map_()[m[K.origin().y();
+[1.889s]       |                                                  [01;31m[K~~~~~~~~~~~^~[m[K
+[1.889s] 
+[2.266s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:90: CMakeFiles/rover_node.dir/src/publisher.cpp.o] Error 1
+[2.266s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+[2.266s] gmake: *** [Makefile:146: all] Error 2
+[2.270s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '2': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
