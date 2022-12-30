@@ -11,6 +11,8 @@
 #include <mutex>
 #include <condition_variable>
 
+static std::mutex robot_mutex;
+
 class Robot {
 public:
 

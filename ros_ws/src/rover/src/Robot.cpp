@@ -139,6 +139,11 @@ void Robot::find_min_potential()
         double minimum_potential{available_positions_.at(0).potential()};
         int index{0};
         for(size_t it{0}; it < available_positions().size(); it++) {
+                for(size_t j{0}; j < position_record_.size(); j++) {
+                                if((available_positions_.at(it).coordinates().x() == position_record_.at(j).x()) && (available_positions_.at(it).coordinates().y() == position_record_.at(j).y())) {
+                                        available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
+                                }
+                        }
                 if(available_positions_.at(it).is_obstacle()) {
                         available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
                 }
@@ -152,34 +157,6 @@ void Robot::find_min_potential()
 
         index_of_min_cell_ = index;
         
-
-
-        // double minimum_potential{available_positions().at(0).potential()};
-        // int index_of_min_cell{0};
-        // for(size_t it{1}; it < available_positions().size(); it++) {
-        //         if(!available_positions().at(it).is_obstacle()) {
-        //                 if(available_positions().at(it).potential() < minimum_potential) {
-        //                         minimum_potential = available_positions().at(it).potential();
-        //                         index_of_min_cell = it;
-        //                 }
-        //         }
-        //         else {
-        //                 available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
-        //         }
-
-        //         // if(available_positions().at(it).potential() < minimum_potential) {
-        //                 // std::cout << "ostacolo: " << available_positions().at(it).is_obstacle() << std::endl;
-        //                 // if(!available_positions().at(it).is_obstacle()) {
-        //                         // minimum_potential = available_positions().at(it).potential();
-        //                         // index_of_min_cell = it;
-        //                 // }
-        //         // }
-        // }
-
-        // index_of_min_cell_ = index_of_min_cell;
-
-        // std::cout << "Min potential: " << minimum_potential << " in cell: " << index_of_min_cell<< " (" << available_positions().at(index_of_min_cell).coordinates().x()
-        //                 << "," << available_positions().at(index_of_min_cell).coordinates().y() << ")" << std::endl;
 }
 
 // void Robot::move(const vector<Position>& obstacles_position, const double max_influence_distance)
@@ -213,12 +190,6 @@ void Robot::step(const double max_influence_distance)
                         std::cerr << "Error: local minimum found." << std::endl;
                         arrived_ = true;
                 }
-
-
-                // if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
-                //         std::cerr << "Error: local minimum found." << std::endl;
-                //         arrived_ = true;
-                // }
                 else {
                         previous_cell_ = Position(coordinates().x(),coordinates().y());
                 

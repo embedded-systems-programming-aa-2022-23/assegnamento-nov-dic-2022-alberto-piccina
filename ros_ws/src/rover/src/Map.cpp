@@ -400,10 +400,6 @@ double Cell::potential_calculation(const Position& goal_position, const vector<P
         repulsive_field = (0.5 * eta * pow(((1 / distance) - (1 / max_influence_distance)),2));
     }
 
-    // if(is_obstacle_) {
-    //     repulsive_field = std::numeric_limits<double>::max();
-    // }
-
     // std::cout << "The repulsive field of this cell is about " << repulsive_field << std::endl;
 
     double total_field = attractive_field + repulsive_field;

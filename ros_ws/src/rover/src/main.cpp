@@ -6,7 +6,6 @@ rclcpp::Node::SharedPtr g_node;
 rclcpp::Publisher<rover_visualizer::msg::RoverPosition>::SharedPtr g_publisher;
 
 Server monitor;
-std::mutex robot_mutex;
 std::mutex cout_mutex;
 
 void producer(const int id, const vector<Position>& goals){
@@ -63,15 +62,19 @@ int main(int argc, char* argv[]) {
   std::thread satellite1(producer, 0, std::ref(satellite_1));
   std::thread satellite2(producer, 1, std::ref(satellite_2));
 
-  std::thread rover0(Rover(list_of_robots.at(0), monitor, 0, 0.2));
-  std::thread rover1(Rover(list_of_robots.at(1), monitor, 1, 0.2));
+  vector<std::thread> rovers_threads;
+  for(size_t i{0}; i < list_of_robots.size(); i++) {
+        rovers_threads.push_back(std::thread(Rover(list_of_robots.at(i), monitor, i, 0.2)));
+  }
 
   rclcpp::spin(g_node);
 
   satellite1.join();
   satellite2.join();
-  rover0.join();
-  rover1.join();
+
+    for(auto& it : rovers_threads) {
+        it.join();
+    }
 
   // example code that spawns 2 rovers
   // auto rover0 = Rover(0, 0.2);  // Spawn a rover with id 0 and "speed" 0.4m/s
