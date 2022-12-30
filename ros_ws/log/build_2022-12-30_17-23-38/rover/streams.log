@@ -1,0 +1,26 @@
+[0.008s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.055s] [35m[1mConsolidate compiler generated dependencies of target rover_node[0m
+[0.080s] [ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[0.881s] [ 33%] [32m[1mLinking CXX executable rover[0m
+[1.098s] [100%] Built target rover_node
+[1.110s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '0': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[1.146s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --install /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover
+[1.153s] -- Install configuration: "Debug"
+[1.153s] -- Execute custom install script
+[1.154s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/lib/rover/rover
+[1.154s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/ament_index/resource_index/package_run_dependencies/rover
+[1.155s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/ament_index/resource_index/parent_prefix_path/rover
+[1.155s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/environment/ament_prefix_path.sh
+[1.155s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/environment/ament_prefix_path.dsv
+[1.155s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/environment/path.sh
+[1.156s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/environment/path.dsv
+[1.156s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/local_setup.bash
+[1.156s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/local_setup.sh
+[1.156s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/local_setup.zsh
+[1.156s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/local_setup.dsv
+[1.156s] -- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/package.dsv
+[1.165s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/ament_index/resource_index/packages/rover
+[1.165s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/cmake/roverConfig.cmake
+[1.165s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/cmake/roverConfig-version.cmake
+[1.165s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover/share/rover/package.xml
+[1.169s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '0': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --install /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover

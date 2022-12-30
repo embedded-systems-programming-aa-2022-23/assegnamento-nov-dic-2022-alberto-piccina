@@ -1,0 +1,13 @@
+[35m[1mConsolidate compiler generated dependencies of target rover_node[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[ 83%] [32m[1mLinking CXX executable rover[0m
+/usr/bin/ld: CMakeFiles/rover_node.dir/src/publisher.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+/usr/bin/ld: CMakeFiles/rover_node.dir/src/Robot.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+/usr/bin/ld: CMakeFiles/rover_node.dir/src/Server.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:255: rover] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

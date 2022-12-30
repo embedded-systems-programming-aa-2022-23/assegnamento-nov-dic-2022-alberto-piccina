@@ -1,0 +1,15 @@
+[0.015s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target rover_node[0m
+[0.071s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[0.071s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[0.071s] [ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[0.071s] [ 66%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[4.653s] [ 83%] [32m[1mLinking CXX executable rover[0m
+[4.878s] /usr/bin/ld: CMakeFiles/rover_node.dir/src/publisher.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+[4.884s] /usr/bin/ld: CMakeFiles/rover_node.dir/src/Robot.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+[4.890s] /usr/bin/ld: CMakeFiles/rover_node.dir/src/Server.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: multiple definition of `robot_mutex'; CMakeFiles/rover_node.dir/src/main.cpp.o:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h:14: first defined here
+[5.056s] collect2: error: ld returned 1 exit status
+[5.058s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:255: rover] Error 1
+[5.058s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+[5.059s] gmake: *** [Makefile:146: all] Error 2
+[5.111s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '2': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
