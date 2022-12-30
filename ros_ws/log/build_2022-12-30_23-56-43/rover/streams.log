@@ -1,0 +1,65 @@
+[0.010s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.057s] [ 16%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[0.057s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[0.057s] [ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o[0m
+[0.058s] [ 66%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[0.058s] [ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[0.593s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:118:1:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[KMap::Map(std::vector<Position>, std::vector<Position>, std::vector<obstacle>, double, double, double)[m[K’
+[0.593s]   118 | [01;31m[KMap[m[K::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size, double zeta, double eta)
+[0.593s]       | [01;31m[K^~~[m[K
+[0.593s] In file included from [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:3[m[K:
+[0.593s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h:69:7:[m[K [01;36m[Knote: [m[Kcandidates are: ‘[01m[KMap::Map(Map&&)[m[K’
+[0.593s]    69 | class [01;36m[KMap[m[K {
+[0.593s]       |       [01;36m[K^~~[m[K
+[0.593s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h:69:7:[m[K [01;36m[Knote: [m[K                ‘[01m[KMap::Map(const Map&)[m[K’
+[0.593s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h:74:5:[m[K [01;36m[Knote: [m[K                ‘[01m[KMap::Map(std::vector<Position>, std::vector<Position>, std::vector<obstacle>, double)[m[K’
+[0.594s]    74 |     [01;36m[KMap[m[K(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size);
+[0.594s]       |     [01;36m[K^~~[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h:69:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Map[m[K’ defined here
+[0.594s]    69 | class [01;36m[KMap[m[K {
+[0.594s]       |       [01;36m[K^~~[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:55:[m[K [01;31m[Kerror: [m[Kmixing declarations and function-definitions is forbidden
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}[01;31m[K,[m[K goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                       [01;31m[K^[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:72:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K{[m[K’ token
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_[01;31m[K{[m[Kvec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                                        [01;31m[K^[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:86:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}[01;31m[K,[m[K obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                                                      [01;31m[K^[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:98:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K{[m[K’ token
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_[01;31m[K{[m[Kvector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                                                                  [01;31m[K^[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:115:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}[01;31m[K,[m[K cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                                                                                   [01;31m[K^[m[K
+[0.594s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:127:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K{[m[K’ token
+[0.594s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_[01;31m[K{[m[Kcell_size}, zeta_{zeta}, eta_{eta}
+[0.594s]       |                                                                                                                               [01;31m[K^[m[K
+[0.595s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:138:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.595s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}[01;31m[K,[m[K zeta_{zeta}, eta_{eta}
+[0.595s]       |                                                                                                                                          [01;31m[K^[m[K
+[0.595s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:145:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K{[m[K’ token
+[0.595s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_[01;31m[K{[m[Kzeta}, eta_{eta}
+[0.595s]       |                                                                                                                                                 [01;31m[K^[m[K
+[0.595s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:151:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.595s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}[01;31m[K,[m[K eta_{eta}
+[0.595s]       |                                                                                                                                                       [01;31m[K^[m[K
+[0.595s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:119:157:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K{[m[K’ token
+[0.595s]   119 |         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_[01;31m[K{[m[Keta}
+[0.595s]       |                                                                                                                                                             [01;31m[K^[m[K
+[0.595s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:120:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.595s]   120 | [01;31m[K{[m[K
+[0.595s]       | [01;31m[K^[m[K
+[0.609s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:[m[K In member function ‘[01m[Kdouble Cell::potential_calculation(const Position&, const std::vector<Position>&, double)[m[K’:
+[0.609s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:360:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kzeta_[m[K’ was not declared in this scope
+[0.609s]   360 |     double attractive_field{0.5 * [01;31m[Kzeta_[m[K * pow(distance,2)};
+[0.609s]       |                                   [01;31m[K^~~~~[m[K
+[0.609s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:382:34:[m[K [01;31m[Kerror: [m[K‘[01m[Keta_[m[K’ was not declared in this scope
+[0.609s]   382 |         repulsive_field = (0.5 * [01;31m[Keta_[m[K * pow(((1 / distance) - (1 / max_influence_distance)),2));
+[0.609s]       |                                  [01;31m[K^~~~[m[K
+[0.719s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:104: CMakeFiles/rover_node.dir/src/Map.cpp.o] Error 1
+[0.720s] gmake[2]: *** Waiting for unfinished jobs....
+[3.732s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+[3.736s] gmake: *** [Makefile:146: all] Error 2
+[3.859s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '2': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6

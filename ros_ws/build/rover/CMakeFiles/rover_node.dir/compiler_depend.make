@@ -864,11 +864,9 @@ CMakeFiles/rover_node.dir/src/Server.cpp.o: /home/alberto/assegnamento_PSE/asseg
   /usr/include/aarch64-linux-gnu/sys/time.h \
   /usr/include/semaphore.h \
   /usr/include/aarch64-linux-gnu/bits/semaphore.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/fstream \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
@@ -1605,11 +1603,9 @@ CMakeFiles/rover_node.dir/src/main.cpp.o: /home/alberto/assegnamento_PSE/assegna
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h \
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h \
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/fstream \
   /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
@@ -2342,11 +2338,9 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Map/Map.h \
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Robot/Robot.h \
   /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/include/Server/Server.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/fstream \
   /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
@@ -2586,8 +2580,6 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_map.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_base.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:
 
 /usr/include/c++/11/mutex:
 
@@ -2950,6 +2942,8 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 /usr/include/c++/11/bits/exception_ptr.h:
 
 /usr/include/c++/11/bits/charconv.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
 
@@ -3407,12 +3401,6 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 
 /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Server.cpp:
 
-/usr/include/c++/11/queue:
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/opt/ros/humble/include/rmw/rmw/init.h:
-
 /usr/include/c++/11/deque:
 
 /usr/include/c++/11/bits/stl_deque.h:
@@ -3422,8 +3410,6 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:
-
-/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h:
 
@@ -3535,6 +3521,10 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/opt/ros/humble/include/rmw/rmw/init.h:
+
 /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/c++/11/backward/auto_ptr.h:
@@ -3628,12 +3618,6 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 /opt/ros/humble/include/rmw/rmw/events_statuses/events_statuses.h:
 
 /opt/ros/humble/include/rmw/rmw/qos_policy_kind.h:
-
-/opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp:
-
-/usr/include/c++/11/bit:
-
-/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h:
 
@@ -3828,3 +3812,9 @@ CMakeFiles/rover_node.dir/src/publisher.cpp.o: /home/alberto/assegnamento_PSE/as
 /usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
 
 /opt/ros/humble/include/rcpputils/rcpputils/time.hpp:
+
+/usr/include/c++/11/bit:
+
+/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
+
+/opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp:

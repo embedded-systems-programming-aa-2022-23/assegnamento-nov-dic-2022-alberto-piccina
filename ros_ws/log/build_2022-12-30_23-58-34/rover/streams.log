@@ -1,0 +1,19 @@
+[0.008s] Invoking command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target rover_node[0m
+[0.069s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/publisher.cpp.o[0m
+[0.072s] [ 33%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/main.cpp.o[0m
+[0.072s] [ 66%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Map.cpp.o[0m
+[0.072s] [ 50%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Robot.cpp.o[0m
+[0.076s] [ 83%] [32mBuilding CXX object CMakeFiles/rover_node.dir/src/Server.cpp.o[0m
+[0.470s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:[m[K In member function ‘[01m[Kdouble Cell::potential_calculation(const Position&, const std::vector<Position>&, double)[m[K’:
+[0.470s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:360:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kzeta_[m[K’ was not declared in this scope
+[0.470s]   360 |     double attractive_field{0.5 * [01;31m[Kzeta_[m[K * pow(distance,2)};
+[0.470s]       |                                   [01;31m[K^~~~~[m[K
+[0.473s] [01m[K/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/src/rover/src/Map.cpp:382:34:[m[K [01;31m[Kerror: [m[K‘[01m[Keta_[m[K’ was not declared in this scope
+[0.473s]   382 |         repulsive_field = (0.5 * [01;31m[Keta_[m[K * pow(((1 / distance) - (1 / max_influence_distance)),2));
+[0.473s]       |                                  [01;31m[K^~~~[m[K
+[0.551s] gmake[2]: *** [CMakeFiles/rover_node.dir/build.make:104: CMakeFiles/rover_node.dir/src/Map.cpp.o] Error 1
+[0.551s] gmake[2]: *** Waiting for unfinished jobs....
+[3.587s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/rover_node.dir/all] Error 2
+[3.590s] gmake: *** [Makefile:146: all] Error 2
+[3.724s] Invoked command in '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover' returned '2': CMAKE_PREFIX_PATH=/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer:/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover -- -j6 -l6

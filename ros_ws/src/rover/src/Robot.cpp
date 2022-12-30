@@ -10,12 +10,14 @@ Robot::Robot(Position start_position, Map map)
                 std::cout << "Robot(): invalid robot. Verify if start position and goal position are defined correctly." << std::endl;
                 exit(EXIT_FAILURE);
         }
-        for(size_t i{0}; i < available_positions().size(); i++) {
-                available_positions_.at(i).set_potential(0);
-        }
-        set_available_positions(start_position);
 
-        previous_cell_ = start_position;
+        for(size_t i{0}; i < available_positions().size(); i++) {
+
+                available_positions_.at(i).set_potential(0);
+
+        }
+
+        set_available_positions(start_position);
 }
 
 // Robot's default constructor
@@ -24,6 +26,7 @@ Robot::Robot(Map map)
 {
 }
 
+// controlls if robot's position fits with the cell size
 bool Robot::check_with_cell_size()
 {
         double a{fmod(coordinates_.x(), map_.cell_size())};
@@ -37,10 +40,10 @@ bool Robot::check_with_cell_size()
                 return true;
 }
 
+// function to set the array of available positions where the robot can move
 void Robot::set_available_positions(const Position& current_cell)
 {
         Position new_cell{current_cell};
-        // std::cout << "Current cell: (" << current_cell.x() << "," << current_cell.y() << ")" << std::endl;
 
         // cell: Nord
         new_cell.set_y(current_cell.y() + map_.cell_size());
@@ -98,6 +101,7 @@ void Robot::set_available_positions(const Position& current_cell)
                 available_positions_.at(7).set_potential(std::numeric_limits<double>::max());
 }
 
+// function to set the coordinates of the robot
 Position Robot::set_coordinates_robot(const Position& new_position)
 {
         coordinates_.set_x(new_position.x());
@@ -106,6 +110,7 @@ Position Robot::set_coordinates_robot(const Position& new_position)
         return coordinates_;
 }
 
+// function to set the goal to reach
 Position Robot::set_goal(const Position& goal_position)
 {
         goal_position_.set_x(goal_position.x() - map_.origin().x());
@@ -114,6 +119,7 @@ Position Robot::set_goal(const Position& goal_position)
         return goal_position_;
 }
 
+// to set robot's id (for concurrency)
 int Robot::set_id(const int id_to_set)
 {
         id_ = id_to_set;
@@ -121,12 +127,14 @@ int Robot::set_id(const int id_to_set)
         return id_;
 }
 
+// to clear old positions and set arrived_ to false
 bool Robot::reset()
 {
         position_record_.clear();
         return (arrived_ = false);
 }
 
+// print function: it prints the coordinates of all available positions
 void Robot::print_av_pos()
 {
         for(size_t i{0}; i < available_positions().size(); i++) {
@@ -134,16 +142,21 @@ void Robot::print_av_pos()
         }
 }
 
+// function to find the minimum potential in the available positions
 void Robot::find_min_potential()
 {
         double minimum_potential{available_positions_.at(0).potential()};
         int index{0};
         for(size_t it{0}; it < available_positions().size(); it++) {
+
                 for(size_t j{0}; j < position_record_.size(); j++) {
-                                if((available_positions_.at(it).coordinates().x() == position_record_.at(j).x()) && (available_positions_.at(it).coordinates().y() == position_record_.at(j).y())) {
-                                        available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
-                                }
+
+                        if((available_positions_.at(it).coordinates().x() == position_record_.at(j).x()) && (available_positions_.at(it).coordinates().y() == position_record_.at(j).y())) {
+                                available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
                         }
+
+                }
+
                 if(available_positions_.at(it).is_obstacle()) {
                         available_positions_.at(it).set_potential(std::numeric_limits<double>::max());
                 }
@@ -153,98 +166,58 @@ void Robot::find_min_potential()
                                 index = it;
                         }
                 }
+
         }
 
         index_of_min_cell_ = index;
         
 }
 
-// void Robot::move(const vector<Position>& obstacles_position, const double max_influence_distance)
+// function that allows robot to move of one cell
 void Robot::step(const double max_influence_distance)
 {
-                // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-                position_record_.push_back(coordinates_);
-                set_available_positions(Position(coordinates().x(),coordinates().y()));
+        position_record_.push_back(coordinates_);
+        set_available_positions(Position(coordinates().x(),coordinates().y()));
 
-                for(size_t i{0}; i < available_positions().size(); i++) {
-                        if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
-                                coordinates_.set_x(available_positions().at(i).coordinates().x());
-                                coordinates_.set_y(available_positions().at(i).coordinates().y());
-                                map_.change_robot_position(id_, coordinates_);
-                                std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
-                                                << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
-                                arrived_ = true;
-                                return ;
-                        }
-                        available_positions_.at(i).potential_calculation(goal_position(),map_.obstacle_positions(),max_influence_distance);
-                }
+        for(size_t i{0}; i < available_positions().size(); i++) {
 
-                find_min_potential();
-
-                bool check{true};
-                for(auto& it : position_record_) {
-                        if((it.x() == available_positions_.at(index_of_min_cell_).coordinates().x()) && (it.y() == available_positions_.at(index_of_min_cell_).coordinates().y()))
-                                check = false;
-                }
-                if(!check) {
-                        std::cerr << "Error: local minimum found." << std::endl;
-                        arrived_ = true;
-                }
-                else {
-                        previous_cell_ = Position(coordinates().x(),coordinates().y());
-                
-                        coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
-                        coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
+                if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
+                        coordinates_.set_x(available_positions().at(i).coordinates().x());
+                        coordinates_.set_y(available_positions().at(i).coordinates().y());
                         map_.change_robot_position(id_, coordinates_);
                         std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
-                                                << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
-
-                        if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
-                                arrived_ = true;
-                        }   
+                                        << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
+                        arrived_ = true;
+                        return ;
                 }
-        
-
-
-
-
-
-        // bool arrived{false};
-        // while(!arrived) {
-        //         // std::cout << "\nPrevious cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-        //         position_record_.push_back(coordinates_);
-        //         set_available_positions(Position(coordinates().x(),coordinates().y()), cell_size);
-
-        //         for(size_t i{0}; i < available_positions().size(); i++) {
-        //                 if((available_positions_.at(i).coordinates().x() == goal_position().x()) && (available_positions_.at(i).coordinates().y() == goal_position().y())) {
-        //                         coordinates_.set_x(available_positions().at(i).coordinates().x());
-        //                         coordinates_.set_y(available_positions().at(i).coordinates().y());
-        //                         std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-        //                         std::cout << "Done." << std::endl;
-        //                         arrived = true;
-        //                         return ;
-        //                 }
-        //                 available_positions_.at(i).potential_calculation(goal_position(),obstacles_position,max_influence_distance);
-        //                 // std::cout << "Potential: " << available_positions().at(i).potential() << std::endl;
-        //         }
-
-        //         find_min_potential();
-        //         // if((available_positions().at(index_of_min_cell_).coordinates().x() == ))
-
-        //         if((previous_cell().x() == available_positions().at(index_of_min_cell_).coordinates().x()) && (previous_cell().y() == available_positions().at(index_of_min_cell_).coordinates().y())) {
-        //                 std::cerr << "Error: local minimum found." << std::endl;
-        //                 arrived = true;
-        //         }
-        //         else {
-        //                 previous_cell_ = Position(coordinates().x(),coordinates().y());
                 
-        //                 coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
-        //                 coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
+                available_positions_.at(i).potential_calculation(goal_position(),map_.obstacle_positions(),max_influence_distance, map_.zeta(), map_.eta());
+                
+        }
 
-        //                 // std::cout << "Previous cell: (" << previous_cell().x() << "," << previous_cell().y() << ")" << std::endl;
-        //                 std::cout << "New cell: (" << coordinates().x() << "," << coordinates().y() << ")" << std::endl;
-        //                 if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y()))
-        //                         arrived = true;
-        //         }
-        // }
+        find_min_potential();
+
+        bool check{true};
+        for(auto& it : position_record_) {
+                        
+                if((it.x() == available_positions_.at(index_of_min_cell_).coordinates().x()) && (it.y() == available_positions_.at(index_of_min_cell_).coordinates().y()))
+                        check = false;
+        
+        }
+                
+        if(!check) {
+                std::cerr << "Error: local minimum found." << std::endl;
+                arrived_ = true;
+        }
+        else {                
+                coordinates_.set_x(available_positions().at(index_of_min_cell_).coordinates().x());
+                coordinates_.set_y(available_positions().at(index_of_min_cell_).coordinates().y());
+                map_.change_robot_position(id_, coordinates_);
+                std::cout << "Robot " << id_ << " moved to " << map_.robot_start_position().at(id_).x() + map_.origin().x() << "," 
+                                        << map_.robot_start_position().at(id_).y() + map_.origin().y() << std::endl;
+
+                if((coordinates().x() == goal_position().x()) && (coordinates().y() == goal_position().y())) {
+                        arrived_ = true;
+                }   
+        }
 }

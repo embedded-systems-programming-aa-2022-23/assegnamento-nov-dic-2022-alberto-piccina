@@ -9,6 +9,7 @@
 
 using namespace std::chrono_literals;
 
+// Rover's constructor
 Rover::Rover(Robot robot, Server& monitor, int id, double speed) 
         : robot_{robot}, monitor_{monitor}, id_(id), speed_(speed)
 {
@@ -16,6 +17,7 @@ Rover::Rover(Robot robot, Server& monitor, int id, double speed)
 
 Rover::~Rover() {}
 
+// () overloading
 void Rover::operator()()
 {
   robot_.set_id(id_);
@@ -47,16 +49,20 @@ void Rover::timer_callback() {
   }
 
   if(robot_.arrived()) {
+
     std::cout << "Robot " << robot_.id() << " reached (" << robot_.coordinates().x() + robot_.map().origin().x() << ","
             << robot_.coordinates().y() + robot_.map().origin().y() << ")" << std::endl;
+
     if(!monitor_.goal_queue().empty()) {
       new_goal();
     } else {
       std::cout << "Robot " << robot_.id() << "has no goal to reach." << std::endl;
     }
+
   }
 }
 
+// function that assign a new goal to a robot
 void Rover::new_goal()
 {
   robot_.reset();

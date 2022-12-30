@@ -13,7 +13,6 @@ void producer(const int id, const vector<Position>& goals){
         monitor.position_append(new_pos);
         cout_mutex.lock();
         std::cout << "Satellite " << id << " produced (" << new_pos.x() << "," << new_pos.y() << ")" << std::endl;
-        // std::this_thread::sleep_for(std::chrono::milliseconds(100));
         cout_mutex.unlock();
     }
 }
@@ -52,7 +51,7 @@ int main(int argc, char* argv[]) {
   }
 
   double cell_size{1};
-  Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, cell_size};
+  Map map{vector_of_start_position, vector_of_goals, vector_of_obstacles, cell_size, 5, 20};
 
   vector<Robot> list_of_robots;
     for(size_t i{0}; i < vector_of_start_position.size(); i++) {
@@ -71,10 +70,9 @@ int main(int argc, char* argv[]) {
 
   satellite1.join();
   satellite2.join();
-
-    for(auto& it : rovers_threads) {
-        it.join();
-    }
+  for(auto& it : rovers_threads) {
+    it.join();
+  }
 
   // example code that spawns 2 rovers
   // auto rover0 = Rover(0, 0.2);  // Spawn a rover with id 0 and "speed" 0.4m/s
@@ -84,7 +82,6 @@ int main(int argc, char* argv[]) {
   // rover1.setX_pos(10);  // Set rover1 x_pos to 10
   // rover1.setY_pos(8);   // Set rover1 y_pos to 8
 
-  // rclcpp::spin(g_node);
   rclcpp::shutdown();
 
   exit(EXIT_SUCCESS);
