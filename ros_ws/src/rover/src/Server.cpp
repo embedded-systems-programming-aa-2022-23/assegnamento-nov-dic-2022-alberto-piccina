@@ -21,6 +21,11 @@ Server::Server()
 // function used to update Server's variables and calculate the capacity of the queue
 void Server::update_queue(const int number_of_robots, const int arbitrary_parameter)
 {
+    if(arbitrary_parameter == 0) {
+        std::cerr << "Server(): invalid server. " << "The arbitrary parameter K can't be set at 0, please change the value imposted by argument." << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    
     number_of_robots_ = number_of_robots;
     parameter_ = arbitrary_parameter;
 

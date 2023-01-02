@@ -1,0 +1,187 @@
+[0.016s] Invoking command in '/home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer -- -j6 -l6
+[0.025s] [0mCMake Error: The current CMakeCache.txt directory /home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer/CMakeCache.txt is different than the directory /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.059s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.171s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.190s] -- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)
+[0.239s] -- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.242s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.249s] -- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.261s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.275s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.329s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.331s] -- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.433s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.578s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.586s] -- Found geometry_msgs: 4.2.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.622s] -- Found visualization_msgs: 4.2.2 (/opt/ros/humble/share/visualization_msgs/cmake)
+[1.004s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.337s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.464s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.481s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.498s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.498s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.498s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[1.560s] -- Configuring done
+[1.635s] -- Generating done
+[1.638s] -- Build files have been written to: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer
+[1.669s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_generator_c[0m
+[1.676s] [  2%] Built target rover_visualizer__cpp
+[1.681s] [  5%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_c.dir/rosidl_generator_c/rover_visualizer/msg/detail/rover_position__functions.c.o[0m
+[1.683s] [  5%] Built target ament_cmake_python_symlink_rover_visualizer
+[1.692s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_fastrtps_cpp[0m
+[1.692s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_cpp[0m
+[1.695s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_introspection_cpp[0m
+[1.708s] [  8%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rover_visualizer/msg/rover_position__type_support.cpp.o[0m
+[1.708s] [ 11%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rover_visualizer/msg/detail/rover_position__type_support.cpp.o[0m
+[1.711s] [ 14%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rover_visualizer/msg/detail/dds_fastrtps/rover_position__type_support.cpp.o[0m
+[1.830s] running egg_info
+[1.830s] writing rover_visualizer.egg-info/PKG-INFO
+[1.831s] writing dependency_links to rover_visualizer.egg-info/dependency_links.txt
+[1.831s] writing top-level names to rover_visualizer.egg-info/top_level.txt
+[1.835s] reading manifest file 'rover_visualizer.egg-info/SOURCES.txt'
+[1.837s] writing manifest file 'rover_visualizer.egg-info/SOURCES.txt'
+[1.845s] [ 17%] [32m[1mLinking C shared library librover_visualizer__rosidl_generator_c.so[0m
+[1.856s] [ 17%] Built target ament_cmake_python_build_rover_visualizer_egg
+[1.877s] [ 20%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_cpp.so[0m
+[1.892s] [ 23%] Built target rover_visualizer__rosidl_generator_c
+[1.908s] [ 26%] Built target rover_visualizer__rosidl_typesupport_cpp
+[1.909s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_c[0m
+[1.909s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_fastrtps_c[0m
+[1.910s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_introspection_c[0m
+[1.920s] [ 29%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_c.dir/rosidl_typesupport_c/rover_visualizer/msg/rover_position__type_support.cpp.o[0m
+[1.921s] [ 32%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rover_visualizer/msg/detail/rover_position__type_support.c.o[0m
+[1.922s] [ 35%] [32mBuilding CXX object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rover_visualizer/msg/detail/rover_position__type_support_c.cpp.o[0m
+[1.930s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer_node[0m
+[1.940s] [ 38%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_introspection_cpp.so[0m
+[1.949s] [ 41%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_c.so[0m
+[1.961s] [ 44%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_cpp.so[0m
+[1.967s] [ 47%] [32m[1mLinking C shared library librover_visualizer__rosidl_typesupport_introspection_c.so[0m
+[1.986s] [ 50%] Built target rover_visualizer__rosidl_typesupport_introspection_cpp
+[1.987s] [ 52%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/main.cpp.o[0m
+[1.989s] [ 55%] Built target rover_visualizer__rosidl_typesupport_c
+[1.994s] [ 58%] [32mBuilding CXX object CMakeFiles/rover_visualizer_node.dir/src/Visualizer.cpp.o[0m
+[2.008s] [ 61%] Built target rover_visualizer__rosidl_typesupport_introspection_c
+[2.013s] [ 64%] Built target rover_visualizer__rosidl_typesupport_fastrtps_cpp
+[2.119s] [ 67%] [32m[1mLinking CXX shared library librover_visualizer__rosidl_typesupport_fastrtps_c.so[0m
+[2.174s] [ 70%] Built target rover_visualizer__rosidl_typesupport_fastrtps_c
+[2.194s] [ 70%] Built target rover_visualizer
+[2.213s] [ 73%] Built target rover_visualizer__py
+[2.225s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_generator_py[0m
+[2.236s] [ 76%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_generator_py.dir/rosidl_generator_py/rover_visualizer/msg/_rover_position_s.c.o[0m
+[2.339s] [ 79%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/librover_visualizer__rosidl_generator_py.so[0m
+[2.382s] [ 79%] Built target rover_visualizer__rosidl_generator_py
+[2.400s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_introspection_c__pyext[0m
+[2.400s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_c__pyext[0m
+[2.400s] [35m[1mConsolidate compiler generated dependencies of target rover_visualizer__rosidl_typesupport_fastrtps_c__pyext[0m
+[2.411s] [ 85%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.411s] [ 85%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.411s] [ 88%] [32mBuilding C object CMakeFiles/rover_visualizer__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_c.c.o[0m
+[2.480s] [ 91%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[2.480s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[2.490s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[2.512s] [ 97%] Built target rover_visualizer__rosidl_typesupport_c__pyext
+[2.512s] [ 97%] Built target rover_visualizer__rosidl_typesupport_fastrtps_c__pyext
+[2.523s] [ 97%] Built target rover_visualizer__rosidl_typesupport_introspection_c__pyext
+[7.092s] [100%] [32m[1mLinking CXX executable rover_visualizer[0m
+[7.402s] [100%] Built target rover_visualizer_node
+[7.412s] Invoked command in '/home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer -- -j6 -l6
+[7.475s] Invoking command in '/home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer
+[7.482s] -- Install configuration: ""
+[7.482s] -- Execute custom install script
+[7.483s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/rosidl_interfaces/rover_visualizer
+[7.486s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__functions.h
+[7.486s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__struct.h
+[7.486s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__type_support.h
+[7.487s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_generator_c__visibility_control.h
+[7.487s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rover_position.h
+[7.487s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/library_path.sh
+[7.488s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/library_path.dsv
+[7.489s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_fastrtps_c.h
+[7.489s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.489s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__builder.hpp
+[7.490s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__struct.hpp
+[7.490s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__traits.hpp
+[7.490s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rover_position.hpp
+[7.490s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_fastrtps_cpp.hpp
+[7.491s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.491s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_introspection_c.h
+[7.491s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.492s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/include/rover_visualizer/rover_visualizer/msg/detail/rover_position__rosidl_typesupport_introspection_cpp.hpp
+[7.492s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/pythonpath.sh
+[7.493s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/pythonpath.dsv
+[7.493s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/PKG-INFO
+[7.493s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/SOURCES.txt
+[7.493s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/dependency_links.txt
+[7.494s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer-0.0.0-py3.10.egg-info/top_level.txt
+[7.494s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/__init__.py
+[7.495s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_c.c
+[7.495s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.495s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/_rover_visualizer_s.ep.rosidl_typesupport_introspection_c.c
+[7.496s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/librover_visualizer__rosidl_generator_py.so
+[7.496s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/__init__.py
+[7.496s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/_rover_position.py
+[7.497s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg/_rover_position_s.c
+[7.497s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[7.497s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[7.498s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[7.498s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[7.498s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[7.498s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/rover_visualizer_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[7.498s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/msg/RoverPosition.idl
+[7.499s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/msg/RoverPosition.msg
+[7.499s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/rover_visualizer/rover_visualizer
+[7.500s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/config/mars.rviz
+[7.501s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rover_launch.py
+[7.501s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rover_visualizer_launch.py
+[7.501s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/launch/rviz_launch.py
+[7.501s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/package_run_dependencies/rover_visualizer
+[7.502s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/parent_prefix_path/rover_visualizer
+[7.502s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/ament_prefix_path.sh
+[7.502s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/ament_prefix_path.dsv
+[7.502s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/path.sh
+[7.503s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/environment/path.dsv
+[7.503s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.bash
+[7.503s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.sh
+[7.504s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.zsh
+[7.504s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/local_setup.dsv
+[7.504s] -- Symlinking: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/package.dsv
+[7.511s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/ament_index/resource_index/packages/rover_visualizer
+[7.512s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake-extras.cmake
+[7.512s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.512s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_include_directories-extras.cmake
+[7.513s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_libraries-extras.cmake
+[7.513s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/ament_cmake_export_targets-extras.cmake
+[7.513s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[7.514s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[7.514s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizerConfig.cmake
+[7.514s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizerConfig-version.cmake
+[7.514s] -- Up-to-date symlink: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/package.xml
+[7.515s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_c.so
+[7.515s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_c.so
+[7.516s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_fastrtps_cpp.so
+[7.517s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_c.so
+[7.517s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_c.so
+[7.518s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_introspection_cpp.so
+[7.518s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_typesupport_cpp.so
+[7.540s] Listing '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer'...
+[7.540s] Compiling '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/__init__.py'...
+[7.540s] Listing '/home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/local/lib/python3.10/dist-packages/rover_visualizer/msg'...
+[7.543s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/lib/librover_visualizer__rosidl_generator_py.so
+[7.543s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cExport.cmake
+[7.543s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cExport-noconfig.cmake
+[7.543s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cExport.cmake
+[7.543s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[7.544s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_cppExport.cmake
+[7.544s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cppExport.cmake
+[7.544s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[7.544s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cExport.cmake
+[7.544s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[7.545s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cExport.cmake
+[7.545s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cExport-noconfig.cmake
+[7.545s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cppExport.cmake
+[7.545s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[7.546s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cppExport.cmake
+[7.546s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/rover_visualizer__rosidl_typesupport_cppExport-noconfig.cmake
+[7.546s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_pyExport.cmake
+[7.546s] -- Up-to-date: /home/alberto/assegnamento_PSE/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/install/rover_visualizer/share/rover_visualizer/cmake/export_rover_visualizer__rosidl_generator_pyExport-noconfig.cmake
+[7.549s] Invoked command in '/home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/alberto/assegnamento-nov-dic-2022-alberto-piccina/ros_ws/build/rover_visualizer

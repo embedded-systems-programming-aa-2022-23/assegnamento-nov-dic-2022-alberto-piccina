@@ -122,14 +122,14 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}
 {
     if(cell_size_ == 0) {
-        std::cout << "Map(): invalid map. " << "Cell size can't be set at 0, please change the value imposted by argument." << std::endl;
+        std::cerr << "Map(): invalid map. " << "Cell size can't be set at 0, please change the value imposted by argument." << std::endl;
         exit(EXIT_FAILURE);
     }
 
     for(auto& it : robot_start_positions_) {
         
         if((fmod(it.x(),cell_size_) != 0) || (fmod(it.y(),cell_size_) != 0)) {
-            std::cout << "Map(): invalid map." << "\n" << "Verify if start positions are concordant to the cell size imposted." << std::endl;
+            std::cerr << "Map(): invalid map." << "\n" << "Verify if start positions are concordant to the cell size imposted." << std::endl;
             exit(EXIT_FAILURE);
         }
 
@@ -138,7 +138,7 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
     for(auto& it : goal_positions_) {
         
         if((fmod(it.x(),cell_size_) != 0) || (fmod(it.y(),cell_size_) != 0)) {
-            std::cout << "Map(): invalid map." << "\n" << "Verify if goal positions are concordant to the cell size imposted." << std::endl;
+            std::cerr << "Map(): invalid map." << "\n" << "Verify if goal positions are concordant to the cell size imposted." << std::endl;
             exit(EXIT_FAILURE);
         }
             
@@ -147,7 +147,7 @@ Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, 
     for(auto& it : obstacles_) {
         
         if((fmod(it.min_corner.x(),cell_size_) != 0) || (fmod(it.min_corner.y(),cell_size_) != 0) || (fmod(it.max_corner.x(),cell_size_) != 0) || (fmod(it.max_corner.y(),cell_size_) != 0)) {
-            std::cout << "Map(): invalid map." << "\n" << "Verify if obstacles positions are concordant to the cell size imposted." << std::endl;
+            std::cerr << "Map(): invalid map." << "\n" << "Verify if obstacles positions are concordant to the cell size imposted." << std::endl;
             exit(EXIT_FAILURE);
         }
             
