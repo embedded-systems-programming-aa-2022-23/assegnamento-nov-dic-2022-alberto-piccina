@@ -3,6 +3,8 @@
 #include "Map.h"
 
 const double edges_surplus{6}; // in order to create a gap between obstacles and map's edges
+const double zeta{5}; // attractive field's scale factor
+const double eta{20}; // repulsive field's scale factor
 
 // *************************************************************
 // ***************************  MAP  ***************************
@@ -116,11 +118,41 @@ void Map::check_map_limits()
 }
 
 // Map's constructor
-// Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size, double zeta, double eta)
 Map::Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size)
-        // :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}, zeta_{zeta}, eta_{eta}
         :robot_start_positions_{vec_of_start_position}, goal_positions_{vec_of_goals}, obstacles_{vector_obstacle}, cell_size_{cell_size}
 {
+    if(cell_size_ == 0) {
+        std::cout << "Map(): invalid map. " << "Cell size can't be set at 0, please change the value imposted by argument." << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    for(auto& it : robot_start_positions_) {
+        
+        if((fmod(it.x(),cell_size_) != 0) || (fmod(it.y(),cell_size_) != 0)) {
+            std::cout << "Map(): invalid map." << "\n" << "Verify if start positions are concordant to the cell size imposted." << std::endl;
+            exit(EXIT_FAILURE);
+        }
+
+    }
+
+    for(auto& it : goal_positions_) {
+        
+        if((fmod(it.x(),cell_size_) != 0) || (fmod(it.y(),cell_size_) != 0)) {
+            std::cout << "Map(): invalid map." << "\n" << "Verify if goal positions are concordant to the cell size imposted." << std::endl;
+            exit(EXIT_FAILURE);
+        }
+            
+    }
+
+    for(auto& it : obstacles_) {
+        
+        if((fmod(it.min_corner.x(),cell_size_) != 0) || (fmod(it.min_corner.y(),cell_size_) != 0) || (fmod(it.max_corner.x(),cell_size_) != 0) || (fmod(it.max_corner.y(),cell_size_) != 0)) {
+            std::cout << "Map(): invalid map." << "\n" << "Verify if obstacles positions are concordant to the cell size imposted." << std::endl;
+            exit(EXIT_FAILURE);
+        }
+            
+    }
+
     smallest_corner = robot_start_positions_.at(0);
     biggest_corner = goal_positions_.at(0);
 
@@ -338,9 +370,6 @@ bool operator<(const Position& p1, const Position& p2)
 // ***************************  POTENTIAL  ***************************
 // *******************************************************************
 
-const double zeta{5};
-const double eta{20};
-
 // function to set the potential of a cell
 double Cell::set_potential(const double potential)
 {
@@ -350,7 +379,6 @@ double Cell::set_potential(const double potential)
 }
 
 // function to calculate the potential of a cell and set it
-// double Cell::potential_calculation(const Position& goal_position, const vector<Position>& obstacles_position, const double max_influence_distance, const double zeta, const double eta)
 double Cell::potential_calculation(const Position& goal_position, const vector<Position>& obstacles_position, const double max_influence_distance)
 {
     double distance{distance_calculation(coordinates(), goal_position)};

@@ -31,7 +31,7 @@ public:
     Position set_goal(const Position& goal_position);
     int set_id(const int id_to_set);
     bool reset();
-    void step(const double max_influence_distance);
+    void step();
 
 private:
     Position coordinates_;

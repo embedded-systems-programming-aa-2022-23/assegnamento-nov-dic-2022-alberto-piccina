@@ -2,6 +2,8 @@
 
 #include "Robot.h"
 
+const double max_influence_distance{5}; // max distance that influence the potential calculus
+
 // Robot's constructor
 Robot::Robot(Position start_position, Map map)
         :coordinates_{start_position}, map_{map}
@@ -174,8 +176,7 @@ void Robot::find_min_potential()
 }
 
 // function that allows robot to move of one cell
-// void Robot::move(const vector<Position>& obstacles_position, const double max_influence_distance)
-void Robot::step(const double max_influence_distance)
+void Robot::step()
 {
         position_record_.push_back(coordinates_);
         set_available_positions(Position(coordinates().x(),coordinates().y()));
@@ -205,6 +206,7 @@ void Robot::step(const double max_influence_distance)
                         check = false;
                         
         }
+        
         if(!check) {
                 std::cerr << "Error: local minimum found." << std::endl;
                 arrived_ = true;

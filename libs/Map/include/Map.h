@@ -25,7 +25,6 @@ public:
 
     double set_x(const double x);
     double set_y(const double y);
-    double distance(Position p1, Position p2);
 
 private:
     double x_;
@@ -66,7 +65,6 @@ class Map {
 public:
 
     // constructor
-    // Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size, double zeta, double eta);
     Map(vector<Position> vec_of_start_position, vector<Position> vec_of_goals, vector<obstacle> vector_obstacle, double cell_size);
 
     // const members
@@ -76,8 +74,6 @@ public:
     vector<Position> obstacle_positions() const {return obstacle_positions_;}
     double cell_size() const {return cell_size_;}
     Position origin() const {return map_origin_;}
-    // double zeta() const {return zeta_;}
-    // double eta() const {return eta_;}
 
     Position smallest_corner;
     Position biggest_corner;
@@ -91,8 +87,6 @@ private:
     vector<Position> obstacle_positions_;
     double cell_size_;
     Position map_origin_;
-    // double zeta_;
-    // double eta_;
 
     void map_initialization(const int number_of_horizontal_cells, const int number_of_vertical_cells);
     void print_map();
